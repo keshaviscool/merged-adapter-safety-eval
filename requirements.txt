@@ -1,0 +1,11 @@
+torch
+transformers>=4.43 
+peft
+accelerate
+pyyaml
+tqdm
+sentencepiece     # slow Llama-2 tokenizer used by HarmCLS
+protobuf
+hf_xet
+pillow
+torchvision
