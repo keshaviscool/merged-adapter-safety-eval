@@ -5,6 +5,7 @@ from __future__ import annotations
 from bench.config import DetectorsConfig
 from bench.detectors.base import Detector, Verdict
 from bench.detectors.harm_cls import HarmClsDetector
+from bench.detectors.keyword_refusal import KeywordRefusalDetector
 from bench.detectors.llama_guard3 import LlamaGuard3Detector
 from bench.detectors.rejection_classifier import RejectionDetector
 
@@ -21,6 +22,8 @@ def build_detectors(config: DetectorsConfig) -> list[Detector]:
         detectors.append(HarmClsDetector(config.harm_cls))           # metric: asr
     if config.rejection.enabled:
         detectors.append(RejectionDetector(config.rejection))        # metric: frr
+    if config.keyword_refusal.enabled:
+        detectors.append(KeywordRefusalDetector(config.keyword_refusal))  # metric: frr
 
     if not detectors:
         raise ValueError("No detectors enabled. Enable at least one in the config.")

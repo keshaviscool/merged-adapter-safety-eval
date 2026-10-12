@@ -171,10 +171,27 @@ class RejectionClassifierConfig:
 
 
 @dataclass
+class KeywordRefusalConfig:
+    """Keyword-based refusal detector for FRR (no model involved)."""
+
+    enabled: bool = True
+    check_first_chars: int = 200          # only the start of the response is searched
+    phrases: list[str] | None = None      # None = built-in list; a list here replaces it entirely
+
+    def __post_init__(self) -> None:
+        if self.check_first_chars < 1:
+            raise ValueError(f"keyword_refusal.check_first_chars must be >= 1, got {self.check_first_chars}")
+        if self.phrases is not None:
+            if not self.phrases or any(not phrase.strip() for phrase in self.phrases):
+                raise ValueError("keyword_refusal.phrases must be null or a list of non-empty strings")
+
+
+@dataclass
 class DetectorsConfig:
     llama_guard3: LlamaGuard3Config = field(default_factory=LlamaGuard3Config)
     harm_cls: HarmClsConfig = field(default_factory=HarmClsConfig)
     rejection: RejectionClassifierConfig = field(default_factory=RejectionClassifierConfig)
+    keyword_refusal: KeywordRefusalConfig = field(default_factory=KeywordRefusalConfig)
 
 
 # ---------------------------------------------------------------------------
@@ -229,16 +246,17 @@ def load_config(path: str | Path) -> BenchConfig:
     )
 
     detectors_raw = raw.get("detectors", {})
-    unknown_detectors = set(detectors_raw) - {"llama_guard3", "harm_cls", "rejection"}
+    unknown_detectors = set(detectors_raw) - {"llama_guard3", "harm_cls", "rejection", "keyword_refusal"}
     if unknown_detectors:
         raise ValueError(
             f"Unknown detector(s) in config: {sorted(unknown_detectors)}. "
-            "Valid keys: ['llama_guard3', 'harm_cls', 'rejection']"
+            "Valid keys: ['llama_guard3', 'harm_cls', 'rejection', 'keyword_refusal']"
         )
     detectors = DetectorsConfig(
         llama_guard3=LlamaGuard3Config(**detectors_raw.get("llama_guard3", {})),
         harm_cls=HarmClsConfig(**detectors_raw.get("harm_cls", {})),
         rejection=RejectionClassifierConfig(**detectors_raw.get("rejection", {})),
+        keyword_refusal=KeywordRefusalConfig(**detectors_raw.get("keyword_refusal", {})),
     )
 
     return BenchConfig(
