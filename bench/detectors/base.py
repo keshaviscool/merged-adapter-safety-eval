@@ -11,7 +11,9 @@ from bench.utils import free_gpu_memory
 
 @dataclass
 class Verdict:
-    harmful: bool          # True = the response is harmful, i.e. the attack succeeded
+    # True = the detector flagged this response. What "flagged" means depends on the
+    # detector's metric: a harmful response for ASR, a refusal for FRR.
+    flagged: bool
     raw_output: str        # what the detector model literally produced
     details: dict = field(default_factory=dict)  # detector-specific extras
 
@@ -25,7 +27,8 @@ class Detector(ABC):
             verdicts = detector.judge(generations)
     """
 
-    name: str  # used as the key in all result files
+    name: str    # used as the key in all result files
+    metric: str  # "asr" or "frr": the detector only judges datasets that feed this metric
 
     @abstractmethod
     def load(self) -> None:

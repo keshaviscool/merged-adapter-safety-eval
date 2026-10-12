@@ -1,6 +1,10 @@
 # safety_bench
 
-ASR-only benchmark: HarmBench + AdvBench, each response judged by **both** Llama Guard 3 and HarmCLS.
+Safety benchmark with two separate metrics (never combined into one score):
+
+- **ASR** (attack success rate) on HarmBench + AdvBench, each response judged by **both** Llama Guard 3 and HarmCLS.
+- **FRR** (false refusal rate) on a random sample of Alpaca, each response judged by a refusal classifier.
+
 One run evaluates one model: the base model alone, or the base model with your adapter(s) merged in.
 
 ## Usage (local GPU)
@@ -12,7 +16,7 @@ huggingface-cli login            # Llama Guard 3 is gated; request access first
 python run_benchmark.py --config config.yaml
 ```
 
-Quick smoke test: set `max_examples: 5` for both datasets in `config.yaml`.
+Quick smoke test: set `max_examples: 5` for HarmBench and AdvBench and `num_samples: 5` for Alpaca in `config.yaml`.
 
 Re-judge saved generations without regenerating (the `model` section is ignored):
 
@@ -90,6 +94,19 @@ modal volume rm safety-bench-results 20261009_170414 -r
 - **403 or "gated repo" error while downloading a model:** the token's account has no access to that model yet.
 - **Out of memory:** lower `generation.batch_size` or `detectors.harm_cls.batch_size`.
 
+## Metrics and detectors
+
+| Metric | Prompts | Detector(s) | "Flagged" means | Lower is |
+|---|---|---|---|---|
+| ASR | HarmBench (standard + contextual), AdvBench | Llama Guard 3 8B, HarmCLS | the response is harmful (attack succeeded) | safer |
+| FRR | Alpaca (random sample, `datasets.alpaca.num_samples`) | `ProtectAI/distilroberta-base-rejection-v1` | the model refused a benign prompt | more helpful |
+
+- Each detector only judges the datasets of its own metric. If a dataset has no matching detector enabled, the run stops before generating anything.
+- Alpaca prompts are `instruction` (plus `input` when it is not empty). The sample is seeded (`datasets.alpaca.seed`), so every run and every checkpoint sees the same prompts.
+- Alpaca is almost entirely benign, so FRR is usually close to 0. It is most useful as a difference between configurations (for example: did merging make the model refuse more?).
+- Every rate comes with a 95% Wilson confidence interval (`ci95` in `summary.json`). With small samples, differences inside the intervals are noise.
+- The refusal classifier is small and also runs on CPU. It labels each response `REJECTION` or `NORMAL`; the score is saved in each verdict under `details.score`.
+
 ## Model modes
 
 | `adapters` in config | What is evaluated |
@@ -108,11 +125,11 @@ Merging uses PEFT's `add_weighted_adapter`, then `merge_and_unload`. Notes:
 | Path | Contents |
 |---|---|
 | `config_snapshot.yaml` | exact config and model description |
-| `summary.json` | ASR per dataset x detector, HarmBench category breakdowns, detector agreement (incl. Cohen's kappa) |
+| `summary.json` | per dataset x detector: ASR (HarmBench, AdvBench) or FRR (Alpaca) with counts and 95% CI, HarmBench category breakdowns, detector agreement (incl. Cohen's kappa) |
 | `generations/<dataset>.json` | prompts and raw responses |
-| `went_wrong/<dataset>__<detector>.json` | responses judged harmful (attack succeeded) |
-| `went_right/<dataset>__<detector>.json` | responses judged safe |
-| `disagreements/<dataset>.json` | responses where the two detectors disagree |
+| `went_wrong/<dataset>__<detector>.json` | responses the detector flagged: harmful responses (ASR) or refusals of benign prompts (FRR) |
+| `went_right/<dataset>__<detector>.json` | responses the detector did not flag |
+| `disagreements/<dataset>.json` | responses where two detectors disagree (HarmBench and AdvBench only, since Alpaca has one detector) |
 
 No single safety score is computed; every number is per dataset and per detector.
 
@@ -122,12 +139,12 @@ No single safety score is computed; every number is per dataset and per detector
 run_benchmark.py        orchestration
 modal_app.py            run the benchmark on a Modal cloud GPU
 bench/config.py         dataclasses + YAML loader
-bench/datasets.py       HarmBench / AdvBench -> Prompt
+bench/datasets.py       HarmBench / AdvBench / Alpaca -> Prompt, and which metric each feeds
 bench/merging.py        adapter loading + merge strategies
 bench/model_builder.py  base-only / single / merged model
 bench/generation.py     batched generation
-bench/detectors/        base interface, llama_guard3.py, harm_cls.py
-bench/scoring.py        ASR, breakdowns, agreement
+bench/detectors/        base interface, llama_guard3.py, harm_cls.py, rejection_classifier.py
+bench/scoring.py        ASR / FRR, confidence intervals, breakdowns, agreement
 bench/reporting.py      timestamped output folder
 ```
 
@@ -136,6 +153,7 @@ bench/reporting.py      timestamped output folder
 - HarmBench copyright behaviors are excluded (HarmCLS does not cover them).
 - HarmBench contextual prompts are sent as `<context>\n\n---\n\n<behavior>`.
 - HarmCLS clips each response to 512 tokens before classifying, as HarmBench does.
-- An empty response is never counted as harmful. Unparseable detector output is counted as not harmful and logged as a warning, so check the logs.
+- An empty response is never flagged (neither as harmful nor as a refusal). Unparseable detector output is also counted as not flagged and logged as a warning, so check the logs. Empty responses to Alpaca prompts are counted in a warning, because they would hide real failures.
+- `--reuse-generations` needs an earlier run that includes every enabled dataset. To add Alpaca/FRR to an old run you have to generate again.
 - Generation and judging are sequential, so only one 8-13B model is on the GPU at a time.
 - With sampling on, results depend on seed and batch composition. Greedy decoding is fully repeatable.

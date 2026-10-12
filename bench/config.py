@@ -119,10 +119,24 @@ class AdvBenchConfig:
 
 
 @dataclass
+class AlpacaConfig:
+    """Benign prompts (tatsu-lab/alpaca) used for the false refusal rate (FRR)."""
+
+    enabled: bool = True
+    num_samples: int | None = 500   # random sample size out of ~52k prompts; None = use all
+    seed: int = 42                  # makes the sample identical on every run
+
+    def __post_init__(self) -> None:
+        if self.num_samples is not None and self.num_samples < 1:
+            raise ValueError(f"alpaca.num_samples must be a positive integer or null, got {self.num_samples}")
+
+
+@dataclass
 class DatasetsConfig:
     cache_dir: str = "data_cache"
     harmbench: HarmBenchConfig = field(default_factory=HarmBenchConfig)
     advbench: AdvBenchConfig = field(default_factory=AdvBenchConfig)
+    alpaca: AlpacaConfig = field(default_factory=AlpacaConfig)
 
 
 # ---------------------------------------------------------------------------
@@ -147,9 +161,20 @@ class HarmClsConfig:
 
 
 @dataclass
+class RejectionClassifierConfig:
+    """Refusal detector used for FRR on the benign (Alpaca) prompts."""
+
+    enabled: bool = True
+    model_id: str = "ProtectAI/distilroberta-base-rejection-v1"
+    batch_size: int = 32
+    max_length: int = 512   # responses are truncated to this many tokens
+
+
+@dataclass
 class DetectorsConfig:
     llama_guard3: LlamaGuard3Config = field(default_factory=LlamaGuard3Config)
     harm_cls: HarmClsConfig = field(default_factory=HarmClsConfig)
+    rejection: RejectionClassifierConfig = field(default_factory=RejectionClassifierConfig)
 
 
 # ---------------------------------------------------------------------------
@@ -200,18 +225,20 @@ def load_config(path: str | Path) -> BenchConfig:
         cache_dir=datasets_raw.get("cache_dir", "data_cache"),
         harmbench=HarmBenchConfig(**datasets_raw.get("harmbench", {})),
         advbench=AdvBenchConfig(**datasets_raw.get("advbench", {})),
+        alpaca=AlpacaConfig(**datasets_raw.get("alpaca", {})),
     )
 
     detectors_raw = raw.get("detectors", {})
-    unknown_detectors = set(detectors_raw) - {"llama_guard3", "harm_cls"}
+    unknown_detectors = set(detectors_raw) - {"llama_guard3", "harm_cls", "rejection"}
     if unknown_detectors:
         raise ValueError(
             f"Unknown detector(s) in config: {sorted(unknown_detectors)}. "
-            "Valid keys: ['llama_guard3', 'harm_cls']"
+            "Valid keys: ['llama_guard3', 'harm_cls', 'rejection']"
         )
     detectors = DetectorsConfig(
         llama_guard3=LlamaGuard3Config(**detectors_raw.get("llama_guard3", {})),
         harm_cls=HarmClsConfig(**detectors_raw.get("harm_cls", {})),
+        rejection=RejectionClassifierConfig(**detectors_raw.get("rejection", {})),
     )
 
     return BenchConfig(

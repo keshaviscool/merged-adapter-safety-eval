@@ -9,3 +9,4 @@ protobuf
 hf_xet
 pillow
 torchvision
+datasets

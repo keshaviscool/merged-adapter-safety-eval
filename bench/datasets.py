@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import csv
 import logging
+import random
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
-from bench.config import AdvBenchConfig, DatasetsConfig, HarmBenchConfig
+from bench.config import AdvBenchConfig, AlpacaConfig, DatasetsConfig, HarmBenchConfig
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +25,15 @@ ADVBENCH_URL = (
 # The copyright category is excluded because HarmCLS does not cover it.
 SUPPORTED_HARMBENCH_CATEGORIES = {"standard", "contextual"}
 
+# Which metric each dataset feeds. Every detector declares the metric it serves
+# (see bench/detectors/base.py), so a detector only judges the datasets of its metric.
+#   asr = attack success rate on harmful prompts, frr = false refusal rate on benign prompts
+DATASET_METRICS = {
+    "harmbench": "asr",
+    "advbench": "asr",
+    "alpaca": "frr",
+}
+
 
 @dataclass
 class Prompt:
@@ -34,6 +44,7 @@ class Prompt:
     context: str | None = None                # only for HarmBench contextual behaviors
     category: str | None = None               # HarmBench semantic category
     functional_category: str | None = None    # HarmBench: standard / contextual
+    reference_response: str | None = None     # Alpaca's reference answer (unused for FRR, kept for later)
 
 
 # ---------------------------------------------------------------------------
@@ -118,6 +129,44 @@ def load_advbench(config: AdvBenchConfig, cache_dir: Path) -> list[Prompt]:
 
 
 # ---------------------------------------------------------------------------
+# Alpaca (benign prompts, for FRR)
+# ---------------------------------------------------------------------------
+def load_alpaca(config: AlpacaConfig, cache_dir: Path) -> list[Prompt]:
+    # Imported here so the rest of the pipeline works without the `datasets` package.
+    from datasets import load_dataset
+
+    rows = load_dataset("tatsu-lab/alpaca", split="train", cache_dir=str(cache_dir / "hf_datasets"))
+
+    indices = list(range(len(rows)))
+    if config.num_samples is not None and config.num_samples < len(indices):
+        # Seeded random sample: the same prompts are used on every run and every checkpoint.
+        indices = sorted(random.Random(config.seed).sample(indices, config.num_samples))
+
+    prompts = []
+    for index in indices:
+        row = rows[index]
+        instruction = row["instruction"].strip()
+        extra_input = row["input"].strip()  # empty for most rows
+
+        # We use only `instruction` (+ `input`). The dataset's `text` column is the Alpaca
+        # training template and would clash with the model's own chat template.
+        text = f"{instruction}\n\n{extra_input}" if extra_input else instruction
+
+        prompts.append(
+            Prompt(
+                id=f"alpaca_{index:05d}",  # index in the full dataset
+                dataset="alpaca",
+                text=text,
+                behavior=instruction,
+                reference_response=row["output"],
+            )
+        )
+
+    logger.info("Loaded %d Alpaca prompts (sampled from %d)", len(prompts), len(rows))
+    return prompts
+
+
+# ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 def load_all_datasets(config: DatasetsConfig) -> dict[str, list[Prompt]]:
@@ -129,6 +178,8 @@ def load_all_datasets(config: DatasetsConfig) -> dict[str, list[Prompt]]:
         datasets["harmbench"] = load_harmbench(config.harmbench, cache_dir)
     if config.advbench.enabled:
         datasets["advbench"] = load_advbench(config.advbench, cache_dir)
+    if config.alpaca.enabled:
+        datasets["alpaca"] = load_alpaca(config.alpaca, cache_dir)
 
     if not datasets:
         raise ValueError("No datasets enabled. Enable at least one in the config.")

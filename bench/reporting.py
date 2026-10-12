@@ -2,10 +2,11 @@
 
 results/<YYYYMMDD_HHMMSS>/
     config_snapshot.yaml                       exact settings and model description
-    summary.json                               ASR per dataset x detector (+ breakdowns, agreement)
+    summary.json                               ASR / FRR per dataset x detector (+ breakdowns, agreement)
     generations/<dataset>.json                 raw prompts and responses
-    went_wrong/<dataset>__<detector>.json      responses the detector labeled harmful (attack succeeded)
-    went_right/<dataset>__<detector>.json      responses the detector labeled safe (attack failed)
+    went_wrong/<dataset>__<detector>.json      responses the detector flagged
+                                               (harmful response for ASR, refusal of a benign prompt for FRR)
+    went_right/<dataset>__<detector>.json      responses the detector did not flag
     disagreements/<dataset>.json               responses where the detectors disagree
 """
 
@@ -21,7 +22,7 @@ import yaml
 
 from bench.config import BenchConfig
 from bench.generation import Generation
-from bench.scoring import JudgedExample
+from bench.scoring import METRIC_COUNT_KEYS, JudgedExample
 
 logger = logging.getLogger(__name__)
 
@@ -70,10 +71,12 @@ class ResultsWriter:
     def save_judgments(
         self, dataset: str, examples: list[JudgedExample], detector_names: list[str]
     ) -> None:
-        """Splits the judged examples into went_wrong / went_right per detector, plus disagreements."""
+        """Splits the judged examples into went_wrong / went_right per detector, plus disagreements.
+
+        `detector_names` are the detectors that judged this dataset."""
         for detector in detector_names:
-            wrong = [_judged_to_record(e) for e in examples if e.verdicts[detector].harmful]
-            right = [_judged_to_record(e) for e in examples if not e.verdicts[detector].harmful]
+            wrong = [_judged_to_record(e) for e in examples if e.verdicts[detector].flagged]
+            right = [_judged_to_record(e) for e in examples if not e.verdicts[detector].flagged]
             _write_json(self.went_wrong_dir / f"{dataset}__{detector}.json", wrong)
             _write_json(self.went_right_dir / f"{dataset}__{detector}.json", right)
 
@@ -81,7 +84,7 @@ class ResultsWriter:
             disagreements = [
                 _judged_to_record(e)
                 for e in examples
-                if len({v.harmful for v in e.verdicts.values()}) > 1
+                if len({v.flagged for v in e.verdicts.values()}) > 1
             ]
             _write_json(self.disagreements_dir / f"{dataset}.json", disagreements)
 
@@ -95,7 +98,10 @@ class ResultsWriter:
 def load_generations(run_dir: str | Path, dataset: str) -> list[Generation]:
     path = Path(run_dir) / "generations" / f"{dataset}.json"
     if not path.exists():
-        raise FileNotFoundError(f"No saved generations for '{dataset}' at {path}")
+        raise FileNotFoundError(
+            f"No saved generations for '{dataset}' at {path}. "
+            "That run did not include this dataset: disable it in the config or run without --reuse-generations."
+        )
     with open(path, "r", encoding="utf-8") as f:
         return [Generation.from_dict(item) for item in json.load(f)]
 
@@ -104,14 +110,20 @@ def load_generations(run_dir: str | Path, dataset: str) -> list[Generation]:
 # Console output
 # ---------------------------------------------------------------------------
 def format_summary_table(summary: dict) -> str:
-    lines = [f"{'dataset':<12}{'detector':<18}{'ASR':>8}   successes/total"]
-    lines.append("-" * 56)
+    """One row per dataset x detector. `summary` is the "results" part of summary.json."""
+    header = f"{'dataset':<11}{'metric':<7}{'detector':<22}{'rate':>7}  {'95% CI':<15}count"
+    lines = [header, "-" * len(header)]
 
     for dataset, entry in summary.items():
-        for detector, stats in entry["asr"].items():
-            asr_text = "n/a" if stats["asr"] is None else f"{100 * stats['asr']:.1f}%"
+        metric = entry["metric"]
+        count_key = METRIC_COUNT_KEYS[metric]
+
+        for detector, stats in entry[metric].items():
+            rate = "n/a" if stats[metric] is None else f"{100 * stats[metric]:.1f}%"
+            low, high = stats["ci95"] if stats["ci95"] else (None, None)
+            interval = "n/a" if low is None else f"[{100 * low:.1f}-{100 * high:.1f}]"
             lines.append(
-                f"{dataset:<12}{detector:<18}{asr_text:>8}   "
-                f"{stats['n_attack_success']}/{stats['n']}"
+                f"{dataset:<11}{metric.upper():<7}{detector:<22}{rate:>7}  {interval:<15}"
+                f"{stats[count_key]}/{stats['n']}"
             )
     return "\n".join(lines)
