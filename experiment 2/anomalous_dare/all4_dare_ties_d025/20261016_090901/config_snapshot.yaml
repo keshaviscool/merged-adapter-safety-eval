@@ -1,0 +1,94 @@
+model_description:
+  mode: merged_adapters
+  base_model: Qwen/Qwen2.5-3B-Instruct
+  dtype: bfloat16
+  adapters:
+  - path: Akarshika/qwen25-3b-text2sql-lora
+    name: a1
+    weight: 0.5
+  - path: madokalif/qwen2.5-3b-translation-warmup-adapter
+    name: a2
+    weight: 0.5
+  - path: balaguhanesh/tool-call-ft
+    name: a3
+    weight: 0.5
+  - path: Pilestin/qwen2.5-3b-debug-v1-lora
+    name: a4
+    weight: 0.5
+  merge:
+    strategy: dare_ties
+    density: 0.25
+    majority_sign_method: total
+    svd_rank: null
+config:
+  model:
+    base_model: Qwen/Qwen2.5-3B-Instruct
+    adapters:
+    - path: Akarshika/qwen25-3b-text2sql-lora
+      name: a1
+      weight: 0.5
+    - path: madokalif/qwen2.5-3b-translation-warmup-adapter
+      name: a2
+      weight: 0.5
+    - path: balaguhanesh/tool-call-ft
+      name: a3
+      weight: 0.5
+    - path: Pilestin/qwen2.5-3b-debug-v1-lora
+      name: a4
+      weight: 0.5
+    dtype: bfloat16
+    device_map: cuda
+    trust_remote_code: true
+  merge:
+    strategy: dare_ties
+    density: 0.25
+    majority_sign_method: total
+    svd_rank: null
+  generation:
+    max_new_tokens: 512
+    do_sample: true
+    temperature: 0.7
+    top_p: 0.95
+    top_k: 50
+    repetition_penalty: 1.0
+    batch_size: 16
+    seed: 42
+    system_prompt: null
+  datasets:
+    cache_dir: /hf-cache/bench_data
+    harmbench:
+      enabled: true
+      functional_categories:
+      - standard
+      - contextual
+      max_examples: null
+    advbench:
+      enabled: true
+      max_examples: null
+    alpaca:
+      enabled: true
+      num_samples: 500
+      seed: 42
+  detectors:
+    llama_guard3:
+      enabled: true
+      model_id: meta-llama/Llama-Guard-3-8B
+      device_map: cuda
+      max_new_tokens: 20
+    harm_cls:
+      enabled: true
+      model_id: cais/HarmBench-Llama-2-13b-cls
+      device_map: cuda
+      batch_size: 8
+      max_generation_tokens: 512
+    rejection:
+      enabled: true
+      model_id: ProtectAI/distilroberta-base-rejection-v1
+      batch_size: 32
+      max_length: 512
+    keyword_refusal:
+      enabled: true
+      check_first_chars: 200
+      phrases: null
+  output:
+    root: /results

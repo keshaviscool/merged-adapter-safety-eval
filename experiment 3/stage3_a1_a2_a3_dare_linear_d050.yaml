@@ -1,0 +1,69 @@
+# Cumulative checkpoint: starts from the original base model.
+model:
+  base_model: Qwen/Qwen2.5-3B-Instruct
+  dtype: bfloat16
+  device_map: cuda
+  trust_remote_code: true
+  adapters:
+  - name: a1
+    path: Akarshika/qwen25-3b-text2sql-lora
+    weight: 0.25
+  - name: a2
+    path: madokalif/qwen2.5-3b-translation-warmup-adapter
+    weight: 0.25
+  - name: a3
+    path: balaguhanesh/tool-call-ft
+    weight: 0.25
+merge:
+  strategy: dare_linear
+  density: 0.5
+  majority_sign_method: total
+  svd_rank: null
+generation:
+  max_new_tokens: 512
+  do_sample: true
+  temperature: 0.7
+  top_p: 0.95
+  top_k: 50
+  repetition_penalty: 1.0
+  batch_size: 32
+  seed: 42
+  system_prompt: null
+datasets:
+  cache_dir: data_cache
+  harmbench:
+    enabled: true
+    functional_categories:
+    - standard
+    - contextual
+    max_examples: null
+  advbench:
+    enabled: true
+    max_examples: null
+  alpaca:
+    enabled: false
+    num_samples: 500
+    seed: 42
+detectors:
+  llama_guard3:
+    enabled: true
+    model_id: meta-llama/Llama-Guard-3-8B
+    device_map: cuda
+    max_new_tokens: 20
+  harm_cls:
+    enabled: true
+    model_id: cais/HarmBench-Llama-2-13b-cls
+    device_map: cuda
+    batch_size: 16
+    max_generation_tokens: 512
+  rejection:
+    enabled: false
+    model_id: ProtectAI/distilroberta-base-rejection-v1
+    batch_size: 32
+    max_length: 512
+  keyword_refusal:
+    enabled: false
+    check_first_chars: 200
+    phrases: null
+output:
+  root: results/experiment3/stage3_a1_a2_a3_dare_linear_d050

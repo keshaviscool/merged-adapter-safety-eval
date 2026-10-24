@@ -1,0 +1,91 @@
+✓ Initialized. View run at 
+https://modal.com/apps/aaj2oct/main/ap-o1E09qO1WOU5Cw5GVTqaGc
+✓ Created objects.
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/modal
+│   _app.py
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/run_b
+│   enchmark.py
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/bench
+└── ✓ Created Function run_benchmark.
+08:49:03 | INFO | bench.datasets | Loaded 300 HarmBench prompts
+08:49:03 | INFO | bench.datasets | Loaded 520 AdvBench prompts
+08:49:05 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+08:49:05 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/tatsu-lab/alpaca/dce01c9b08f87459cf36a430d809084718273017/README.md?%2Fdatasets%2Ftatsu-lab%2Falpaca%2Fresolve%2Fmain%2FREADME.md=&etag=%2285e528790f89572cf48ee0383c6bc76241bc2cbd%22 "HTTP/1.1 200 OK"
+08:49:05 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/alpaca.py "HTTP/1.1 404 Not Found"
+08:49:05 | INFO | httpx2 | HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/tatsu-lab/alpaca/tatsu-lab/alpaca.py "HTTP/1.1 404 Not Found"
+08:49:05 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/revision/dce01c9b08f87459cf36a430d809084718273017 "HTTP/1.1 200 OK"
+08:49:05 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/.huggingface.yaml "HTTP/1.1 404 Not Found"
+08:49:05 | INFO | httpx2 | HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=tatsu-lab/alpaca "HTTP/1.1 200 OK"
+08:49:05 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/tree/dce01c9b08f87459cf36a430d809084718273017/data?recursive=true&expand=false "HTTP/1.1 200 OK"
+08:49:05 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/tree/dce01c9b08f87459cf36a430d809084718273017?recursive=false&expand=false "HTTP/1.1 200 OK"
+08:49:05 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/dataset_infos.json "HTTP/1.1 404 Not Found"
+08:49:05 | INFO | bench.datasets | Loaded 500 Alpaca prompts (sampled from 52002)
+08:49:05 | INFO | bench.reporting | Results folder: /results/20261016_084905
+08:49:05 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct "HTTP/1.1 200 OK"
+08:49:05 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+08:49:05 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+08:49:06 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct "HTTP/1.1 200 OK"
+08:49:06 | INFO | bench.model_builder | Loading base model: Qwen/Qwen2.5-3B-Instruct
+08:49:06 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+[1ALoading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/434 [00:00<02:20,  3.09it/s]
+[1ALoading weights:   4%|▎         | 16/434 [00:00<00:09, 43.35it/s]
+[1ALoading weights:   6%|▌         | 26/434 [00:00<00:07, 57.73it/s]
+[1ALoading weights:   9%|▉         | 41/434 [00:00<00:04, 81.41it/s]
+[1ALoading weights:  13%|█▎        | 57/434 [00:00<00:03, 102.45it/s]
+[1ALoading weights:  16%|█▌        | 69/434 [00:00<00:03, 106.09it/s]
+[1ALoading weights:  19%|█▉        | 84/434 [00:01<00:03, 109.80it/s]
+[1ALoading weights:  23%|██▎       | 100/434 [00:01<00:02, 119.93it/s]
+[1ALoading weights:  26%|██▌       | 113/434 [00:01<00:02, 122.50it/s]
+[1ALoading weights:  30%|███       | 131/434 [00:01<00:02, 132.99it/s]
+[1ALoading weights:  34%|███▍      | 149/434 [00:01<00:02, 141.48it/s]
+[1ALoading weights:  39%|███▉      | 169/434 [00:01<00:01, 141.12it/s]
+[1ALoading weights:  43%|████▎     | 185/434 [00:01<00:01, 144.03it/s]
+[1ALoading weights:  47%|████▋     | 205/434 [00:01<00:01, 149.36it/s]
+[1ALoading weights:  51%|█████     | 221/434 [00:01<00:01, 149.73it/s]
+[1ALoading weights:  56%|█████▌    | 242/434 [00:02<00:01, 156.08it/s]
+[1ALoading weights:  59%|█████▉    | 258/434 [00:02<00:01, 153.39it/s]
+[1ALoading weights:  64%|██████▍   | 277/434 [00:02<00:01, 153.48it/s]
+[1ALoading weights:  68%|██████▊   | 293/434 [00:02<00:00, 153.59it/s]
+[1ALoading weights:  72%|███████▏  | 313/434 [00:02<00:00, 155.62it/s]
+[1ALoading weights:  76%|███████▌  | 329/434 [00:02<00:00, 153.14it/s]
+[1ALoading weights:  80%|███████▉  | 347/434 [00:02<00:00, 155.91it/s]
+[1ALoading weights:  84%|████████▍ | 364/434 [00:02<00:00, 156.77it/s]
+[1ALoading weights:  88%|████████▊ | 380/434 [00:02<00:00, 156.60it/s]
+[1ALoading weights:  91%|█████████▏| 397/434 [00:03<00:00, 149.66it/s]
+[1ALoading weights:  95%|█████████▌| 413/434 [00:03<00:00, 149.83it/s]Loading weights: 100%|██████████| 434/434 [00:03<00:00, 133.18it/s]
+08:49:10 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+08:49:10 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Akarshika/qwen25-3b-text2sql-lora/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+08:49:10 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Akarshika/qwen25-3b-text2sql-lora/b033f92f7d4433f3cc6da7d1e23bad8f092b6c77/adapter_config.json?%2FAkarshika%2Fqwen25-3b-text2sql-lora%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%2285c3c5afa5699fbefdd599eef62cc120f6e239e6%22 "HTTP/1.1 200 OK"
+08:49:10 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Akarshika/qwen25-3b-text2sql-lora/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+08:49:10 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Akarshika/qwen25-3b-text2sql-lora/b033f92f7d4433f3cc6da7d1e23bad8f092b6c77/adapter_config.json?%2FAkarshika%2Fqwen25-3b-text2sql-lora%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%2285c3c5afa5699fbefdd599eef62cc120f6e239e6%22 "HTTP/1.1 200 OK"
+08:49:11 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Akarshika/qwen25-3b-text2sql-lora/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+08:49:11 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Akarshika/qwen25-3b-text2sql-lora/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+08:49:11 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/madokalif/qwen2.5-3b-translation-warmup-adapter/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+08:49:11 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/madokalif/qwen2.5-3b-translation-warmup-adapter/78008bb3e35202a37d042e2d785463fab2f61d25/adapter_config.json?%2Fmadokalif%2Fqwen2.5-3b-translation-warmup-adapter%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%22544f78ea796d6db2b53c656a45df8a1370d96d98%22 "HTTP/1.1 200 OK"
+08:49:11 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/madokalif/qwen2.5-3b-translation-warmup-adapter/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+08:49:11 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/madokalif/qwen2.5-3b-translation-warmup-adapter/78008bb3e35202a37d042e2d785463fab2f61d25/adapter_config.json?%2Fmadokalif%2Fqwen2.5-3b-translation-warmup-adapter%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%22544f78ea796d6db2b53c656a45df8a1370d96d98%22 "HTTP/1.1 200 OK"
+08:49:12 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/madokalif/qwen2.5-3b-translation-warmup-adapter/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+08:49:12 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/madokalif/qwen2.5-3b-translation-warmup-adapter/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+08:49:12 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/balaguhanesh/tool-call-ft/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+08:49:12 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/balaguhanesh/tool-call-ft/3ac7a8efd43a20ad3cc5d6201bd058598e3ba0c2/adapter_config.json?%2Fbalaguhanesh%2Ftool-call-ft%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%2279dd11e37bb27bd2e1aef387806e3ad4b3bb2f17%22 "HTTP/1.1 200 OK"
+08:49:12 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/balaguhanesh/tool-call-ft/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+08:49:12 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/balaguhanesh/tool-call-ft/3ac7a8efd43a20ad3cc5d6201bd058598e3ba0c2/adapter_config.json?%2Fbalaguhanesh%2Ftool-call-ft%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%2279dd11e37bb27bd2e1aef387806e3ad4b3bb2f17%22 "HTTP/1.1 200 OK"
+08:49:13 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/balaguhanesh/tool-call-ft/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+08:49:13 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/balaguhanesh/tool-call-ft/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+08:49:14 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Pilestin/qwen2.5-3b-debug-v1-lora/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+08:49:14 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Pilestin/qwen2.5-3b-debug-v1-lora/43d398e30f1948290c8c59847876a7c375399d9f/adapter_config.json?%2FPilestin%2Fqwen2.5-3b-debug-v1-lora%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%22ff08781dccc222db7ae8d88507d48381d21d908c%22 "HTTP/1.1 200 OK"
+08:49:14 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Pilestin/qwen2.5-3b-debug-v1-lora/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+08:49:14 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Pilestin/qwen2.5-3b-debug-v1-lora/43d398e30f1948290c8c59847876a7c375399d9f/adapter_config.json?%2FPilestin%2Fqwen2.5-3b-debug-v1-lora%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%22ff08781dccc222db7ae8d88507d48381d21d908c%22 "HTTP/1.1 200 OK"
+08:49:15 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Pilestin/qwen2.5-3b-debug-v1-lora/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+08:49:15 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Pilestin/qwen2.5-3b-debug-v1-lora/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+08:49:15 | INFO | bench.merging | Merging 4 adapters: names=['a1', 'a2', 'a3', 'a4'] weights=[0.5, 0.5, 0.5, 0.5] {'combination_type': 'dare_ties', 'density': 0.25, 'majority_sign_method': 'total'}
+08:49:17 | INFO | run_benchmark | Generating for harmbench (300 prompts)
+
+Disconnecting from Modal - This will terminate your Modal app in a few seconds.
+

@@ -1,0 +1,14 @@
+✓ Initialized. View run at 
+https://modal.com/apps/aaj2oct/main/ap-0HbRyUXnF8PA1RiowGSXsy
+✓ Created objects.
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/modal
+│   _app.py
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/run_b
+│   enchmark.py
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/bench
+└── ✓ Created Function run_benchmark.
+Disconnecting from Modal - This will terminate your Modal app in a few seconds.
+

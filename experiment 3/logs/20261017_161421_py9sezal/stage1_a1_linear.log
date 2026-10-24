@@ -1,0 +1,209 @@
+✓ Initialized. View run at 
+https://modal.com/apps/aaj2oct/main/ap-3qbE13HuQKai7yqNBxs3om
+✓ Created objects.
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/exper
+│   iment 3/modal_app.py
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/exper
+│   iment 3/benchmark_entrypoint.py
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/exper
+│   iment 3/weighted_merging.py
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/run_b
+│   enchmark.py
+├── ✓ Uploaded 
+│   /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/bench
+└── ✓ Created Function run_benchmark.
+11:03:03 | INFO | bench.datasets | Loaded 300 HarmBench prompts
+11:03:03 | INFO | bench.datasets | Loaded 520 AdvBench prompts
+11:03:03 | INFO | bench.reporting | Results folder: /results/experiment3/stage1_a1_linear/20261017_110303
+11:03:03 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct "HTTP/1.1 200 OK"
+11:03:03 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+11:03:03 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+11:03:03 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct "HTTP/1.1 200 OK"
+11:03:03 | INFO | bench.model_builder | Loading base model: Qwen/Qwen2.5-3B-Instruct
+11:03:04 | INFO | httpx2 | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+[1ALoading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/434 [00:00<01:47,  4.04it/s]
+[1ALoading weights:   4%|▍         | 17/434 [00:00<00:06, 60.93it/s]
+[1ALoading weights:   6%|▋         | 28/434 [00:00<00:05, 77.54it/s]
+[1ALoading weights:  10%|█         | 45/434 [00:00<00:03, 105.82it/s]
+[1ALoading weights:  14%|█▍        | 60/434 [00:00<00:03, 116.39it/s]
+[1ALoading weights:  18%|█▊        | 76/434 [00:00<00:02, 127.64it/s]
+[1ALoading weights:  22%|██▏       | 97/434 [00:00<00:02, 144.58it/s]
+[1ALoading weights:  28%|██▊       | 120/434 [00:01<00:02, 156.03it/s]
+[1ALoading weights:  32%|███▏      | 141/434 [00:01<00:01, 168.39it/s]
+[1ALoading weights:  37%|███▋      | 159/434 [00:01<00:01, 169.26it/s]
+[1ALoading weights:  41%|████▏     | 180/434 [00:01<00:01, 174.37it/s]
+[1ALoading weights:  46%|████▌     | 198/434 [00:01<00:01, 173.10it/s]
+[1ALoading weights:  50%|████▉     | 216/434 [00:01<00:01, 169.49it/s]
+[1ALoading weights:  56%|█████▌    | 241/434 [00:01<00:01, 189.01it/s]
+[1ALoading weights:  60%|██████    | 262/434 [00:01<00:00, 194.80it/s]
+[1ALoading weights:  65%|██████▍   | 282/434 [00:01<00:00, 190.67it/s]
+[1ALoading weights:  70%|██████▉   | 303/434 [00:01<00:00, 196.04it/s]
+[1ALoading weights:  74%|███████▍  | 323/434 [00:02<00:00, 197.05it/s]
+[1ALoading weights:  79%|███████▉  | 343/434 [00:02<00:00, 184.55it/s]
+[1ALoading weights:  83%|████████▎ | 362/434 [00:02<00:00, 181.69it/s]
+[1ALoading weights:  88%|████████▊ | 383/434 [00:02<00:00, 189.18it/s]
+[1ALoading weights:  93%|█████████▎| 403/434 [00:02<00:00, 183.46it/s]
+[1ALoading weights:  97%|█████████▋| 422/434 [00:02<00:00, 173.46it/s]
+[1ALoading weights: 100%|██████████| 434/434 [00:02<00:00, 162.43it/s]
+11:03:07 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+11:03:07 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Akarshika/qwen25-3b-text2sql-lora/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+11:03:07 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Akarshika/qwen25-3b-text2sql-lora/b033f92f7d4433f3cc6da7d1e23bad8f092b6c77/adapter_config.json?%2FAkarshika%2Fqwen25-3b-text2sql-lora%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%2285c3c5afa5699fbefdd599eef62cc120f6e239e6%22 "HTTP/1.1 200 OK"
+11:03:07 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Akarshika/qwen25-3b-text2sql-lora/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+11:03:07 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Akarshika/qwen25-3b-text2sql-lora/b033f92f7d4433f3cc6da7d1e23bad8f092b6c77/adapter_config.json?%2FAkarshika%2Fqwen25-3b-text2sql-lora%2Fresolve%2Fmain%2Fadapter_config.json=&etag=%2285c3c5afa5699fbefdd599eef62cc120f6e239e6%22 "HTTP/1.1 200 OK"
+11:03:08 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Akarshika/qwen25-3b-text2sql-lora/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+11:03:08 | INFO | httpx2 | HTTP Request: HEAD https://huggingface.co/Akarshika/qwen25-3b-text2sql-lora/resolve/main/adapter_model.safetensors "HTTP/1.1 302 Found"
+11:03:09 | INFO | bench.merging | One adapter given ('a1'): applying its configured weight.
+11:03:09 | INFO | bench.merging | Applying single-adapter weight 0.250
+11:03:09 | INFO | run_benchmark | Generating for harmbench (300 prompts)
+
+[1AGenerating:   0%|          | 0/10 [00:00<?, ?it/s]
+[1AGenerating:  10%|█         | 1/10 [00:21<03:13, 21.55s/it]
+[1AGenerating:  20%|██        | 2/10 [00:42<02:49, 21.13s/it]
+[1AGenerating:  30%|███       | 3/10 [01:03<02:26, 20.91s/it]
+[1AGenerating:  40%|████      | 4/10 [01:24<02:05, 20.98s/it]
+[1AGenerating:  50%|█████     | 5/10 [01:45<01:45, 21.05s/it]
+[1AGenerating:  60%|██████    | 6/10 [02:05<01:23, 20.79s/it]
+[1AGenerating:  70%|███████   | 7/10 [02:26<01:02, 20.95s/it]
+[1AGenerating:  80%|████████  | 8/10 [02:47<00:41, 20.93s/it]
+[1AGenerating:  90%|█████████ | 9/10 [03:09<00:21, 21.32s/it]
+[1AGenerating: 100%|██████████| 10/10 [03:30<00:00, 21.20s/it]
+[1AGenerating: 100%|██████████| 10/10 [03:30<00:00, 21.09s/it]
+11:06:40 | INFO | run_benchmark | Generating for advbench (520 prompts)
+
+[1AGenerating:   0%|          | 0/17 [00:00<?, ?it/s]
+[1AGenerating:   6%|▌         | 1/17 [00:21<05:39, 21.24s/it]
+[1AGenerating:  12%|█▏        | 2/17 [00:41<05:13, 20.90s/it]
+[1AGenerating:  18%|█▊        | 3/17 [00:57<04:20, 18.57s/it]
+[1AGenerating:  24%|██▎       | 4/17 [01:14<03:52, 17.91s/it]
+[1AGenerating:  29%|██▉       | 5/17 [01:35<03:47, 18.94s/it]
+[1AGenerating:  35%|███▌      | 6/17 [01:56<03:35, 19.60s/it]Generating:  35%|███▌      | 6/17 [02:02<03:44, 20.41s/it]
+Traceback (most recent call last):
+  File "/root/safety_bench/benchmark_entrypoint.py", line 12, in <module>
+    runpy.run_path(str(root / "run_benchmark.py"), run_name="__main__")
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/safety_bench/run_benchmark.py", line 175, in <module>
+    main()
+  File "/root/safety_bench/run_benchmark.py", line 152, in main
+    generations_by_dataset = run_generation_phase(config, prompts_by_dataset, writer)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/safety_bench/run_benchmark.py", line 75, in run_generation_phase
+    generations = generator.generate(prompts)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/safety_bench/bench/generation.py", line 104, in generate
+    batch_responses = self._generate_batch(formatted)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/safety_bench/bench/generation.py", line 86, in _generate_batch
+    output_ids = self.model.generate(**encoded, **self._generation_kwargs())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/generation/utils.py", line 2982, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/generation/utils.py", line 3210, in _sample
+    outputs = model_forward(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 444, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/utils/output_capturing.py", line 287, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 380, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/modeling_layers.py", line 110, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 272, in forward
+    hidden_states = self.input_layernorm(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 243, in forward
+    hidden_states = hidden_states * torch.rsqrt(variance + self.variance_epsilon)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Stopping app - uncaught exception raised locally: ConflictError('workspace ac-Ec2aPptOuyWobW98n0cg1B is disabled').
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/exper │
+│ iment 3/modal_app.py:78 in main                                              │
+│                                                                              │
+│   77 │   config_yaml = (PROJECT_DIR / config).read_text()                    │
+│ ❱ 78 │   run_name = run_benchmark.remote(config_yaml, Path(config).stem, reu │
+│   79                                                                         │
+│                                                                              │
+│ /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/env/l │
+│ ib/python3.11/site-packages/modal/_object.py:49 in wrapped                   │
+│                                                                              │
+│    48 │   │   await self.hydrate()                                           │
+│ ❱  49 │   │   return await method(self, *args, **kwargs)                     │
+│    50                                                                        │
+│                                                                              │
+│ /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/env/l │
+│ ib/python3.11/site-packages/modal/_functions.py:2067 in remote               │
+│                                                                              │
+│   2066 │   │                                                                 │
+│ ❱ 2067 │   │   return await self._call_function(args, kwargs)                │
+│   2068                                                                       │
+│                                                                              │
+│ /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/env/l │
+│ ib/python3.11/site-packages/modal/_functions.py:2004 in _call_function       │
+│                                                                              │
+│   2003 │   │                                                                 │
+│ ❱ 2004 │   │   return await invocation.run_function()                        │
+│   2005                                                                       │
+│                                                                              │
+│ /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/env/l │
+│ ib/python3.11/site-packages/modal/_functions.py:506 in run_function          │
+│                                                                              │
+│    505 │   │   │   │   │   # We immediately retry internal failures and the  │
+│ ❱  506 │   │   │   │   │   self.attempt_token = await self._retry_input(meta │
+│    507 │   │   │   │   │   continue                                          │
+│                                                                              │
+│ /Users/keshavsharmaog/Downloads/rgu_research_intern/benchmark_pipeline/env/l │
+│ ib/python3.11/site-packages/modal/_functions.py:526 in _retry_input          │
+│                                                                              │
+│    525 │   │   )                                                             │
+│ ❱  526 │   │   retry_response = await self.stub.AttemptRetry(retry_request,  │
+│    527 │   │   return retry_response.attempt_token                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ConflictError: workspace ac-Ec2aPptOuyWobW98n0cg1B is disabled

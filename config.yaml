@@ -5,15 +5,15 @@
 #   2+ adapters       -> merge them using the `merge` section below
 # ---------------------------------------------------------------------------
 model:
-  base_model: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"   # <-- replace with your base model
+  base_model: "Qwen/Qwen2.5-3B-Instruct"   # <-- replace with your base model
   dtype: bfloat16
   device_map: cuda
   trust_remote_code: true
-#  adapters: []
-  adapters:
-     - name: a1
-       path: "keshavsharma/tinyllama-1.1b-adcopy-generation-lora"       # local path or hub id of a PEFT LoRA adapter
-       weight: 0.5
+  adapters: []
+ # adapters:
+  #   - name: a1
+   #    path: "keshavsharma/tinyllama-1.1b-adcopy-generation-lora"       # local path or hub id of a PEFT LoRA adapter
+    #   weight: 0.5
   #   - name: a2
   #     path: ./adapters/a2
   #     weight: 0.5
@@ -50,10 +50,10 @@ datasets:
   harmbench:
     enabled: true
     functional_categories: [standard, contextual]
-    max_examples: 10          # set e.g. 20 for a quick smoke test
+    max_examples: null          # set e.g. 20 for a quick smoke test
   advbench:
     enabled: true
-    max_examples: 10
+    max_examples: null
   alpaca:
     enabled: true
     num_samples: 500

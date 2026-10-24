@@ -1,0 +1,14 @@
+config,pid,exit_code,log
+all4_linear.yaml,15470,0,all4_linear.log
+all4_ties_d025.yaml,15471,0,all4_ties_d025.log
+all4_ties_d050.yaml,15472,0,all4_ties_d050.log
+all4_ties_d075.yaml,15473,0,all4_ties_d075.log
+all4_ties_d100.yaml,15474,0,all4_ties_d100.log
+all4_dare_linear_d025.yaml,15475,0,all4_dare_linear_d025.log
+all4_dare_linear_d050.yaml,15476,0,all4_dare_linear_d050.log
+all4_dare_linear_d075.yaml,15477,0,all4_dare_linear_d075.log
+all4_dare_linear_d100.yaml,15478,0,all4_dare_linear_d100.log
+all4_dare_ties_d025.yaml,15479,0,all4_dare_ties_d025.log
+all4_dare_ties_d050.yaml,15480,0,all4_dare_ties_d050.log
+all4_dare_ties_d075.yaml,15481,0,all4_dare_ties_d075.log
+all4_dare_ties_d100.yaml,15482,0,all4_dare_ties_d100.log

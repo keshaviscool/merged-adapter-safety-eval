@@ -1,0 +1,14 @@
+config,strategy,density,adapter_count,weight_per_adapter
+all4_linear.yaml,linear,,4,0.5
+all4_ties_d025.yaml,ties,0.25,4,0.5
+all4_ties_d050.yaml,ties,0.5,4,0.5
+all4_ties_d075.yaml,ties,0.75,4,0.5
+all4_ties_d100.yaml,ties,1.0,4,0.5
+all4_dare_linear_d025.yaml,dare_linear,0.25,4,0.5
+all4_dare_linear_d050.yaml,dare_linear,0.5,4,0.5
+all4_dare_linear_d075.yaml,dare_linear,0.75,4,0.5
+all4_dare_linear_d100.yaml,dare_linear,1.0,4,0.5
+all4_dare_ties_d025.yaml,dare_ties,0.25,4,0.5
+all4_dare_ties_d050.yaml,dare_ties,0.5,4,0.5
+all4_dare_ties_d075.yaml,dare_ties,0.75,4,0.5
+all4_dare_ties_d100.yaml,dare_ties,1.0,4,0.5
