@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "dataset_sha256": "8d81accedd38eaaf8b760618622bb888417d1fd0c86eba65c427a16f1cbb4afc",
+  "expected_prompts": 300,
+  "bootstrap_resamples": 1000,
+  "bootstrap_seed": 42,
+  "runs": [
+    {
+      "label": "base",
+      "config": "base.yaml",
+      "method": "base",
+      "merge_seed": null
+    },
+    {
+      "label": "linear",
+      "config": "linear.yaml",
+      "method": "linear",
+      "merge_seed": null
+    },
+    {
+      "label": "ties_d075",
+      "config": "ties_d075.yaml",
+      "method": "ties",
+      "merge_seed": null
+    },
+    {
+      "label": "dare_linear_d075_seed42",
+      "config": "dare_linear_d075_seed42.yaml",
+      "method": "dare_linear",
+      "merge_seed": 42
+    },
+    {
+      "label": "dare_linear_d075_seed43",
+      "config": "dare_linear_d075_seed43.yaml",
+      "method": "dare_linear",
+      "merge_seed": 43
+    },
+    {
+      "label": "dare_linear_d075_seed44",
+      "config": "dare_linear_d075_seed44.yaml",
+      "method": "dare_linear",
+      "merge_seed": 44
+    },
+    {
+      "label": "dare_linear_d075_seed45",
+      "config": "dare_linear_d075_seed45.yaml",
+      "method": "dare_linear",
+      "merge_seed": 45
+    },
+    {
+      "label": "dare_linear_d075_seed46",
+      "config": "dare_linear_d075_seed46.yaml",
+      "method": "dare_linear",
+      "merge_seed": 46
+    },
+    {
+      "label": "dare_ties_d075_seed42",
+      "config": "dare_ties_d075_seed42.yaml",
+      "method": "dare_ties",
+      "merge_seed": 42
+    },
+    {
+      "label": "dare_ties_d075_seed43",
+      "config": "dare_ties_d075_seed43.yaml",
+      "method": "dare_ties",
+      "merge_seed": 43
+    },
+    {
+      "label": "dare_ties_d075_seed44",
+      "config": "dare_ties_d075_seed44.yaml",
+      "method": "dare_ties",
+      "merge_seed": 44
+    },
+    {
+      "label": "dare_ties_d075_seed45",
+      "config": "dare_ties_d075_seed45.yaml",
+      "method": "dare_ties",
+      "merge_seed": 45
+    },
+    {
+      "label": "dare_ties_d075_seed46",
+      "config": "dare_ties_d075_seed46.yaml",
+      "method": "dare_ties",
+      "merge_seed": 46
+    }
+  ]
+}
