@@ -39,7 +39,7 @@ from bench.datasets import DATASET_METRICS, load_all_datasets  # noqa: E402
 from bench.detectors import build_detectors  # noqa: E402
 from bench.generation import ResponseGenerator  # noqa: E402
 from bench.model_builder import build_model  # noqa: E402
-from bench.reporting import ResultsWriter, format_summary_table  # noqa: E402
+from bench.reporting import ResultsWriter, format_summary_table, load_generations  # noqa: E402
 from bench.scoring import attach_verdicts, compute_summary  # noqa: E402
 from bench.utils import free_gpu_memory, set_global_seed, setup_logging  # noqa: E402
 
@@ -99,6 +99,8 @@ def main() -> None:
     setup_logging()
     parser = argparse.ArgumentParser(description="Sequential adapter merging + safety benchmark")
     parser.add_argument("--config", default=str(Path(__file__).parent / "config.yaml"))
+    parser.add_argument("--judge-only", metavar="RUN_DIR", default=None,
+                        help="Skip generation: judge the generations already saved in this results folder")
     args = parser.parse_args()
 
     os.chdir(REPO_ROOT)  # so data_cache/ and output paths in the config resolve from the repo root
@@ -107,35 +109,42 @@ def main() -> None:
     prompts_by_dataset = load_all_datasets(config.datasets)
     detectors = build_detectors(config.detectors)  # only constructs them; models load later
 
-    run_dir = Path(config.output.root) / datetime.now().strftime("%Y%m%d_%H%M%S")
+    run_dir = Path(args.judge_only) if args.judge_only else Path(config.output.root) / datetime.now().strftime("%Y%m%d_%H%M%S")
     stage_names = ["M"] + ["M+" + "+".join(a.name for a in adapters[:i]) for i in range(1, len(adapters) + 1)]
     stage_dirs = {name: run_dir / f"stage{i}_{name.replace('+', '_')}" for i, name in enumerate(stage_names)}
     writers = {name: StageWriter(path) for name, path in stage_dirs.items()}
     run_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copy(args.config, run_dir / "config_used.yaml")
+    if not args.judge_only:  # when resuming, keep the config the generations were made with
+        shutil.copy(args.config, run_dir / "config_used.yaml")
     logger.info("Results folder: %s | stages: %s", run_dir, stage_names)
 
     # ---- Phase 1: merge adapters one by one, generating after each merge ----
-    model, tokenizer = build_model(replace(config.model, adapters=[]), config.merge)
     generations = {}  # generations[stage][dataset] = list[Generation]
-    for i, stage in enumerate(stage_names):
-        if i > 0:
-            adapter = adapters[i - 1]
-            logger.info("Merging %s (%s) into the current weights", adapter.name, adapter.path)
-            # merge_and_unload folds (alpha/rank) * B @ A into W in place and drops the PEFT wrapper,
-            # so the next adapter is merged on top of the already-merged weights.
-            model = PeftModel.from_pretrained(model, adapter.path).merge_and_unload()
-            model.eval()
+    if args.judge_only:
+        for stage in stage_names:
+            generations[stage] = {d: load_generations(stage_dirs[stage], d) for d in prompts_by_dataset}
+        logger.info("Loaded saved generations from %s, skipping generation", run_dir)
+    else:
+        model, tokenizer = build_model(replace(config.model, adapters=[]), config.merge)
+        for i, stage in enumerate(stage_names):
+            if i > 0:
+                adapter = adapters[i - 1]
+                logger.info("Merging %s (%s) into the current weights", adapter.name, adapter.path)
+                # merge_and_unload folds (alpha/rank) * B @ A into W in place and drops the PEFT wrapper,
+                # so the next adapter is merged on top of the already-merged weights.
+                model = PeftModel.from_pretrained(model, adapter.path).merge_and_unload()
+                model.eval()
 
-        set_global_seed(config.generation.seed)
-        generator = ResponseGenerator(model, tokenizer, config.generation)
-        generations[stage] = {}
-        for dataset, prompts in prompts_by_dataset.items():
-            logger.info("[%s] generating for %s (%d prompts)", stage, dataset, len(prompts))
-            generations[stage][dataset] = generator.generate(prompts)
-            writers[stage].save_generations(dataset, generations[stage][dataset])
-    del generator, model, tokenizer
-    free_gpu_memory()
+            set_global_seed(config.generation.seed)
+            generator = ResponseGenerator(model, tokenizer, config.generation)
+            generations[stage] = {}
+            for dataset, prompts in prompts_by_dataset.items():
+                logger.info("[%s] generating for %s (%d prompts)", stage, dataset, len(prompts))
+                generations[stage][dataset] = generator.generate(prompts)
+                writers[stage].save_generations(dataset, generations[stage][dataset])
+        del generator, model, tokenizer
+        free_gpu_memory()
+
 
     # ---- Phase 2: each detector is loaded once and judges every stage ----
     verdicts = {s: {d: {} for d in prompts_by_dataset} for s in stage_names}  # [stage][dataset][detector]

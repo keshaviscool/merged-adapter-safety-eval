@@ -1,0 +1,53 @@
+model_description:
+  mode: base_only
+  base_model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  dtype: bfloat16
+  adapters: []
+  merge: null
+config:
+  model:
+    base_model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+    adapters: []
+    dtype: bfloat16
+    device_map: mps
+    trust_remote_code: true
+  merge:
+    strategy: ties
+    density: 0.5
+    majority_sign_method: total
+    svd_rank: null
+  generation:
+    max_new_tokens: 512
+    do_sample: false
+    temperature: 0.7
+    top_p: 0.95
+    top_k: 50
+    repetition_penalty: 1.0
+    batch_size: 8
+    seed: 42
+    system_prompt: null
+  datasets:
+    cache_dir: data_cache
+    harmbench:
+      enabled: true
+      functional_categories:
+      - standard
+      - contextual
+      max_examples: 5
+    advbench:
+      enabled: true
+      max_examples: 5
+  detectors:
+    llama_guard4:
+      enabled: true
+      model_id: meta-llama/Llama-Guard-4-12B
+      device_map: cuda
+      max_new_tokens: 20
+    harm_cls:
+      enabled: true
+      model_id: cais/HarmBench-Llama-2-13b-cls
+      device_map: cuda
+      batch_size: 8
+      max_generation_tokens: 512
+  output:
+    root: results
