@@ -1,0 +1,207 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=19mm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype,amsmath,amssymb,booktabs,array,graphicx,xcolor,enumitem,fancyhdr,caption,hyperref}
+\definecolor{navy}{HTML}{21618C}
+\definecolor{rust}{HTML}{CB6336}
+\hypersetup{colorlinks=true,linkcolor=navy,urlcolor=navy,pdftitle={Security trajectories under LoRA composition},pdfauthor={Experimental meeting report}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{navy}{LoRA composition / experimental results}}
+\fancyhead[R]{\small 17 November 2026}
+\fancyfoot[L]{\footnotesize Qwen2.5-3B-Instruct \quad | \quad Meeting report}
+\fancyfoot[R]{\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.12}
+\setlist[itemize]{leftmargin=*,nosep,topsep=4pt}
+\captionsetup{font=small,labelfont=bf,skip=5pt}
+\newcommand{\LG}{Llama Guard}
+\newcommand{\HC}{HarmCLS}
+\newcommand{\fig}[3]{\begin{center}\includegraphics[width=#2\linewidth]{figures/#1.pdf}\captionof{figure}{#3}\end{center}}
+\newcommand{\tbl}[2]{\begin{center}\small\input{tables/#1.tex}\captionof{table}{#2}\end{center}}
+\newcommand{\heading}[2]{\section*{#1\quad #2}}
+\begin{document}
+\thispagestyle{fancy}
+{\LARGE\bfseries Security trajectories under\\[2pt] benign-task LoRA composition}\par
+{\large Fixed-order integration, adapter permutations, and admission gates}\par
+\textcolor{navy}{Results review for the research meeting}\hfill 17 November 2026
+
+\heading{1}{What the completed runs show}
+\begin{itemize}
+\item \textbf{The fixed chain has no detector-independent monotonic trend.} On HarmBench, \LG{} rises from 18.3\% to 43.0\%. \HC{} rises from 18.7\% to 26.3\%, then falls to 24.7\%. The apparent recovery is small and uncertain; it does not restore the base-model rate.
+\item \textbf{Intermediate states depend on the path.} Across 24 orders, HarmBench intermediate ASR spans up to 11.0 pp for \LG{} and 11.7 pp for \HC{}. These ranges also reflect which adapter subset has arrived.
+\item \textbf{TIES endpoints depend on order.} With the implemented pairwise TIES operator at density 0.5, final HarmBench ASR ranges from 20.3--25.3\% (\LG{}) and 19.7--24.7\% (\HC{}). Both spans are 5.0 pp. LINEAR's endpoint is shared by construction.
+\item \textbf{A local gate can miss cumulative drift, in a limited observed case.} With equal local and cumulative budgets of 5 pp, 4/24 TIES paths pass every local gate but breach a cumulative gate under \LG{}. The corresponding count is 0/24 under \HC{}. This is an empirical, threshold-dependent finding, not a validated defense.
+\end{itemize}
+
+\fig{fixed_chain}{1.0}{The original fixed sequence $A_1\!\to\!A_2\!\to\!A_3\!\to\!A_4$. ASR is reported separately for the two harmful-response judges; Alpaca uses two refusal detectors. Lower rates are preferable, but low FRR does not establish response quality.}
+
+\textbf{Evidence scope.} One model family, four public task adapters, five fixed-chain checkpoints, and 24 paths each for LINEAR and TIES. The ordering experiment evaluates 46 distinct states, including its base model. Both runs use greedy decoding, a 512-token output limit, and seed 42. No second model, stronger attack search, or weight-space association test is included.
+
+\textbf{Reading guide.} Pages 2--8 give protocol, results and limitations. Appendices show all 24 paths and the detailed confidence intervals. All ASR/FRR values are percentages; all changes and spreads are \emph{percentage points} (pp).
+
+\clearpage
+\heading{2}{Protocol and what was actually measured}
+\textbf{Model and adapters.} Both saved configurations name \texttt{Qwen/Qwen2.5-3B-Instruct}, BF16 inference, and the same four adapters. Their task labels describe their sources; the present experiment does not audit the adapter training data or establish that every training example was benign.
+\begin{center}\small
+\begin{tabular}{lll}\toprule
+ID & Source task & Adapter repository \\\midrule
+A1 & Text-to-SQL & \texttt{Akarshika/qwen25-3b-text2sql-lora}\\
+A2 & Translation & \texttt{madokalif/qwen2.5-3b-translation-warmup-adapter}\\
+A3 & Tool calling & \texttt{balaguhanesh/tool-call-ft}\\
+A4 & Debugging & \texttt{Pilestin/qwen2.5-3b-debug-v1-lora}\\\bottomrule
+\end{tabular}\end{center}
+
+\textbf{Data.} Every state has the same 300 HarmBench prompts (200 standard, 100 contextual), 520 AdvBench prompts, and fixed sample of 500 Alpaca prompts. This covers the configured HarmBench text categories, not every category or modality in the full benchmark. Prompts are submitted directly using the model's chat template; no optimized adversarial suffixes or attack search are used.
+
+\textbf{Judges.} \LG{} is \texttt{meta-llama/Llama-Guard-3-8B}: its ``unsafe'' response label is used as an ASR proxy. \HC{} is \texttt{cais/HarmBench-Llama-2-13b-cls}: it checks realization of the requested behavior, clipping responses to 512 of its own tokenizer's tokens. These are related but different constructs. Alpaca FRR uses \texttt{ProtectAI/distilroberta-base-rejection-v1} and a keyword matcher over the first 200 characters. No combined security score is used here.
+
+\textbf{Merge definitions.} Write $\Delta_i=(\alpha_i/r_i)B_iA_i$ for an ordinary LoRA update. No extra 0.25 multiplier is applied. The original sequential run repeatedly folds each adapter into the current model with PEFT. Ordering LINEAR rebuilds each subset from $W_0$:
+\[
+  W_{\mathcal S}=\operatorname{BF16}\!\left(W_0+\sum_{i\in\mathcal S}^{\text{fixed order}}\Delta_i\right).
+\]
+Ordering TIES instead uses $S_1=\Delta_{\pi_1}$ and $S_k=T_{0.5}(S_{k-1},\Delta_{\pi_k})$, then evaluates $\operatorname{BF16}(W_0+S_k)$. Its operator trims \emph{each operand, per module matrix}, keeps the top magnitude half, elects $\operatorname{sign}(x+y)$ per coordinate, and averages the nonzero entries agreeing with that sign. Magnitude ties can retain more than half; exact opposite cancellation gives zero. This is dense-update, binary TIES, not simultaneous four-adapter TIES or a merge of LoRA factors. Density 0.5 was fixed for this experiment; it was not validated as optimal.
+
+\textbf{Deduplication.} The 24 paths share states: 15 nonempty LINEAR subsets and 30 additional TIES states, plus base. TIES' first pair is symmetric, yielding 12 distinct final expressions. All paths remain in the tables; they are not 24 independent replications. LINEAR's zero endpoint spread is enforced by canonical summation and result reuse, not measured across 24 repeated BF16 integrations.
+
+\textbf{Uncertainty.} HarmBench changes use paired prompt bootstrap, 20,000 resamples, percentile 95\% intervals, RNG seed 20261117. Pairing uses verified prompt identities and identical prompt content. These are pointwise, unadjusted intervals, not simultaneous guarantees; they do not capture judge errors or run-to-run variability. Endpoint extrema and gate witnesses are selected from these data and remain exploratory.
+
+\clearpage
+\heading{3}{Fixed-order sequence: amplification and apparent recovery}
+\tbl{fixed_rates}{Original sequential run. After each column, the next adapter is added to the current model. Entries are ASR (HarmBench/AdvBench) or FRR (Alpaca), in \%.}
+
+\tbl{fixed_changes}{HarmBench changes in pp, with paired 95\% bootstrap intervals. ``Local'' compares with the preceding checkpoint; ``cumulative'' compares with this run's original base model.}
+
+\fig{fixed_regression_ci}{1.0}{Local and cumulative changes for the original fixed chain. Error bars are paired bootstrap intervals, not confidence intervals for the absolute rates.}
+
+\textbf{Interpretation.} \LG{} identifies large increases at A1 and A4. The smaller A2/A3 local intervals include zero. \HC{} shows a first-step increase followed by a plateau and small decreases: final minus its peak at step 2 is $-1.7$ pp [95\% CI: $-6.7,+3.3$]. Thus the observed decrease is not compelling evidence of recovery. Final minus base remains $+6.0$ pp [$+1.0,+11.3$] under \HC{}, compared with $+24.7$ pp [$+19.3,+30.3$] under \LG{}.
+
+\textbf{Judge disagreement increases.} On HarmBench the judges disagree on 15/300 base responses, versus 71/300 final responses. At the final checkpoint, 66 are flagged by both, 63 by \LG{} only, and 8 by \HC{} only. On AdvBench, final flags are 39/520 versus 2/520. A claim that both detectors show the same large final regression would be inaccurate.
+
+\clearpage
+\heading{4}{Ordering changes trajectories}
+\fig{all_trajectories}{1.0}{All 24 ordering paths, using the ordering run's own baseline. Dashed boundaries connect the minimum and maximum ASR at each checkpoint; they need not belong to a single path. Overlapping curves share evaluated states.}
+
+\tbl{ordering_spreads}{HarmBench ASR range across reached models, in pp. For LINEAR, the distinct-state counts at steps 1--4 are 4, 6, 4, 1; for TIES they are 4, 6, 12, 12.}
+
+\textbf{Monotonicity is the exception for several settings.} Using observed point estimates, LINEAR has 14/24 nondecreasing HarmBench paths under \LG{}, while 10/24 have both an increase and a decrease. TIES has 3/24 nondecreasing paths and 21/24 fluctuating paths. Under \HC{}, all 24 paths fluctuate for each method. These are descriptions of observed curves, not statistical tests that every turning point is real.
+
+\textbf{Composition can amplify or attenuate an individual-adapter change.} In the ordering run, A1 alone has ASR 27.3\% (\LG{}) and 27.0\% (\HC{}). Along the fixed order 1-2-3-4, LINEAR ends at 42.7\% and 22.7\%; TIES ends at 22.7\% and 21.0\%. Compared with A1 alone, LINEAR increases \LG{} ASR by $+15.3$ pp [$+9.7,+21.0$]; TIES decreases it by $-4.7$ pp [$-8.3,-1.0$]. TIES also decreases \HC{} ASR by $-6.0$ pp [$-9.7,-2.3$]. This is attenuation relative to A1, not restoration of base-model safety.
+
+\textbf{What ``order'' means here.} Early LINEAR ranges compare different subsets, not different addition orders for the same subset. TIES can additionally distinguish histories that have reached the same subset because trimming and averaging are repeated. All endpoint comparisons use the same complete set of four adapters.
+
+\clearpage
+\heading{5}{Endpoint effects are method- and detector-dependent}
+\tbl{endpoint_rates}{Ordering-run endpoint rates (\%). LINEAR has one shared endpoint; TIES has 12 distinct endpoint expressions. HarmBench/AdvBench use ASR; Alpaca uses FRR. Ranges show observed minimum--maximum, not confidence intervals.}
+
+\tbl{endpoint_contrasts}{Paired HarmBench changes (pp) with 95\% bootstrap intervals. *TIES extrema were selected on the same data: these intervals do not correct selection or multiple comparisons.}
+
+\fig{ties_endpoint_ci}{0.98}{All 12 TIES endpoints compared with the ordering-run base. Each endpoint is ranked separately within its detector. Error bars are pointwise paired 95\% bootstrap intervals. Corresponding orders and values appear in Appendix D.}
+
+\textbf{A common low/high endpoint pair.} The lowest endpoint is reached by 1-4-2-3 (or 4-1-2-3), and the highest by 3-4-2-1 (or 4-3-2-1), under both judges. Their 5 pp gaps correspond to 15 net additional flags out of 300. The largest prompt-level disagreement between any two TIES endpoints is 7.0\% under \LG{} and 8.0\% under \HC{}: similar total rates can still hide different affected prompts.
+
+\textbf{A smaller ASR is not a controlled merge-method advantage.} For order 1-2-3-4, LINEAR minus TIES final ASR is $+20.0$ pp [$+14.3,+25.7$] under \LG{}, but only $+1.7$ pp [$-3.3,+6.3$] under \HC{}. LINEAR sums updates whereas TIES prunes and averages them; update magnitude and retained task capability are not matched. These data cannot isolate sign conflict resolution as the cause, or establish TIES as universally safer.
+
+\clearpage
+\heading{6}{Local admission can miss cumulative regression}
+For a path with observed HarmBench ASR $R_k$, define
+\[
+ L_k=R_k-R_{k-1},\qquad C_k=R_k-R_0=\sum_{j=1}^k L_j.
+\]
+A local gate accepts if $L_k\leq\epsilon$; a cumulative gate accepts if $C_k\leq\tau$. The comparison below uses \textbf{equal budgets $\epsilon=\tau=5$ pp}, includes the first adapter, and rejects at the first exceeded threshold. It uses point estimates rather than uncertainty-aware bounds.
+
+\tbl{gates_equal}{HarmBench path counts, out of 24. ``Admits'' means every checkpoint passes that rule. *``Local only'' means the local rule admits the complete path while the cumulative rule rejects at some checkpoint; it is a set difference, not subtraction of the preceding columns.}
+
+\textbf{Concrete witness: TIES order 3-4-1-2.} \LG{} starts at 17.7\%. All four local increments are at most 5 pp, yet the cumulative increase reaches 6 pp at step 3.
+\begin{center}\small\input{tables/gate_witness.tex}\end{center}
+\fig{gate_example}{0.98}{The same path under both judges. \LG{} rejects at step 3 under the cumulative rule; \HC{} never exceeds its 5 pp cumulative budget.}
+
+\textbf{Evidence strength.} At step 3, \LG{} cumulative regression is $+6.0$ pp [$+2.0,+10.0$], while its local change is $+4.7$ pp [$+2.0,+7.7$]. This supports positive drift, but \emph{neither interval certifies which side of a 5 pp threshold the true change lies on}. The witness and its threshold were inspected after observing results. The result motivates a defense study; it does not establish a calibrated admission policy.
+
+\textbf{Scope and sensitivity.} The original fixed chain fails the 5 pp local gate at its first step under both judges; it is not a hidden-drift example. The four \LG{} TIES witness orders are 3-4-1-2, 4-2-1-3, 4-2-3-1, and 4-3-1-2. At a 10 pp cumulative budget none qualifies. At a 2 pp local budget none qualifies. No equal-5-pp hidden-drift path appears on AdvBench for either detector or method. Appendix D gives the full threshold grid.
+
+\clearpage
+\heading{7}{Individual adapters, last-adapter effects, and category checks}
+\tbl{singles}{Individual adapters in the ordering run. ASR is in \%; changes from the ordering base are in pp. LG = \LG{}, HC = \HC{}. Intervals are pointwise paired 95\% bootstrap intervals.}
+
+\textbf{Single-adapter effects differ.} A1 and A2 raise HarmBench flag rates under both judges; A3 is lower at the point estimate and A4 is close to base. A3's \HC{} interval barely excludes zero, without multiplicity correction. These results support heterogeneous adaptation effects, not the claim that every benign-task adapter makes the model less safe.
+
+\fig{ties_last_adapter}{0.98}{TIES endpoints grouped by the adapter merged last. Dots are the mean of three distinct endpoint expressions; bars are their min--max range, not uncertainty intervals. Dashed lines are base ASR.}
+
+\textbf{No universal last-adapter rule is established.} A1-last endpoints have the highest group mean under both judges (24.6\% / 23.3\%). A3-last endpoints range widely (20.3--24.0\% / 19.7--24.0\%). The preceding history still matters. Only on coordinates that survive all trims and have agreeing signs throughout does repeated equal averaging give coefficients $(1/8,1/8,1/4,1/2)$. Actual influence is coordinate-dependent; the newest adapter is not guaranteed to dominate every weight or behavior.
+
+\fig{functional_categories}{0.98}{Fixed-order 1-2-3-4 endpoints minus base, within the ordering run. These descriptive category checks use one fixed order for both methods; endpoints were not selected separately for each category.}
+
+\textbf{Category and utility caveats.} For this TIES order, contextual HarmBench changes are $+16.0$ pp (\LG{}) and $+7.0$ pp (\HC{}), while standard changes are $-0.5$ pp for both. This descriptive contrast has not been tested with category-wise inference; it does not establish a causal explanation for low AdvBench rates. Alpaca covers only 500 prompts. The LINEAR endpoint has 8/500 empty answers in the ordering run (7/500 in the sequential run), counted as non-refusals; low FRR therefore does not establish preserved usefulness.
+
+\clearpage
+\heading{8}{Audit, limitations, and decisions for the next experiment}
+\textbf{What was checked.} All five sequential checkpoints and 46 ordering states contain the expected prompts and labels. Full prompt records align across states and across runs; sequential verdicts were joined by prompt ID and checked against their saved response text. Every reported detector rate matches its raw labels, and all 2,160 rows in the supplied ordering CSV agree with the reconstructed rates. There are no recorded parsing failures. The analysis covers 67,320 saved responses and 134,640 detector verdicts; shared paths do not add independent samples.
+
+\textbf{Greedy decoding did not make the two runs identical.} Generation batch sizes are 16 (sequential) and 256 (ordering). Even before any adapter is merged, the base responses differ:
+\tbl{cross_run_base}{Between-run base-model differences on identical prompts. Detectors 1/2 are \LG{}/\HC{} for HarmBench and AdvBench, and refusal classifier/keyword matcher for Alpaca. Text difference means exact saved-string inequality.}
+On HarmBench this is 255/300 different texts; baseline ASRs are 18.3/18.7\% versus 17.7/19.0\%. The cause is unisolated. Batch-dependent arithmetic, environments, kernels, model revisions or other runtime changes are possible, not demonstrated explanations. Sequential PEFT merging and canonical FP32 update summation also use different rounding paths. Cross-run differences must not be presented as an adapter-order effect. The sequential report's H100 environment was written after re-judging; it does not prove generation used that hardware.
+
+\textbf{Two existing summary artifacts need qualification.}
+\begin{itemize}
+\item The saved gate code compares floating-point rates directly with decimal thresholds. At exactly 5 pp this can produce an incorrect rejection. This report recomputes decisions with a $10^{-10}$ pp comparison tolerance. For TIES/HarmBench's exploratory union-of-detectors metric at equal 5 pp budgets, the corrected hidden-path count is \textbf{3}, not the saved report's 5; cumulative admissions are 4, not 1. Named-detector equal-5-pp conclusions above are unchanged.
+\item The saved ``largest cumulative increase'' maximizes only endpoint minus base, not all intermediate checkpoints. For ordering LINEAR/\HC{} on HarmBench, the endpoint increase is 3.7 pp but the largest checkpoint increase is 8.7 pp. All gate calculations here inspect every checkpoint. Original result files have been preserved.
+\end{itemize}
+
+\textbf{Limits on the present claim.} No manual adjudication establishes which automatic judge is correct on the growing disagreement set. No task accuracy, adapter skill retention, matched-update-norm control, second model family, stronger adversarial condition, density sweep, or measured weight-space predictor is available. Adapter revisions/configs and complete generation runtime metadata were not archived with both runs; nonuniform LoRA scaling and transpose settings need verification before paper-grade replication. Sparse TIES averaging may reduce adaptation strength, which is a plausible confound rather than a demonstrated mechanism. Cached ordering verdicts lack configuration fingerprints.
+
+\textbf{Decisions to take into the meeting.}
+\begin{enumerate}[leftmargin=*,nosep]
+\item Audit a stratified sample of the 71 final fixed-chain HarmBench disagreements; distinguish unsafe content from successful requested behavior.
+\item Freeze model/adapter revisions, merge arithmetic, generation and judge batching, and environments. Repeat selected configurations to measure residual variability.
+\item Predefine gate thresholds and an uncertainty-aware acceptance rule. Use held-out prompts and account for repeated integration decisions; the present 5 pp witness is exploratory.
+\item Measure task retention and compare TIES with magnitude-matched averaging/pruning controls. Then validate the headline configurations on a second model family and stronger attacks.
+\end{enumerate}
+
+\clearpage
+\appendix
+\heading{A}{Every TIES path on HarmBench}
+\fig{ties_heatmap}{0.98}{All 24 permutations and every checkpoint, including base. Row labels are adapter integration orders. Equal states share measurements; first-pair reversal can change checkpoint 1 but leaves checkpoints 2--4 unchanged. The same color scale is used for both judges.}
+\textbf{Interpretation.} The matrix is a complete path view, not 24 independent repetitions. Each displayed percentage is based on the same 300 prompts. Absolute endpoint ranks can differ between judges even when the lowest and highest endpoints coincide. Exact values and local/cumulative differences for every dataset and detector are supplied in \texttt{data/all\_path\_regressions.csv}.
+
+\textbf{Traceability.} The two raw source runs, relative to the repository root, are:
+\begin{quote}\small\ttfamily
+sequential\_merging/results/20261117\_001902\\
+ordering\_experiment/results/20261117\_045604
+\end{quote}
+The companion analysis records SHA-256 hashes for consumed generation, verdict, summary and plan files. The original saved reports were used for cross-checks, not as a substitute for per-prompt data.
+
+\clearpage
+\heading{B}{All LINEAR paths: numerical HarmBench results}
+Every cell is \textbf{LG ASR / HC ASR (\%)}. The common baseline is 17.7 / 19.0. An order such as 1-3-4-2 means A1 arrives first and A2 last. LINEAR's repeated cells refer to shared subset states.
+\begin{center}\small\input{tables/paths_linear.tex}\end{center}
+\textbf{Point-estimate trajectory shapes.} \LG{}: 14 nondecreasing, 10 fluctuating. \HC{}: 24 fluctuating. No harmful-response judge shows a nonincreasing LINEAR HarmBench path. A downward segment is not by itself statistical evidence of recovery.
+
+\textbf{Endpoint interpretation.} The final rates are identical because the experiment defines LINEAR as a canonical sum over the same set. This provides an algebraic reference for trajectory analysis. It does not measure sensitivity to low-precision execution order in a different deployment pipeline.
+
+\clearpage
+\heading{C}{All TIES paths: numerical HarmBench results}
+Every cell is \textbf{LG ASR / HC ASR (\%)}. Baseline is 17.7 / 19.0. The operator is the binary dense-update TIES implementation at fixed density 0.5.
+\begin{center}\small\input{tables/paths_ties.tex}\end{center}
+\textbf{Point-estimate trajectory shapes.} \LG{}: 3 nondecreasing, 21 fluctuating. \HC{}: 24 fluctuating. The first-pair symmetry explains why adjacent orders can converge after the first checkpoint, but the full order still matters for the local gate at checkpoint 1.
+
+\textbf{The gate witness is visible without averaging across paths.} In order 3-4-1-2, \LG{} moves 17.7 $\to$ 16.3 $\to$ 19.0 $\to$ 23.7 $\to$ 23.7\%. Each local increase is below 5 pp, while the final two checkpoints exceed the base by 6 pp. Its paired intervals are given in the main text and companion data.
+
+\clearpage
+\heading{D}{Endpoint uncertainty and admission-threshold sensitivity}
+\textbf{TIES endpoints.} ASRs are percentages; changes and intervals are pp relative to the ordering-run base. Each row is one of 12 distinct endpoints; swapping the first pair produces the same endpoint. Intervals are pointwise and unadjusted. Their ranks or signs should not be interpreted as a multiple-comparison-controlled result.
+\begin{center}\footnotesize\setlength{\tabcolsep}{4pt}\input{tables/all_endpoint_ci.tex}\end{center}
+
+\textbf{Threshold grid.} Cells count complete paths admitted at every step by the local rule but rejected somewhere by the cumulative rule. Denominator: 24 paths per method. Thresholds are pp of ASR. Unequal-budget cells with $\epsilon>\tau$ need care: a single accepted update can already exceed the smaller cumulative budget, without gradual accumulation. The main text therefore emphasizes equal 5 pp thresholds.
+\begin{center}\small\input{tables/gate_sweep.tex}\end{center}
+
+\textbf{Reproduction.} From the repository root:
+\begin{verbatim}
+env/bin/python reports/meeting_20261117/analyze_results.py
+env/bin/python reports/meeting_20261117/make_tables.py
+\end{verbatim}
+Compile \texttt{meeting\_report.tex} with Tectonic or a standard LaTeX engine. The analysis loads saved JSON only and does not run any model. \texttt{data/paired\_bootstrap.csv} includes local, cumulative, singleton, merge-method, endpoint and gate-witness contrasts; \texttt{data/gates.csv} includes both complete-path and first-reachable-violation counts. No additional GPU experiment is implied by this report.
+\end{document}

@@ -1,0 +1,13 @@
+method,dataset,detector,base_pct,min_pct,max_pct,min_state,max_state,max_disagreement_pct
+linear,harmbench,llama_guard_3,17.666666666666668,42.66666666666667,42.66666666666667,"sum(a1,a2,a3,a4)","sum(a1,a2,a3,a4)",0.0
+linear,harmbench,harm_cls,19.0,22.666666666666664,22.666666666666664,"sum(a1,a2,a3,a4)","sum(a1,a2,a3,a4)",0.0
+linear,advbench,llama_guard_3,0.0,8.653846153846153,8.653846153846153,"sum(a1,a2,a3,a4)","sum(a1,a2,a3,a4)",0.0
+linear,advbench,harm_cls,0.38461538461538464,0.38461538461538464,0.38461538461538464,"sum(a1,a2,a3,a4)","sum(a1,a2,a3,a4)",0.0
+linear,alpaca,rejection_classifier,0.4,1.6,1.6,"sum(a1,a2,a3,a4)","sum(a1,a2,a3,a4)",0.0
+linear,alpaca,keyword_refusal,1.7999999999999998,0.4,0.4,"sum(a1,a2,a3,a4)","sum(a1,a2,a3,a4)",0.0
+ties,harmbench,llama_guard_3,17.666666666666668,20.333333333333332,25.333333333333336,"ties(a3,ties(a2,ties(a1,a4)))","ties(a1,ties(a2,ties(a3,a4)))",7.000000000000001
+ties,harmbench,harm_cls,19.0,19.666666666666664,24.666666666666668,"ties(a3,ties(a2,ties(a1,a4)))","ties(a1,ties(a2,ties(a3,a4)))",8.0
+ties,advbench,llama_guard_3,0.0,0.0,0.19230769230769232,"ties(a1,ties(a2,ties(a3,a4)))","ties(a4,ties(a1,ties(a2,a3)))",0.19230769230769232
+ties,advbench,harm_cls,0.38461538461538464,0.0,0.19230769230769232,"ties(a1,ties(a2,ties(a3,a4)))","ties(a4,ties(a2,ties(a1,a3)))",0.38461538461538464
+ties,alpaca,rejection_classifier,0.4,1.2,1.6,"ties(a1,ties(a4,ties(a2,a3)))","ties(a1,ties(a2,ties(a3,a4)))",1.0
+ties,alpaca,keyword_refusal,1.7999999999999998,2.1999999999999997,2.6,"ties(a1,ties(a3,ties(a2,a4)))","ties(a1,ties(a4,ties(a2,a3)))",0.8

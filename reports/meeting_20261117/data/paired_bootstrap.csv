@@ -1,0 +1,79 @@
+comparison,dataset,detector,delta_pp,ci_low_pp,ci_high_pp,newly_flagged,newly_unflagged,n
+sequential: step 1 vs step 0,harmbench,llama_guard_3,8.0,3.6666666666666665,12.333333333333334,34,10,300
+sequential: step 1 vs base,harmbench,llama_guard_3,8.0,3.6666666666666665,12.333333333333334,34,10,300
+sequential: step 1 vs step 0,harmbench,harm_cls,6.666666666666667,2.666666666666667,10.666666666666668,30,10,300
+sequential: step 1 vs base,harmbench,harm_cls,6.666666666666667,2.666666666666667,10.666666666666668,30,10,300
+sequential: step 2 vs step 1,harmbench,llama_guard_3,3.0,-0.6666666666666667,6.666666666666667,21,12,300
+sequential: step 2 vs base,harmbench,llama_guard_3,11.0,6.333333333333334,15.666666666666668,44,11,300
+sequential: step 2 vs step 1,harmbench,harm_cls,1.0,-2.666666666666667,4.666666666666667,18,15,300
+sequential: step 2 vs base,harmbench,harm_cls,7.666666666666666,3.3333333333333335,12.0,35,12,300
+sequential: step 3 vs step 2,harmbench,llama_guard_3,2.0,-2.0,6.0,23,17,300
+sequential: step 3 vs base,harmbench,llama_guard_3,13.0,8.0,18.0,53,14,300
+sequential: step 3 vs step 2,harmbench,harm_cls,-1.0,-5.0,3.0,17,20,300
+sequential: step 3 vs base,harmbench,harm_cls,6.666666666666667,2.0,11.333333333333332,36,16,300
+sequential: step 4 vs step 3,harmbench,llama_guard_3,11.666666666666666,6.333333333333334,17.0,52,17,300
+sequential: step 4 vs base,harmbench,llama_guard_3,24.666666666666668,19.333333333333332,30.333333333333336,82,8,300
+sequential: step 4 vs step 3,harmbench,harm_cls,-0.6666666666666667,-5.666666666666666,4.333333333333334,28,30,300
+sequential: step 4 vs base,harmbench,harm_cls,6.0,1.0,11.333333333333332,40,22,300
+sequential: final vs step 2 (apparent recovery),harmbench,llama_guard_3,13.666666666666666,8.333333333333332,19.333333333333332,58,17,300
+linear: fixed-order endpoint vs A1,harmbench,llama_guard_3,15.333333333333332,9.666666666666666,21.0,66,20,300
+ties: fixed-order endpoint vs A1,harmbench,llama_guard_3,-4.666666666666667,-8.333333333333332,-1.0,8,22,300
+ordering: LINEAR endpoint vs fixed-order TIES endpoint,harmbench,llama_guard_3,20.0,14.333333333333334,25.666666666666664,73,13,300
+sequential: final vs step 2 (apparent recovery),harmbench,harm_cls,-1.6666666666666667,-6.666666666666667,3.3333333333333335,28,33,300
+linear: fixed-order endpoint vs A1,harmbench,harm_cls,-4.333333333333334,-10.0,1.3333333333333335,30,43,300
+ties: fixed-order endpoint vs A1,harmbench,harm_cls,-6.0,-9.666666666666666,-2.3333333333333335,8,26,300
+ordering: LINEAR endpoint vs fixed-order TIES endpoint,harmbench,harm_cls,1.6666666666666667,-3.3333333333333335,6.333333333333334,30,25,300
+"linear: endpoint sum(a1,a2,a3,a4) vs base",harmbench,llama_guard_3,25.0,19.0,30.666666666666664,86,11,300
+linear: selected max endpoint vs min endpoint,harmbench,llama_guard_3,0.0,0.0,0.0,0,0,300
+"linear: endpoint sum(a1,a2,a3,a4) vs base",harmbench,harm_cls,3.6666666666666665,-1.3416666666666592,9.0,38,27,300
+linear: selected max endpoint vs min endpoint,harmbench,harm_cls,0.0,0.0,0.0,0,0,300
+"ties: endpoint ties(a1,ties(a2,ties(a3,a4))) vs base",harmbench,llama_guard_3,7.666666666666666,3.6666666666666665,11.666666666666666,31,8,300
+"ties: endpoint ties(a1,ties(a3,ties(a2,a4))) vs base",harmbench,llama_guard_3,6.666666666666667,2.666666666666667,10.666666666666668,29,9,300
+"ties: endpoint ties(a1,ties(a4,ties(a2,a3))) vs base",harmbench,llama_guard_3,6.333333333333334,2.3333333333333335,10.333333333333334,28,9,300
+"ties: endpoint ties(a2,ties(a1,ties(a3,a4))) vs base",harmbench,llama_guard_3,6.0,2.0,10.0,29,11,300
+"ties: endpoint ties(a2,ties(a3,ties(a1,a4))) vs base",harmbench,llama_guard_3,4.666666666666667,0.6666666666666667,8.666666666666668,25,11,300
+"ties: endpoint ties(a2,ties(a4,ties(a1,a3))) vs base",harmbench,llama_guard_3,5.0,0.6666666666666667,9.333333333333334,29,14,300
+"ties: endpoint ties(a3,ties(a1,ties(a2,a4))) vs base",harmbench,llama_guard_3,6.333333333333334,2.3333333333333335,10.666666666666668,31,12,300
+"ties: endpoint ties(a3,ties(a2,ties(a1,a4))) vs base",harmbench,llama_guard_3,2.666666666666667,-1.3333333333333335,7.000000000000001,24,16,300
+"ties: endpoint ties(a3,ties(a4,ties(a1,a2))) vs base",harmbench,llama_guard_3,5.666666666666666,1.6666666666666667,10.0,29,12,300
+"ties: endpoint ties(a4,ties(a1,ties(a2,a3))) vs base",harmbench,llama_guard_3,5.333333333333334,1.3333333333333335,9.333333333333334,27,11,300
+"ties: endpoint ties(a4,ties(a2,ties(a1,a3))) vs base",harmbench,llama_guard_3,4.333333333333334,0.33333333333333337,8.333333333333332,25,12,300
+"ties: endpoint ties(a4,ties(a3,ties(a1,a2))) vs base",harmbench,llama_guard_3,5.0,1.0,9.0,27,12,300
+ties: selected max endpoint vs min endpoint,harmbench,llama_guard_3,5.0,2.3333333333333335,8.0,18,3,300
+"ties: endpoint ties(a1,ties(a2,ties(a3,a4))) vs base",harmbench,harm_cls,5.666666666666666,2.0,9.666666666666666,27,10,300
+"ties: endpoint ties(a1,ties(a3,ties(a2,a4))) vs base",harmbench,harm_cls,3.0,-1.0,7.000000000000001,24,15,300
+"ties: endpoint ties(a1,ties(a4,ties(a2,a3))) vs base",harmbench,harm_cls,4.333333333333334,0.33333333333333337,8.333333333333332,25,12,300
+"ties: endpoint ties(a2,ties(a1,ties(a3,a4))) vs base",harmbench,harm_cls,2.3333333333333335,-1.6666666666666667,6.333333333333334,22,15,300
+"ties: endpoint ties(a2,ties(a3,ties(a1,a4))) vs base",harmbench,harm_cls,1.0,-3.0,5.0,21,18,300
+"ties: endpoint ties(a2,ties(a4,ties(a1,a3))) vs base",harmbench,harm_cls,3.3333333333333335,-0.6666666666666667,7.333333333333333,25,15,300
+"ties: endpoint ties(a3,ties(a1,ties(a2,a4))) vs base",harmbench,harm_cls,5.0,0.6666666666666667,9.333333333333334,30,15,300
+"ties: endpoint ties(a3,ties(a2,ties(a1,a4))) vs base",harmbench,harm_cls,0.6666666666666667,-3.6666666666666665,5.0,23,21,300
+"ties: endpoint ties(a3,ties(a4,ties(a1,a2))) vs base",harmbench,harm_cls,1.6666666666666667,-2.666666666666667,6.0,24,19,300
+"ties: endpoint ties(a4,ties(a1,ties(a2,a3))) vs base",harmbench,harm_cls,2.666666666666667,-1.3333333333333335,6.666666666666667,22,14,300
+"ties: endpoint ties(a4,ties(a2,ties(a1,a3))) vs base",harmbench,harm_cls,2.3333333333333335,-1.6666666666666667,6.666666666666667,24,17,300
+"ties: endpoint ties(a4,ties(a3,ties(a1,a2))) vs base",harmbench,harm_cls,2.0,-2.0,6.333333333333334,23,17,300
+ties: selected max endpoint vs min endpoint,harmbench,harm_cls,5.0,2.0,8.0,19,4,300
+single a1 vs base (ordering run),harmbench,llama_guard_3,9.666666666666666,5.666666666666666,13.666666666666666,35,6,300
+single a1 vs base (ordering run),harmbench,harm_cls,8.0,4.0,12.0,32,8,300
+single a2 vs base (ordering run),harmbench,llama_guard_3,5.333333333333334,2.0,8.666666666666668,22,6,300
+single a2 vs base (ordering run),harmbench,harm_cls,5.666666666666666,2.0,9.333333333333334,26,9,300
+single a3 vs base (ordering run),harmbench,llama_guard_3,-1.3333333333333335,-4.666666666666667,1.6666666666666667,10,14,300
+single a3 vs base (ordering run),harmbench,harm_cls,-3.6666666666666665,-7.000000000000001,-0.33333333333333337,7,18,300
+single a4 vs base (ordering run),harmbench,llama_guard_3,0.33333333333333337,-3.6666666666666665,4.333333333333334,18,17,300
+single a4 vs base (ordering run),harmbench,harm_cls,-0.33333333333333337,-4.0,3.3333333333333335,16,17,300
+gate example a3>a4>a1>a2: step 1 vs base,harmbench,llama_guard_3,-1.3333333333333335,-4.666666666666667,2.0,10,14,300
+gate example a3>a4>a1>a2: step 1 vs previous,harmbench,llama_guard_3,-1.3333333333333335,-4.666666666666667,2.0,10,14,300
+gate example a3>a4>a1>a2: step 2 vs base,harmbench,llama_guard_3,1.3333333333333335,-2.0,4.666666666666667,16,12,300
+gate example a3>a4>a1>a2: step 2 vs previous,harmbench,llama_guard_3,2.666666666666667,-1.0,6.333333333333334,20,12,300
+gate example a3>a4>a1>a2: step 3 vs base,harmbench,llama_guard_3,6.0,2.0,10.0,28,10,300
+gate example a3>a4>a1>a2: step 3 vs previous,harmbench,llama_guard_3,4.666666666666667,2.0,7.666666666666666,17,3,300
+gate example a3>a4>a1>a2: step 4 vs base,harmbench,llama_guard_3,6.0,2.0,10.0,29,11,300
+gate example a3>a4>a1>a2: step 4 vs previous,harmbench,llama_guard_3,0.0,-2.666666666666667,2.666666666666667,9,9,300
+gate example a3>a4>a1>a2: step 1 vs base,harmbench,harm_cls,-3.6666666666666665,-7.000000000000001,-0.33333333333333337,7,18,300
+gate example a3>a4>a1>a2: step 1 vs previous,harmbench,harm_cls,-3.6666666666666665,-7.000000000000001,-0.6666666666666667,7,18,300
+gate example a3>a4>a1>a2: step 2 vs base,harmbench,harm_cls,-0.6666666666666667,-4.333333333333334,3.0,14,16,300
+gate example a3>a4>a1>a2: step 2 vs previous,harmbench,harm_cls,3.0,0.33333333333333337,6.0,14,5,300
+gate example a3>a4>a1>a2: step 3 vs base,harmbench,harm_cls,3.6666666666666665,-0.6666666666666667,7.666666666666666,26,15,300
+gate example a3>a4>a1>a2: step 3 vs previous,harmbench,harm_cls,4.333333333333334,1.0,7.666666666666666,19,6,300
+gate example a3>a4>a1>a2: step 4 vs base,harmbench,harm_cls,2.3333333333333335,-1.6666666666666667,6.333333333333334,22,15,300
+gate example a3>a4>a1>a2: step 4 vs previous,harmbench,harm_cls,-1.3333333333333335,-4.333333333333334,1.6666666666666667,9,13,300
