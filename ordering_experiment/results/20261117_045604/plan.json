@@ -1,0 +1,399 @@
+{
+  "adapters": [
+    "a1",
+    "a2",
+    "a3",
+    "a4"
+  ],
+  "ties_density": 0.5,
+  "paths": {
+    "linear": {
+      "a1>a2>a3>a4": [
+        "base",
+        "a1",
+        "sum(a1,a2)",
+        "sum(a1,a2,a3)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a1>a2>a4>a3": [
+        "base",
+        "a1",
+        "sum(a1,a2)",
+        "sum(a1,a2,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a1>a3>a2>a4": [
+        "base",
+        "a1",
+        "sum(a1,a3)",
+        "sum(a1,a2,a3)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a1>a3>a4>a2": [
+        "base",
+        "a1",
+        "sum(a1,a3)",
+        "sum(a1,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a1>a4>a2>a3": [
+        "base",
+        "a1",
+        "sum(a1,a4)",
+        "sum(a1,a2,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a1>a4>a3>a2": [
+        "base",
+        "a1",
+        "sum(a1,a4)",
+        "sum(a1,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a2>a1>a3>a4": [
+        "base",
+        "a2",
+        "sum(a1,a2)",
+        "sum(a1,a2,a3)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a2>a1>a4>a3": [
+        "base",
+        "a2",
+        "sum(a1,a2)",
+        "sum(a1,a2,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a2>a3>a1>a4": [
+        "base",
+        "a2",
+        "sum(a2,a3)",
+        "sum(a1,a2,a3)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a2>a3>a4>a1": [
+        "base",
+        "a2",
+        "sum(a2,a3)",
+        "sum(a2,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a2>a4>a1>a3": [
+        "base",
+        "a2",
+        "sum(a2,a4)",
+        "sum(a1,a2,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a2>a4>a3>a1": [
+        "base",
+        "a2",
+        "sum(a2,a4)",
+        "sum(a2,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a3>a1>a2>a4": [
+        "base",
+        "a3",
+        "sum(a1,a3)",
+        "sum(a1,a2,a3)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a3>a1>a4>a2": [
+        "base",
+        "a3",
+        "sum(a1,a3)",
+        "sum(a1,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a3>a2>a1>a4": [
+        "base",
+        "a3",
+        "sum(a2,a3)",
+        "sum(a1,a2,a3)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a3>a2>a4>a1": [
+        "base",
+        "a3",
+        "sum(a2,a3)",
+        "sum(a2,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a3>a4>a1>a2": [
+        "base",
+        "a3",
+        "sum(a3,a4)",
+        "sum(a1,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a3>a4>a2>a1": [
+        "base",
+        "a3",
+        "sum(a3,a4)",
+        "sum(a2,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a4>a1>a2>a3": [
+        "base",
+        "a4",
+        "sum(a1,a4)",
+        "sum(a1,a2,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a4>a1>a3>a2": [
+        "base",
+        "a4",
+        "sum(a1,a4)",
+        "sum(a1,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a4>a2>a1>a3": [
+        "base",
+        "a4",
+        "sum(a2,a4)",
+        "sum(a1,a2,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a4>a2>a3>a1": [
+        "base",
+        "a4",
+        "sum(a2,a4)",
+        "sum(a2,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a4>a3>a1>a2": [
+        "base",
+        "a4",
+        "sum(a3,a4)",
+        "sum(a1,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ],
+      "a4>a3>a2>a1": [
+        "base",
+        "a4",
+        "sum(a3,a4)",
+        "sum(a2,a3,a4)",
+        "sum(a1,a2,a3,a4)"
+      ]
+    },
+    "ties": {
+      "a1>a2>a3>a4": [
+        "base",
+        "a1",
+        "ties(a1,a2)",
+        "ties(a3,ties(a1,a2))",
+        "ties(a4,ties(a3,ties(a1,a2)))"
+      ],
+      "a1>a2>a4>a3": [
+        "base",
+        "a1",
+        "ties(a1,a2)",
+        "ties(a4,ties(a1,a2))",
+        "ties(a3,ties(a4,ties(a1,a2)))"
+      ],
+      "a1>a3>a2>a4": [
+        "base",
+        "a1",
+        "ties(a1,a3)",
+        "ties(a2,ties(a1,a3))",
+        "ties(a4,ties(a2,ties(a1,a3)))"
+      ],
+      "a1>a3>a4>a2": [
+        "base",
+        "a1",
+        "ties(a1,a3)",
+        "ties(a4,ties(a1,a3))",
+        "ties(a2,ties(a4,ties(a1,a3)))"
+      ],
+      "a1>a4>a2>a3": [
+        "base",
+        "a1",
+        "ties(a1,a4)",
+        "ties(a2,ties(a1,a4))",
+        "ties(a3,ties(a2,ties(a1,a4)))"
+      ],
+      "a1>a4>a3>a2": [
+        "base",
+        "a1",
+        "ties(a1,a4)",
+        "ties(a3,ties(a1,a4))",
+        "ties(a2,ties(a3,ties(a1,a4)))"
+      ],
+      "a2>a1>a3>a4": [
+        "base",
+        "a2",
+        "ties(a1,a2)",
+        "ties(a3,ties(a1,a2))",
+        "ties(a4,ties(a3,ties(a1,a2)))"
+      ],
+      "a2>a1>a4>a3": [
+        "base",
+        "a2",
+        "ties(a1,a2)",
+        "ties(a4,ties(a1,a2))",
+        "ties(a3,ties(a4,ties(a1,a2)))"
+      ],
+      "a2>a3>a1>a4": [
+        "base",
+        "a2",
+        "ties(a2,a3)",
+        "ties(a1,ties(a2,a3))",
+        "ties(a4,ties(a1,ties(a2,a3)))"
+      ],
+      "a2>a3>a4>a1": [
+        "base",
+        "a2",
+        "ties(a2,a3)",
+        "ties(a4,ties(a2,a3))",
+        "ties(a1,ties(a4,ties(a2,a3)))"
+      ],
+      "a2>a4>a1>a3": [
+        "base",
+        "a2",
+        "ties(a2,a4)",
+        "ties(a1,ties(a2,a4))",
+        "ties(a3,ties(a1,ties(a2,a4)))"
+      ],
+      "a2>a4>a3>a1": [
+        "base",
+        "a2",
+        "ties(a2,a4)",
+        "ties(a3,ties(a2,a4))",
+        "ties(a1,ties(a3,ties(a2,a4)))"
+      ],
+      "a3>a1>a2>a4": [
+        "base",
+        "a3",
+        "ties(a1,a3)",
+        "ties(a2,ties(a1,a3))",
+        "ties(a4,ties(a2,ties(a1,a3)))"
+      ],
+      "a3>a1>a4>a2": [
+        "base",
+        "a3",
+        "ties(a1,a3)",
+        "ties(a4,ties(a1,a3))",
+        "ties(a2,ties(a4,ties(a1,a3)))"
+      ],
+      "a3>a2>a1>a4": [
+        "base",
+        "a3",
+        "ties(a2,a3)",
+        "ties(a1,ties(a2,a3))",
+        "ties(a4,ties(a1,ties(a2,a3)))"
+      ],
+      "a3>a2>a4>a1": [
+        "base",
+        "a3",
+        "ties(a2,a3)",
+        "ties(a4,ties(a2,a3))",
+        "ties(a1,ties(a4,ties(a2,a3)))"
+      ],
+      "a3>a4>a1>a2": [
+        "base",
+        "a3",
+        "ties(a3,a4)",
+        "ties(a1,ties(a3,a4))",
+        "ties(a2,ties(a1,ties(a3,a4)))"
+      ],
+      "a3>a4>a2>a1": [
+        "base",
+        "a3",
+        "ties(a3,a4)",
+        "ties(a2,ties(a3,a4))",
+        "ties(a1,ties(a2,ties(a3,a4)))"
+      ],
+      "a4>a1>a2>a3": [
+        "base",
+        "a4",
+        "ties(a1,a4)",
+        "ties(a2,ties(a1,a4))",
+        "ties(a3,ties(a2,ties(a1,a4)))"
+      ],
+      "a4>a1>a3>a2": [
+        "base",
+        "a4",
+        "ties(a1,a4)",
+        "ties(a3,ties(a1,a4))",
+        "ties(a2,ties(a3,ties(a1,a4)))"
+      ],
+      "a4>a2>a1>a3": [
+        "base",
+        "a4",
+        "ties(a2,a4)",
+        "ties(a1,ties(a2,a4))",
+        "ties(a3,ties(a1,ties(a2,a4)))"
+      ],
+      "a4>a2>a3>a1": [
+        "base",
+        "a4",
+        "ties(a2,a4)",
+        "ties(a3,ties(a2,a4))",
+        "ties(a1,ties(a3,ties(a2,a4)))"
+      ],
+      "a4>a3>a1>a2": [
+        "base",
+        "a4",
+        "ties(a3,a4)",
+        "ties(a1,ties(a3,a4))",
+        "ties(a2,ties(a1,ties(a3,a4)))"
+      ],
+      "a4>a3>a2>a1": [
+        "base",
+        "a4",
+        "ties(a3,a4)",
+        "ties(a2,ties(a3,a4))",
+        "ties(a1,ties(a2,ties(a3,a4)))"
+      ]
+    }
+  },
+  "models": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "base",
+    "sum(a1,a2)",
+    "sum(a1,a2,a3)",
+    "sum(a1,a2,a3,a4)",
+    "sum(a1,a2,a4)",
+    "sum(a1,a3)",
+    "sum(a1,a3,a4)",
+    "sum(a1,a4)",
+    "sum(a2,a3)",
+    "sum(a2,a3,a4)",
+    "sum(a2,a4)",
+    "sum(a3,a4)",
+    "ties(a1,a2)",
+    "ties(a1,a3)",
+    "ties(a1,a4)",
+    "ties(a1,ties(a2,a3))",
+    "ties(a1,ties(a2,a4))",
+    "ties(a1,ties(a2,ties(a3,a4)))",
+    "ties(a1,ties(a3,a4))",
+    "ties(a1,ties(a3,ties(a2,a4)))",
+    "ties(a1,ties(a4,ties(a2,a3)))",
+    "ties(a2,a3)",
+    "ties(a2,a4)",
+    "ties(a2,ties(a1,a3))",
+    "ties(a2,ties(a1,a4))",
+    "ties(a2,ties(a1,ties(a3,a4)))",
+    "ties(a2,ties(a3,a4))",
+    "ties(a2,ties(a3,ties(a1,a4)))",
+    "ties(a2,ties(a4,ties(a1,a3)))",
+    "ties(a3,a4)",
+    "ties(a3,ties(a1,a2))",
+    "ties(a3,ties(a1,a4))",
+    "ties(a3,ties(a1,ties(a2,a4)))",
+    "ties(a3,ties(a2,a4))",
+    "ties(a3,ties(a2,ties(a1,a4)))",
+    "ties(a3,ties(a4,ties(a1,a2)))",
+    "ties(a4,ties(a1,a2))",
+    "ties(a4,ties(a1,a3))",
+    "ties(a4,ties(a1,ties(a2,a3)))",
+    "ties(a4,ties(a2,a3))",
+    "ties(a4,ties(a2,ties(a1,a3)))",
+    "ties(a4,ties(a3,ties(a1,a2)))"
+  ]
+}

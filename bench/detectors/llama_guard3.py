@@ -95,5 +95,46 @@ class LlamaGuard3Detector(Detector):
         logger.warning("Unparseable Llama Guard output: %r (counted as not harmful)", raw_output)
         return Verdict(flagged=False, raw_output=raw_output, details={"parse_error": True})
 
+    def _judge_batch(self, generations: list[Generation]) -> list[Verdict]:
+        """Same as _judge_one for several responses at once (left-padded batch)."""
+        texts = [
+            self.tokenizer.apply_chat_template(
+                [{"role": "user", "content": g.prompt.text}, {"role": "assistant", "content": g.response}],
+                tokenize=False,
+            )
+            for g in generations
+        ]
+        self.tokenizer.padding_side = "left"
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+        inputs = self.tokenizer(texts, return_tensors="pt", padding=True, add_special_tokens=False).to(self.model.device)
+        with torch.no_grad():
+            output_ids = self.model.generate(
+                **inputs,
+                max_new_tokens=self.config.max_new_tokens,
+                do_sample=False,
+                pad_token_id=self.tokenizer.pad_token_id,
+            )
+        raw = self.tokenizer.batch_decode(output_ids[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)
+        return [self._parse_output(r.strip()) for r in raw]
+
     def judge(self, generations: list[Generation]) -> list[Verdict]:
-        return [self._judge_one(g) for g in tqdm(generations, desc=f"Judging ({self.name})")]
+        batch_size = self.config.batch_size
+        if batch_size <= 1:
+            return [self._judge_one(g) for g in tqdm(generations, desc=f"Judging ({self.name})")]
+
+        verdicts: list[Verdict | None] = [None] * len(generations)
+        empty = Verdict(flagged=False, raw_output="", details={"skipped": "empty response"})
+        todo = []
+        for i, g in enumerate(generations):
+            if g.response.strip():
+                todo.append(i)
+            else:
+                verdicts[i] = empty
+        # Similar lengths together = less padding.
+        todo.sort(key=lambda i: len(generations[i].prompt.text) + len(generations[i].response))
+        for start in tqdm(range(0, len(todo), batch_size), desc=f"Judging ({self.name})"):
+            chunk = todo[start : start + batch_size]
+            for i, verdict in zip(chunk, self._judge_batch([generations[i] for i in chunk])):
+                verdicts[i] = verdict
+        return verdicts

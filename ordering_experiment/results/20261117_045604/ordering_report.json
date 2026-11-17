@@ -1,0 +1,632 @@
+{
+  "linear|advbench|any": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.0,
+        "max": 0.0038461538461538464,
+        "range": 0.0038461538461538464,
+        "std": 0.001359820733051053
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.0,
+        "max": 0.023076923076923078,
+        "range": 0.023076923076923078,
+        "std": 0.00885915061608029
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.007692307692307693,
+        "max": 0.032692307692307694,
+        "range": 0.025,
+        "std": 0.010221294050706395
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.08846153846153847,
+        "max": 0.08846153846153847,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.0,
+    "path_mean_rate_range": 0.009230769230769233
+  },
+  "linear|advbench|harm_cls": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.0,
+        "max": 0.0019230769230769232,
+        "range": 0.0019230769230769232,
+        "std": 0.0008327167344081141
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.0,
+        "max": 0.013461538461538462,
+        "range": 0.013461538461538462,
+        "std": 0.00552361792936349
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.0057692307692307696,
+        "max": 0.019230769230769232,
+        "range": 0.013461538461538462,
+        "std": 0.004973115592686828
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.0038461538461538464,
+        "max": 0.0038461538461538464,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.013461538461538462,
+    "path_mean_rate_range": 0.005384615384615384
+  },
+  "linear|advbench|llama_guard_3": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.0,
+        "max": 0.0038461538461538464,
+        "range": 0.0038461538461538464,
+        "std": 0.0016654334688162283
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.0,
+        "max": 0.023076923076923078,
+        "range": 0.023076923076923078,
+        "std": 0.009088106973562708
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.007692307692307693,
+        "max": 0.03076923076923077,
+        "range": 0.023076923076923078,
+        "std": 0.00999260081289737
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.08653846153846154,
+        "max": 0.08653846153846154,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.0,
+    "path_mean_rate_range": 0.00923076923076923
+  },
+  "linear|alpaca|any": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.02,
+        "max": 0.03,
+        "range": 0.009999999999999998,
+        "std": 0.0035707142142714244
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.016,
+        "max": 0.038,
+        "range": 0.022,
+        "std": 0.007659416862050704
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.014,
+        "max": 0.024,
+        "range": 0.01,
+        "std": 0.00412310562561766
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.016,
+        "max": 0.016,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.016,
+    "path_mean_rate_range": 0.006799999999999997
+  },
+  "linear|alpaca|keyword_refusal": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.016,
+        "max": 0.026,
+        "range": 0.009999999999999998,
+        "std": 0.00412310562561766
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.014,
+        "max": 0.03,
+        "range": 0.016,
+        "std": 0.006262764742685312
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.006,
+        "max": 0.018,
+        "range": 0.011999999999999999,
+        "std": 0.005545268253204708
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.004,
+        "max": 0.004,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.012,
+    "path_mean_rate_range": 0.007199999999999998
+  },
+  "linear|alpaca|rejection_classifier": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.004,
+        "max": 0.008,
+        "range": 0.004,
+        "std": 0.0016583123951777
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.008,
+        "max": 0.02,
+        "range": 0.012,
+        "std": 0.004533823502911814
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.012,
+        "max": 0.02,
+        "range": 0.008,
+        "std": 0.002958039891549808
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.016,
+        "max": 0.016,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.004,
+    "path_mean_rate_range": 0.004
+  },
+  "linear|harmbench|any": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.19,
+        "max": 0.31,
+        "range": 0.12,
+        "std": 0.04710360920354193
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.23,
+        "max": 0.32,
+        "range": 0.09,
+        "std": 0.031952897432329784
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.31333333333333335,
+        "max": 0.4,
+        "range": 0.08666666666666667,
+        "std": 0.03410563654946854
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.45,
+        "max": 0.45,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.0,
+    "path_mean_rate_range": 0.057999999999999996
+  },
+  "linear|harmbench|harm_cls": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.15333333333333332,
+        "max": 0.27,
+        "range": 0.1166666666666667,
+        "std": 0.04645039169790595
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.18333333333333332,
+        "max": 0.27666666666666667,
+        "range": 0.09333333333333335,
+        "std": 0.03446236093171295
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.22333333333333333,
+        "max": 0.26666666666666666,
+        "range": 0.043333333333333335,
+        "std": 0.01748014746950253
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.22666666666666666,
+        "max": 0.22666666666666666,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.05000000000000002,
+    "path_mean_rate_range": 0.050666666666666665
+  },
+  "linear|harmbench|llama_guard_3": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.16333333333333333,
+        "max": 0.2733333333333333,
+        "range": 0.10999999999999999,
+        "std": 0.04323707257024282
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.19666666666666666,
+        "max": 0.29,
+        "range": 0.09333333333333332,
+        "std": 0.031011746082117472
+      },
+      "3": {
+        "n_distinct_models": 4,
+        "min": 0.2833333333333333,
+        "max": 0.37,
+        "range": 0.08666666666666667,
+        "std": 0.03418698582794336
+      },
+      "4": {
+        "n_distinct_models": 1,
+        "min": 0.4266666666666667,
+        "max": 0.4266666666666667,
+        "range": 0.0,
+        "std": 0.0
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0,
+    "path_max_rate_range": 0.0,
+    "path_mean_rate_range": 0.0546666666666667
+  },
+  "ties|advbench|any": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.0,
+        "max": 0.0038461538461538464,
+        "range": 0.0038461538461538464,
+        "std": 0.001359820733051053
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.0019230769230769232,
+        "max": 0.009615384615384616,
+        "range": 0.007692307692307693,
+        "std": 0.002719641466102106
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.0,
+        "max": 0.011538461538461539,
+        "range": 0.011538461538461539,
+        "std": 0.003882705589610807
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.0,
+        "max": 0.0019230769230769232,
+        "range": 0.0019230769230769232,
+        "std": 0.0008327167344081141
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0038461538461538464,
+    "path_max_rate_range": 0.007692307692307693,
+    "path_mean_rate_range": 0.0038461538461538464
+  },
+  "ties|advbench|harm_cls": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.0,
+        "max": 0.0019230769230769232,
+        "range": 0.0019230769230769232,
+        "std": 0.0008327167344081141
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.0019230769230769232,
+        "max": 0.009615384615384616,
+        "range": 0.007692307692307693,
+        "std": 0.002719641466102106
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.0,
+        "max": 0.011538461538461539,
+        "range": 0.011538461538461539,
+        "std": 0.003882705589610807
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.0,
+        "max": 0.0019230769230769232,
+        "range": 0.0019230769230769232,
+        "std": 0.0007166884543268557
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0038461538461538464,
+    "path_max_rate_range": 0.007692307692307693,
+    "path_mean_rate_range": 0.0038461538461538464
+  },
+  "ties|advbench|llama_guard_3": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.0,
+        "max": 0.0038461538461538464,
+        "range": 0.0038461538461538464,
+        "std": 0.0016654334688162283
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.0,
+        "max": 0.009615384615384616,
+        "range": 0.009615384615384616,
+        "std": 0.0034668762264076823
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.0,
+        "max": 0.009615384615384616,
+        "range": 0.009615384615384616,
+        "std": 0.0036367967044584034
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.0,
+        "max": 0.0019230769230769232,
+        "range": 0.0019230769230769232,
+        "std": 0.0005315103830697757
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.0019230769230769232,
+    "path_max_rate_range": 0.009615384615384616,
+    "path_mean_rate_range": 0.0034615384615384616
+  },
+  "ties|alpaca|any": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.02,
+        "max": 0.03,
+        "range": 0.009999999999999998,
+        "std": 0.0035707142142714244
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.024,
+        "max": 0.034,
+        "range": 0.010000000000000002,
+        "std": 0.0035433819375782173
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.028,
+        "max": 0.038,
+        "range": 0.009999999999999998,
+        "std": 0.002763853991962833
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.03,
+        "max": 0.034,
+        "range": 0.0040000000000000036,
+        "std": 0.0011055415967851344
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.014,
+    "path_max_rate_range": 0.005999999999999998,
+    "path_mean_rate_range": 0.005599999999999997
+  },
+  "ties|alpaca|keyword_refusal": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.016,
+        "max": 0.026,
+        "range": 0.009999999999999998,
+        "std": 0.00412310562561766
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.016,
+        "max": 0.024,
+        "range": 0.008,
+        "std": 0.003
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.02,
+        "max": 0.028,
+        "range": 0.008,
+        "std": 0.002229848026709942
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.022,
+        "max": 0.026,
+        "range": 0.004,
+        "std": 0.0011902380714238086
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.008,
+    "path_max_rate_range": 0.006000000000000002,
+    "path_mean_rate_range": 0.004799999999999999
+  },
+  "ties|alpaca|rejection_classifier": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.004,
+        "max": 0.008,
+        "range": 0.004,
+        "std": 0.0016583123951777
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.006,
+        "max": 0.016,
+        "range": 0.01,
+        "std": 0.003144660377352201
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.01,
+        "max": 0.018,
+        "range": 0.007999999999999998,
+        "std": 0.00251108652888656
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.012,
+        "max": 0.016,
+        "range": 0.004,
+        "std": 0.0013743685418725535
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.01,
+    "path_max_rate_range": 0.005999999999999998,
+    "path_mean_rate_range": 0.003999999999999999
+  },
+  "ties|harmbench|any": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.19,
+        "max": 0.31,
+        "range": 0.12,
+        "std": 0.04710360920354193
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.21333333333333335,
+        "max": 0.2866666666666667,
+        "range": 0.07333333333333333,
+        "std": 0.023227272178185415
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.21666666666666667,
+        "max": 0.3,
+        "range": 0.08333333333333331,
+        "std": 0.021645288598642395
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.23333333333333334,
+        "max": 0.2733333333333333,
+        "range": 0.03999999999999998,
+        "std": 0.010315247015348406
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.06666666666666667,
+    "path_max_rate_range": 0.05666666666666664,
+    "path_mean_rate_range": 0.04533333333333334
+  },
+  "ties|harmbench|harm_cls": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.15333333333333332,
+        "max": 0.27,
+        "range": 0.1166666666666667,
+        "std": 0.04645039169790595
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.18333333333333332,
+        "max": 0.25666666666666665,
+        "range": 0.07333333333333333,
+        "std": 0.022505143445032325
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.17666666666666667,
+        "max": 0.27,
+        "range": 0.09333333333333335,
+        "std": 0.02507396465865946
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.19666666666666666,
+        "max": 0.24666666666666667,
+        "range": 0.05000000000000002,
+        "std": 0.014688115629335873
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.08,
+    "path_max_rate_range": 0.05000000000000002,
+    "path_mean_rate_range": 0.040666666666666684
+  },
+  "ties|harmbench|llama_guard_3": {
+    "per_checkpoint": {
+      "1": {
+        "n_distinct_models": 4,
+        "min": 0.16333333333333333,
+        "max": 0.2733333333333333,
+        "range": 0.10999999999999999,
+        "std": 0.04323707257024282
+      },
+      "2": {
+        "n_distinct_models": 6,
+        "min": 0.19,
+        "max": 0.26,
+        "range": 0.07,
+        "std": 0.021147629234082536
+      },
+      "3": {
+        "n_distinct_models": 12,
+        "min": 0.19333333333333333,
+        "max": 0.27666666666666667,
+        "range": 0.08333333333333334,
+        "std": 0.02162210517268764
+      },
+      "4": {
+        "n_distinct_models": 12,
+        "min": 0.20333333333333334,
+        "max": 0.25333333333333335,
+        "range": 0.05000000000000002,
+        "std": 0.012357209121964016
+      }
+    },
+    "endpoint_max_pairwise_verdict_disagreement": 0.07,
+    "path_max_rate_range": 0.04000000000000001,
+    "path_mean_rate_range": 0.04133333333333333
+  }
+}

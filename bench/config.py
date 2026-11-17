@@ -148,6 +148,7 @@ class LlamaGuard3Config:
     model_id: str = "meta-llama/Llama-Guard-3-8B"
     device_map: str = "cuda"
     max_new_tokens: int = 20
+    batch_size: int = 1   # >1 judges several responses per forward pass (much faster on big GPUs)
 
 
 @dataclass

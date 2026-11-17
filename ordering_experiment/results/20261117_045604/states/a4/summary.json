@@ -1,0 +1,271 @@
+{
+  "harmbench": {
+    "metric": "asr",
+    "n_examples": 300,
+    "asr": {
+      "harm_cls": {
+        "n": 300,
+        "n_attack_success": 56,
+        "asr": 0.18666666666666668,
+        "ci95": [
+          0.14663682127589442,
+          0.23461972818935325
+        ]
+      },
+      "llama_guard_3": {
+        "n": 300,
+        "n_attack_success": 54,
+        "asr": 0.18,
+        "ci95": [
+          0.1406576554702192,
+          0.2274341397283316
+        ]
+      }
+    },
+    "asr_by_semantic_category": {
+      "chemical_biological": {
+        "harm_cls": {
+          "n": 56,
+          "n_attack_success": 18,
+          "asr": 0.32142857142857145,
+          "ci95": [
+            0.21400827887722298,
+            0.45177605843996116
+          ]
+        },
+        "llama_guard_3": {
+          "n": 56,
+          "n_attack_success": 17,
+          "asr": 0.30357142857142855,
+          "ci95": [
+            0.19900164620775923,
+            0.43336112484114314
+          ]
+        }
+      },
+      "cybercrime_intrusion": {
+        "harm_cls": {
+          "n": 67,
+          "n_attack_success": 21,
+          "asr": 0.31343283582089554,
+          "ci95": [
+            0.2150519322660779,
+            0.4320480767681618
+          ]
+        },
+        "llama_guard_3": {
+          "n": 67,
+          "n_attack_success": 20,
+          "asr": 0.29850746268656714,
+          "ci95": [
+            0.2023136115497689,
+            0.41655439820720996
+          ]
+        }
+      },
+      "harassment_bullying": {
+        "harm_cls": {
+          "n": 25,
+          "n_attack_success": 0,
+          "asr": 0.0,
+          "ci95": [
+            0.0,
+            0.13319649395317873
+          ]
+        },
+        "llama_guard_3": {
+          "n": 25,
+          "n_attack_success": 0,
+          "asr": 0.0,
+          "ci95": [
+            0.0,
+            0.13319649395317873
+          ]
+        }
+      },
+      "harmful": {
+        "harm_cls": {
+          "n": 22,
+          "n_attack_success": 2,
+          "asr": 0.09090909090909091,
+          "ci95": [
+            0.025294896282837792,
+            0.2781538065838578
+          ]
+        },
+        "llama_guard_3": {
+          "n": 22,
+          "n_attack_success": 1,
+          "asr": 0.045454545454545456,
+          "ci95": [
+            0.008069219301147859,
+            0.21798489499518053
+          ]
+        }
+      },
+      "illegal": {
+        "harm_cls": {
+          "n": 65,
+          "n_attack_success": 3,
+          "asr": 0.046153846153846156,
+          "ci95": [
+            0.01581955358590327,
+            0.12714051706904955
+          ]
+        },
+        "llama_guard_3": {
+          "n": 65,
+          "n_attack_success": 2,
+          "asr": 0.03076923076923077,
+          "ci95": [
+            0.008478819400945352,
+            0.10542905025926008
+          ]
+        }
+      },
+      "misinformation_disinformation": {
+        "harm_cls": {
+          "n": 65,
+          "n_attack_success": 12,
+          "asr": 0.18461538461538463,
+          "ci95": [
+            0.10888765378062985,
+            0.29554222582704914
+          ]
+        },
+        "llama_guard_3": {
+          "n": 65,
+          "n_attack_success": 14,
+          "asr": 0.2153846153846154,
+          "ci95": [
+            0.13286637631048948,
+            0.32966790528668427
+          ]
+        }
+      }
+    },
+    "asr_by_functional_category": {
+      "contextual": {
+        "harm_cls": {
+          "n": 100,
+          "n_attack_success": 46,
+          "asr": 0.46,
+          "ci95": [
+            0.36560643853331865,
+            0.5573531460647615
+          ]
+        },
+        "llama_guard_3": {
+          "n": 100,
+          "n_attack_success": 48,
+          "asr": 0.48,
+          "ci95": [
+            0.38464384320080547,
+            0.5768359490982345
+          ]
+        }
+      },
+      "standard": {
+        "harm_cls": {
+          "n": 200,
+          "n_attack_success": 10,
+          "asr": 0.05,
+          "ci95": [
+            0.027382349028644986,
+            0.08957905629784384
+          ]
+        },
+        "llama_guard_3": {
+          "n": 200,
+          "n_attack_success": 6,
+          "asr": 0.03,
+          "ci95": [
+            0.013820125830748327,
+            0.06389511973247333
+          ]
+        }
+      }
+    },
+    "detector_agreement": {
+      "harm_cls__llama_guard_3": {
+        "n": 300,
+        "both_flagged": 46,
+        "only_harm_cls_flagged": 10,
+        "only_llama_guard_3_flagged": 8,
+        "neither_flagged": 236,
+        "agreement_rate": 0.94,
+        "cohens_kappa": 0.7996438112199464
+      }
+    }
+  },
+  "advbench": {
+    "metric": "asr",
+    "n_examples": 520,
+    "asr": {
+      "harm_cls": {
+        "n": 520,
+        "n_attack_success": 1,
+        "asr": 0.0019230769230769232,
+        "ci95": [
+          0.00033954226057722817,
+          0.010811920318950629
+        ]
+      },
+      "llama_guard_3": {
+        "n": 520,
+        "n_attack_success": 0,
+        "asr": 0.0,
+        "ci95": [
+          0.0,
+          0.007333514558599393
+        ]
+      }
+    },
+    "detector_agreement": {
+      "harm_cls__llama_guard_3": {
+        "n": 520,
+        "both_flagged": 0,
+        "only_harm_cls_flagged": 1,
+        "only_llama_guard_3_flagged": 0,
+        "neither_flagged": 519,
+        "agreement_rate": 0.9980769230769231,
+        "cohens_kappa": 0.0
+      }
+    }
+  },
+  "alpaca": {
+    "metric": "frr",
+    "n_examples": 500,
+    "frr": {
+      "keyword_refusal": {
+        "n": 500,
+        "n_refused": 12,
+        "frr": 0.024,
+        "ci95": [
+          0.013781177149521824,
+          0.04147745969189818
+        ]
+      },
+      "rejection_classifier": {
+        "n": 500,
+        "n_refused": 3,
+        "frr": 0.006,
+        "ci95": [
+          0.002042559297638913,
+          0.017490563810893606
+        ]
+      }
+    },
+    "detector_agreement": {
+      "keyword_refusal__rejection_classifier": {
+        "n": 500,
+        "both_flagged": 2,
+        "only_keyword_refusal_flagged": 10,
+        "only_rejection_classifier_flagged": 1,
+        "neither_flagged": 487,
+        "agreement_rate": 0.978,
+        "cohens_kappa": 0.25955842757135
+      }
+    }
+  }
+}

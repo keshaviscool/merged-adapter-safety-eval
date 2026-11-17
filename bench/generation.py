@@ -74,6 +74,18 @@ class ResponseGenerator:
     # Generation
     # ------------------------------------------------------------------
     def _generate_batch(self, formatted_prompts: list[str]) -> list[str]:
+        """Generates one batch; on CUDA out-of-memory the batch is split in half and retried."""
+        try:
+            return self._generate_batch_once(formatted_prompts)
+        except torch.cuda.OutOfMemoryError:
+            if len(formatted_prompts) == 1:
+                raise
+            logger.warning("CUDA OOM with batch of %d prompts: splitting it in two", len(formatted_prompts))
+            torch.cuda.empty_cache()
+            middle = len(formatted_prompts) // 2
+            return self._generate_batch(formatted_prompts[:middle]) + self._generate_batch(formatted_prompts[middle:])
+
+    def _generate_batch_once(self, formatted_prompts: list[str]) -> list[str]:
         # The chat template already adds special tokens such as BOS, so don't add them twice.
         encoded = self.tokenizer(
             formatted_prompts,
