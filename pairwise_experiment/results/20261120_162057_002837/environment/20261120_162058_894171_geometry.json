@@ -1,0 +1,56 @@
+{
+  "phase": "geometry",
+  "time_utc": "2026-11-20T10:50:57.932084+00:00",
+  "profile": "rtx5000",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "torch": "2.15.0",
+    "transformers": "5.23.0",
+    "peft": "0.22.0",
+    "accelerate": "1.16.0",
+    "numpy": "2.5.5"
+  },
+  "generation": {
+    "max_new_tokens": 512,
+    "do_sample": false,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 50,
+    "repetition_penalty": 1.0,
+    "batch_size": 32,
+    "seed": 42,
+    "system_prompt": null
+  },
+  "detectors": {
+    "llama_guard3": {
+      "enabled": true,
+      "model_id": "meta-llama/Llama-Guard-3-8B",
+      "device_map": "auto",
+      "max_new_tokens": 20,
+      "batch_size": 8
+    },
+    "harm_cls": {
+      "enabled": true,
+      "model_id": "cais/HarmBench-Llama-2-13b-cls",
+      "device_map": "auto",
+      "batch_size": 2,
+      "max_generation_tokens": 512
+    },
+    "rejection": {
+      "enabled": true,
+      "model_id": "ProtectAI/distilroberta-base-rejection-v1",
+      "batch_size": 32,
+      "max_length": 512
+    },
+    "keyword_refusal": {
+      "enabled": true,
+      "check_first_chars": 200,
+      "phrases": null
+    }
+  },
+  "cuda": "13.2",
+  "gpus": [
+    "NVIDIA RTX 5000 Ada Generation"
+  ]
+}

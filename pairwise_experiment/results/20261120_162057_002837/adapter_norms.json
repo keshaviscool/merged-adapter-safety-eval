@@ -1,0 +1,42 @@
+{
+  "a1": {
+    "path": "Akarshika/qwen25-3b-text2sql-lora",
+    "rank": 16,
+    "alpha": 16,
+    "scale": 1.0,
+    "use_rslora": false,
+    "config_sha256": "631bdfc61dc7395e57184595eff0ae989310b3aabfe46bf15d31ffca1df34761",
+    "weights_sha256": "b5885910b18c769a67a89b8412d6d2488d39b1f3883dd11c82f059bab1f5fb95",
+    "frobenius_norm": 13.156906991833795
+  },
+  "a2": {
+    "path": "madokalif/qwen2.5-3b-translation-warmup-adapter",
+    "rank": 16,
+    "alpha": 32,
+    "scale": 2.0,
+    "use_rslora": false,
+    "config_sha256": "0362bc38d910dc51a609a21aefb507b32facd474098e795dbcc10b52398b49fc",
+    "weights_sha256": "7b87c3aec825e74e2a126939eeba6daa237ef9be74f0bbdba46def232968c9af",
+    "frobenius_norm": 7.871346994336892
+  },
+  "a3": {
+    "path": "balaguhanesh/tool-call-ft",
+    "rank": 16,
+    "alpha": 32,
+    "scale": 2.0,
+    "use_rslora": false,
+    "config_sha256": "c58367150daf74723c66873a540e19a92e5af71390b79e213d3e149849cfadea",
+    "weights_sha256": "3019d1e9ecf66d65d7de4aad143bc08013f0ef2c257426b54939b34a21bcda50",
+    "frobenius_norm": 9.174496290780334
+  },
+  "a4": {
+    "path": "Pilestin/qwen2.5-3b-debug-v1-lora",
+    "rank": 16,
+    "alpha": 32,
+    "scale": 2.0,
+    "use_rslora": false,
+    "config_sha256": "d574ced0a8ed8064e297856eca55d07e83977672e7715c0f6c96b225307be1ad",
+    "weights_sha256": "d3f0f14636a4362476981297a6c11aa99edc0cda1e34a3cb486e620e84966456",
+    "frobenius_norm": 15.10811481731447
+  }
+}

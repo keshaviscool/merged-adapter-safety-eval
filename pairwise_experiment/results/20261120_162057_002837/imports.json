@@ -1,0 +1,895 @@
+{
+  "source_run": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604",
+  "source_config": {
+    "model": {
+      "base_model": "Qwen/Qwen2.5-3B-Instruct",
+      "dtype": "bfloat16",
+      "device_map": "cuda",
+      "trust_remote_code": true,
+      "adapters": [
+        {
+          "name": "a1",
+          "path": "Akarshika/qwen25-3b-text2sql-lora"
+        },
+        {
+          "name": "a2",
+          "path": "madokalif/qwen2.5-3b-translation-warmup-adapter"
+        },
+        {
+          "name": "a3",
+          "path": "balaguhanesh/tool-call-ft"
+        },
+        {
+          "name": "a4",
+          "path": "Pilestin/qwen2.5-3b-debug-v1-lora"
+        }
+      ]
+    },
+    "ordering": {
+      "ties_density": 0.5,
+      "workers": 0,
+      "gate_eps": [
+        0.01,
+        0.02,
+        0.05
+      ],
+      "gate_tau": [
+        0.02,
+        0.05,
+        0.1
+      ]
+    },
+    "generation": {
+      "max_new_tokens": 512,
+      "do_sample": false,
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": 50,
+      "repetition_penalty": 1.0,
+      "batch_size": 256,
+      "seed": 42,
+      "system_prompt": null
+    },
+    "datasets": {
+      "cache_dir": "/hf-cache/bench_data",
+      "harmbench": {
+        "enabled": true,
+        "functional_categories": [
+          "standard",
+          "contextual"
+        ],
+        "max_examples": null
+      },
+      "advbench": {
+        "enabled": true,
+        "max_examples": null
+      },
+      "alpaca": {
+        "enabled": true,
+        "num_samples": 500,
+        "seed": 42
+      }
+    },
+    "detectors": {
+      "llama_guard3": {
+        "enabled": true,
+        "model_id": "meta-llama/Llama-Guard-3-8B",
+        "device_map": "auto",
+        "max_new_tokens": 20,
+        "batch_size": 16
+      },
+      "harm_cls": {
+        "enabled": true,
+        "model_id": "cais/HarmBench-Llama-2-13b-cls",
+        "device_map": "auto",
+        "batch_size": 8,
+        "max_generation_tokens": 512
+      },
+      "rejection": {
+        "enabled": true,
+        "model_id": "ProtectAI/distilroberta-base-rejection-v1",
+        "batch_size": 32,
+        "max_length": 512
+      },
+      "keyword_refusal": {
+        "enabled": true,
+        "check_first_chars": 200,
+        "phrases": null
+      }
+    },
+    "output": {
+      "root": "/results/ordering"
+    }
+  },
+  "original_adapter_revisions": "Not recorded in source; repository IDs alone cannot prove identical revisions.",
+  "files": {
+    "states/base/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/generations/harmbench.json",
+      "source_sha256": "e67b07717f5cdc99d5d29dc7d54352e4cd550c32088d9b70fa5a4575e24469f5",
+      "sha256": "e67b07717f5cdc99d5d29dc7d54352e4cd550c32088d9b70fa5a4575e24469f5"
+    },
+    "states/base/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "d247792712d2628cae1e674689f0f7f2a9d82e1871aaa8adb825f7154b294298",
+      "sha256": "a2d166795ff4e01aa83be9f1118c1b5b8db8584b5eecf9447f3b470897d792ad"
+    },
+    "states/base/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "ec125e734c33dc930daddf7fb1d419006092ba4f1ebebb6b7f071b8d999264c6",
+      "sha256": "38ce4d52cdccc6b1ced4210c11686cad07c0e4c55934733b7039d887e00f00b7"
+    },
+    "states/base/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/generations/advbench.json",
+      "source_sha256": "8428b0e2bef56dc1e19252e213deb0b72ebd357f24cd5f6f4ff10ed1d366a4c3",
+      "sha256": "8428b0e2bef56dc1e19252e213deb0b72ebd357f24cd5f6f4ff10ed1d366a4c3"
+    },
+    "states/base/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "149ec6a5f360768b140ca11c03a86847a8fedd752f14147642907ad98c7ad2fe"
+    },
+    "states/base/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/verdicts/advbench__harm_cls.json",
+      "source_sha256": "048764100c81832899327e50f4a35f1df9bfec5f8a7af60b688980f6ad505f60",
+      "sha256": "079ccabaffa5be3998a177b3c63c3489b4be99c5429f45676a1abdfd257ad358"
+    },
+    "states/base/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/generations/alpaca.json",
+      "source_sha256": "0357968263e2a81649939688bbdbbb6c7e057edebc6e001b30a8702b80a0e75f",
+      "sha256": "0357968263e2a81649939688bbdbbb6c7e057edebc6e001b30a8702b80a0e75f"
+    },
+    "states/base/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "c74ceb2bdab512f3803f26a5b80ac5856be77d2e154c627110875fa89d219639",
+      "sha256": "51696dc8a7f48984ff7cd584a2bc4aa4058edaec716947acca07b1fa5eb40e1f"
+    },
+    "states/base/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/base/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "45d565ed72a67417a686be4181f5c1e210d22315bdc98a1c1d1de3018d36b81d",
+      "sha256": "466ee2633b96fa55e58a1979bb6f4d741c36e301be78ac1dbff5402a20a37879"
+    },
+    "states/a1/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/generations/harmbench.json",
+      "source_sha256": "537913690d1994807b7b326e2199f23d6b80a1fab43a25e337aa68b20cc079a2",
+      "sha256": "537913690d1994807b7b326e2199f23d6b80a1fab43a25e337aa68b20cc079a2"
+    },
+    "states/a1/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "070c2d4753163989f6ab1f6e3959cda804a95e6c23629660826597ddf0bc520a",
+      "sha256": "288b01662c06413e4898780e27e99eb8cf4eae4f9ccb7aa8d4ece4aa5973bc6c"
+    },
+    "states/a1/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "c5250f77fbc2aa2bf679216c994b432f1321f17430627e15627a0e78cde244b6",
+      "sha256": "09b5f3e24ad712cc3b90fd831f200ca674239be7c51e7c8c6fac906ea609f90e"
+    },
+    "states/a1/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/generations/advbench.json",
+      "source_sha256": "437e3202f9f834fc192f633567be68324f0cd876792e26029e202fa49513cc9a",
+      "sha256": "437e3202f9f834fc192f633567be68324f0cd876792e26029e202fa49513cc9a"
+    },
+    "states/a1/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "52ef5e960b773089cef8f0a38ab08b336f29c8f0248a1e28790886cb43df5464"
+    },
+    "states/a1/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/verdicts/advbench__harm_cls.json",
+      "source_sha256": "bccdfae76c2a69b11726a0f11038eb9580eacdccbd785197b4a6aa70bb02e7a1",
+      "sha256": "d50c8578bb40e61aec59148e52fca8a6dc256b5b06fe5fdc4d52a99353fe3bb4"
+    },
+    "states/a1/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/generations/alpaca.json",
+      "source_sha256": "fafa1a31b6a3db298d2247ebd75214a2ff0dbfbf1c7c2da612efcb2721f314b8",
+      "sha256": "fafa1a31b6a3db298d2247ebd75214a2ff0dbfbf1c7c2da612efcb2721f314b8"
+    },
+    "states/a1/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "66121d662733fc5eae36e6439c6164b216fff7aa141c25e23e6b777395c679db",
+      "sha256": "4219187ceb0bf5426caa1973c1624c4f9558661e7cffa3ad3e79218f96015b1c"
+    },
+    "states/a1/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a1/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "e03db7cb226b27ec44bc7d3791598a42e77168dd87065a612ad6c7c148310eb6",
+      "sha256": "b4dcf32d2384cff75536b61160828cb990cf4a622827f448c554196e54071f56"
+    },
+    "states/a2/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/generations/harmbench.json",
+      "source_sha256": "92e4d7a184d2c20200658225f8450cbdc1c2ac66e77c81ce0007d77696ae65c2",
+      "sha256": "92e4d7a184d2c20200658225f8450cbdc1c2ac66e77c81ce0007d77696ae65c2"
+    },
+    "states/a2/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "5cdc3a9b4c76ff580cdea703081f708853be529282f79cc4884fa529eef9863e",
+      "sha256": "ed272a83ff108496b06dcde8cc9a2e63492c98a0a7d9b4cd1c717e7e2cd085e7"
+    },
+    "states/a2/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "23038e9dbd017aa0887e5e19cd3f15c5c72dc24bb0eeb96ba9f62a87fbf830bc",
+      "sha256": "67bbb5cc8467985f719672ded8fccba45e530202cb4fc02c66f877b55db4fa6f"
+    },
+    "states/a2/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/generations/advbench.json",
+      "source_sha256": "00d41a0b6978dfef87d2b0a3ef93e6203024136f2522c51648e264e80905c0cc",
+      "sha256": "00d41a0b6978dfef87d2b0a3ef93e6203024136f2522c51648e264e80905c0cc"
+    },
+    "states/a2/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "b1fb0628debb15b0e2e6b6984761819c11f81157b2350873d53b28c132deb3b0",
+      "sha256": "41d89d0c350b3de809fd1de328bbe45f1fe02976c9c304f7cde7e84e818bb366"
+    },
+    "states/a2/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/verdicts/advbench__harm_cls.json",
+      "source_sha256": "c3e6991917cf58fe29767e8d052ff98a341977a2fcd1ebda93c6e45bd6438c3c",
+      "sha256": "a5f3760cf114948ec985c3a0e746c91e16466a82a221d4714c0810513d9509b6"
+    },
+    "states/a2/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/generations/alpaca.json",
+      "source_sha256": "0d50c92a684f42d0fd96f31a3ce66a63d9f6625e20cde38c7ed2672d169a2296",
+      "sha256": "0d50c92a684f42d0fd96f31a3ce66a63d9f6625e20cde38c7ed2672d169a2296"
+    },
+    "states/a2/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "8fc9f72f01e11a3187ebedc72eeb0a04574256f23d0444a1c8116ff04ffe4487",
+      "sha256": "d1fb5e681297dbdd35ced72d34bca84f006e2c18cb429c6ce709de97b7b495c1"
+    },
+    "states/a2/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a2/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "7250f812f63b73ca7e5405d260bd736e566c6334b8c243b4d5feec070dd547f3",
+      "sha256": "da009a88142e2f8627c3ac4f1641198688272e2a563b355c90f3786f8c346a6d"
+    },
+    "states/a3/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/generations/harmbench.json",
+      "source_sha256": "9981f7ee7f1bcda0304272af119f5753f03707a5b45751519d5cc0c194151ade",
+      "sha256": "9981f7ee7f1bcda0304272af119f5753f03707a5b45751519d5cc0c194151ade"
+    },
+    "states/a3/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "cf3faa975fb8c5f99021578b601b32da729297aa1c9690a76f034475cdf14b6f",
+      "sha256": "07e8b6a5b2a935babf9348e430da6076729991d91bfb421985ea4053504f9d29"
+    },
+    "states/a3/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "9bdfe3ed5f917e2fc3d4baacb6e895097398249f51af2d4b9a05d0f7c37285ef",
+      "sha256": "5c69a0d92be536e5848d5beef86c2b3bfb45720a57219ebbb3f3b4ab9e5663b2"
+    },
+    "states/a3/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/generations/advbench.json",
+      "source_sha256": "4e987529bde4b2a1800ee2c5354865ccdfa4bb31622c26efc8e300fd9fff8e69",
+      "sha256": "4e987529bde4b2a1800ee2c5354865ccdfa4bb31622c26efc8e300fd9fff8e69"
+    },
+    "states/a3/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "5c70415f2d5a8612f11093517ba9483d283305c9baaa5112ad398b4ff1b039af"
+    },
+    "states/a3/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/verdicts/advbench__harm_cls.json",
+      "source_sha256": "3e3e7d5cdbf51a8ba568681961b5fd28bf05dfd1a43162a2d81d600c9f294fd5",
+      "sha256": "58ab6f45cbdd44268654cf537d284113daa64f0c93f4bbfab15b92e5c980608d"
+    },
+    "states/a3/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/generations/alpaca.json",
+      "source_sha256": "2c9e944e5d7350498cddcd650b5c696b683c157651ebd6c1d208640f3883032d",
+      "sha256": "2c9e944e5d7350498cddcd650b5c696b683c157651ebd6c1d208640f3883032d"
+    },
+    "states/a3/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "86856892af92c644a2b36506405d77d37f1759956fdd0dd4cf2a339b6a132b31",
+      "sha256": "0b346ca6c4fa702321f92a2d617d695e190727b66ead67fb3bbe3541d9e29535"
+    },
+    "states/a3/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a3/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "d11571a866ade8c60673c8bd26707ecd31afe615ef80a2c3ebb77d4716957dd0",
+      "sha256": "ce8da43d67081482b79b56212a63e47ef7b5b043198cd8a945f4c30b6b4e9d4f"
+    },
+    "states/a4/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/generations/harmbench.json",
+      "source_sha256": "fee3f07cfed605837f7b480742cfd2da03d6f7e1be7cbb669cbf53caf5147c86",
+      "sha256": "fee3f07cfed605837f7b480742cfd2da03d6f7e1be7cbb669cbf53caf5147c86"
+    },
+    "states/a4/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "d1edee8e070dcd462a3efaee85cbe5d7d9eab255935eae84cd9f1c388721cbb0",
+      "sha256": "35399bc4ff4243fab44adb9463ee1c8bc7517a7982c0db889d7f41466124260d"
+    },
+    "states/a4/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "0d7a55cba6c188332d0da74a34eb58839c3af04a2b9def928e9181fed33724a4",
+      "sha256": "bfd2f75d1d0781f00f7caedf774e1f51aaa0ad40b4cd80d2ac596593da1093f3"
+    },
+    "states/a4/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/generations/advbench.json",
+      "source_sha256": "4b2e006be788928b0123486c3d6f5bb5925425a6a53a6fb14ef2f222c60ea0c1",
+      "sha256": "4b2e006be788928b0123486c3d6f5bb5925425a6a53a6fb14ef2f222c60ea0c1"
+    },
+    "states/a4/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "81469ecbfef90031c3957a1ac659e56d7c2ae95ccf7c33b775c6d65a6b76c49f"
+    },
+    "states/a4/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/verdicts/advbench__harm_cls.json",
+      "source_sha256": "3e3e7d5cdbf51a8ba568681961b5fd28bf05dfd1a43162a2d81d600c9f294fd5",
+      "sha256": "bb1c6473134835e07694caef1e307c412b7219c74bacb81a6e7137ad6ca556fe"
+    },
+    "states/a4/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/generations/alpaca.json",
+      "source_sha256": "1657396bfb126344610f8a4b866a5ed852104d02b1a1cfa97654511a9335d732",
+      "sha256": "1657396bfb126344610f8a4b866a5ed852104d02b1a1cfa97654511a9335d732"
+    },
+    "states/a4/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "9656860a84115a6952fdb85dbbb78b4de68b0edae89391d3acf852528ab5e365",
+      "sha256": "c266d609a8bf76d5a3553e4fb84f81984a556b68ee4b699549d73cb04cbe5616"
+    },
+    "states/a4/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/a4/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "a58798aa0d124a66a2a4892b795dc63ac619c1198f7703634ac8c9522b823668",
+      "sha256": "bd8f4d83b961bbba3f1f3e5a71193da6db3759dfb21150d655232d5e90881a94"
+    },
+    "states/linear_sum__a1__a2/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/generations/harmbench.json",
+      "source_sha256": "7cc9f36bb4eba46cfbfa212762a02df237aa3993ae71ff2d660e95941f875ef1",
+      "sha256": "7cc9f36bb4eba46cfbfa212762a02df237aa3993ae71ff2d660e95941f875ef1"
+    },
+    "states/linear_sum__a1__a2/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "7ae423f179214217bdad5da1ae1944b882bb22f73eafd73a5e186dfa80a6fb96",
+      "sha256": "e39231c27099b6e9e9ac44e8ab672352c539591d8e551cf3f39899d09132197b"
+    },
+    "states/linear_sum__a1__a2/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "3b432d436d805fa3469d59c3d9bba207c345d593093f99fdd68097085c3fd10f",
+      "sha256": "e9286a2eded243899d1fd46ab30370ded30ffd26ef153a2f0f2955fa4179c5fa"
+    },
+    "states/linear_sum__a1__a2/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/generations/advbench.json",
+      "source_sha256": "724d667bbab58ab3cf539357f9725aa8ecbc21cc37c21bd6e52dccefc7423f12",
+      "sha256": "724d667bbab58ab3cf539357f9725aa8ecbc21cc37c21bd6e52dccefc7423f12"
+    },
+    "states/linear_sum__a1__a2/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "5ed097d1ba54096c3485e87889c16c698c8cdea5a2b391654bc4f31daf2119fd",
+      "sha256": "ab64003c6d88bd234af465731d56364df411fb65bf21b22b9403923c6985de73"
+    },
+    "states/linear_sum__a1__a2/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/verdicts/advbench__harm_cls.json",
+      "source_sha256": "e96960aadaf8d8ba94dbef465a55eebad9f91c71d889e38fdd744b5830d1c56b",
+      "sha256": "a5f6370770c96457f79a83da8fcc8236c38cdf5457704ce1e2ea7452ecaaf393"
+    },
+    "states/linear_sum__a1__a2/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/generations/alpaca.json",
+      "source_sha256": "301aae83de081f5548a28fa806e0604bdde16c738e23a934e89d8f4c825b9722",
+      "sha256": "301aae83de081f5548a28fa806e0604bdde16c738e23a934e89d8f4c825b9722"
+    },
+    "states/linear_sum__a1__a2/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "6ff6d0f7e6b7e491bab1b123383348725231562ddb5ce0a64fb48b5120e58135",
+      "sha256": "4d5045aca6c2b7f90e180e89c147ea5a73dc6e7c8a7715935ed40641a9426a00"
+    },
+    "states/linear_sum__a1__a2/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a2/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "14a694cf5717c6d40de67f54be27f151bd14da2e3f5dfd06439e7667d991c08e",
+      "sha256": "58fd7a401a6217e4b2606db93f4f36146442462f6c83733c6505b3d6806b2cc6"
+    },
+    "states/ties__a1__a2/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/generations/harmbench.json",
+      "source_sha256": "46619672d84b708c89de0c50c0c933827836276e3b0904a71cda537d1450c283",
+      "sha256": "46619672d84b708c89de0c50c0c933827836276e3b0904a71cda537d1450c283"
+    },
+    "states/ties__a1__a2/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "83b548c015918435b98e15e72a29554e7b11bd9f5909643fb7fd1705537e027b",
+      "sha256": "5ec9ab3bc08b6ba703ced5803a2634cc9a5ab2b92e30b56b5fe18b7488b021ba"
+    },
+    "states/ties__a1__a2/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "72d889b0985121eb95d71a3a2e24c7444b31f34c0f44383ca5f42fc63dcd645a",
+      "sha256": "745afce92285b36d1db147481b4811f096de6317ceaa5657fd01b519890dd6f7"
+    },
+    "states/ties__a1__a2/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/generations/advbench.json",
+      "source_sha256": "7b8ba4e740db4bb20da3556dd82ca4770aae52a3bf2049d7b116c4a05f16e767",
+      "sha256": "7b8ba4e740db4bb20da3556dd82ca4770aae52a3bf2049d7b116c4a05f16e767"
+    },
+    "states/ties__a1__a2/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "f4263f608ea1b188118e3c9eafd4215879941522d5042072321cb343cd8fd6eb",
+      "sha256": "fabe8030a0d06c5f7fb3cb2399be00164bc5622ea77f487a5aedc9ccff517c28"
+    },
+    "states/ties__a1__a2/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/verdicts/advbench__harm_cls.json",
+      "source_sha256": "dbfb5cd04df4239271c6ff5dd3481004568b7ee23e2fd4f127f40648ddb4535e",
+      "sha256": "6ef60fcfb47ff236af9b06954d31eadf9b96faa6a7d21387340a299dfaee99c6"
+    },
+    "states/ties__a1__a2/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/generations/alpaca.json",
+      "source_sha256": "f417f795727921d24cf0206dd358e190bbf6eac6860d9fc32d3b2b108c446b17",
+      "sha256": "f417f795727921d24cf0206dd358e190bbf6eac6860d9fc32d3b2b108c446b17"
+    },
+    "states/ties__a1__a2/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "1151b3e1b00246f2745168c870835d82dffb8a2c27611bf17956c02f6d1e734b",
+      "sha256": "7c118cfa3ee321412bb1d35096a05e90719216277e29f649f47d1ee4ef71aa51"
+    },
+    "states/ties__a1__a2/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a2/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "16d2f1a70f0e96b547f4688030b3d44622c03634f457955ea006a075ed7623e2",
+      "sha256": "41ef67c94ad3622fe33d9e6353821e68078568f2e47edc42c89ada3661ff309c"
+    },
+    "states/linear_sum__a1__a3/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/generations/harmbench.json",
+      "source_sha256": "1b4f35d3ad7151f502bcff3f83e131d40b7b3ab7ef17bc9ade12b8e8d7438ddf",
+      "sha256": "1b4f35d3ad7151f502bcff3f83e131d40b7b3ab7ef17bc9ade12b8e8d7438ddf"
+    },
+    "states/linear_sum__a1__a3/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "0b7d94cc0941b03f491e80643468698723ccfe4ae648e30d6376cb628a296520",
+      "sha256": "4f85c523117436a06eafa72d8917eef094a0c29bc6d94ea7e95e3eaf390894b4"
+    },
+    "states/linear_sum__a1__a3/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "5c039d44708ea60a4969710306a1fe2c2fd318dd10fcd74cf4ca5ea14ddc2265",
+      "sha256": "2d7d0e446a2b2f4307bc65f9c5ce41e938daa0f97e3009dd803e9869f54e70ca"
+    },
+    "states/linear_sum__a1__a3/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/generations/advbench.json",
+      "source_sha256": "eb1a0b43e3f6450739d8d7f192bd2199181dee5edb626f3f432be44545b66d0f",
+      "sha256": "eb1a0b43e3f6450739d8d7f192bd2199181dee5edb626f3f432be44545b66d0f"
+    },
+    "states/linear_sum__a1__a3/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "3e985c08fd51b61d580f001e668fc2fe6d4997de736b4863631dfcdf96d9466c",
+      "sha256": "43b1b9d61245cd082faf08ae824cca44b09ce717243e4ec01ee2e62544d1e83c"
+    },
+    "states/linear_sum__a1__a3/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/verdicts/advbench__harm_cls.json",
+      "source_sha256": "857a916e23a21ede41c595c964884868db698b59c543074f45cd263e174a05ea",
+      "sha256": "ff97e0ed1eaa5d2c5c132f9da6fb48f82aa557ef131de27858c535899e249290"
+    },
+    "states/linear_sum__a1__a3/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/generations/alpaca.json",
+      "source_sha256": "cbce923b144dacb9e42104a747613705c90991827e329f0403b0787ddee255e8",
+      "sha256": "cbce923b144dacb9e42104a747613705c90991827e329f0403b0787ddee255e8"
+    },
+    "states/linear_sum__a1__a3/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "f1c3a4927b1979d44eb1469f6b6010fe274d40dd3be1036a3578960998851929",
+      "sha256": "048b4ababa73bcf464d1a7d2ece2c2c485776aefd0002bcc1bd7a618a95abe25"
+    },
+    "states/linear_sum__a1__a3/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a3/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "b51300ec76637e4ae0407824083c4c4e8dcbe6a6f4a76c7faa8e0c6f49ba6531",
+      "sha256": "cd91fbe9830ee90df0bacbf6c16ca4e0911f16df6621a20abd3798aba83b1907"
+    },
+    "states/ties__a1__a3/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/generations/harmbench.json",
+      "source_sha256": "46bef9d6bf7e1393d95acd96f441d5b436a79c0e3244df5773a352ab68acdf3b",
+      "sha256": "46bef9d6bf7e1393d95acd96f441d5b436a79c0e3244df5773a352ab68acdf3b"
+    },
+    "states/ties__a1__a3/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "d5914127dd071aa9f6f470abb34345154c4aada3b227306e9750c322dd358c5e",
+      "sha256": "d81f21c03d135f3aab06e3bae15819530f19bceafcbab7acb6b12b4ccffde7e2"
+    },
+    "states/ties__a1__a3/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "406baccba10dd055f07a5b6472d1361947550ddb74e26077083cd025a84f830e",
+      "sha256": "bf6c0136b772e9ca15939c8cf2260a1dbce16207937291edc7d4f09b32b5389b"
+    },
+    "states/ties__a1__a3/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/generations/advbench.json",
+      "source_sha256": "9ad8522300998ae701bd3797ebecc7a0d996c65772176ff3b0ad64a57ad49ca1",
+      "sha256": "9ad8522300998ae701bd3797ebecc7a0d996c65772176ff3b0ad64a57ad49ca1"
+    },
+    "states/ties__a1__a3/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "bef89636675fee87295b64540c64a875e6896fac66773d4381ba5c138f4a7d53",
+      "sha256": "85b0404ad022defaffd03f8abe28f9eae2708247c0283a8fcacbc7434963c295"
+    },
+    "states/ties__a1__a3/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/verdicts/advbench__harm_cls.json",
+      "source_sha256": "6bd685506c548889a8ed4e987f9bd016c39aaacf247943f4ddf83bcbaf721542",
+      "sha256": "ce35392e9e4a2aab0347e76b080a69c01b52a16dca24d44ced4554f0f5607d13"
+    },
+    "states/ties__a1__a3/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/generations/alpaca.json",
+      "source_sha256": "3fbecba93d1f6ec72977cd1ae3b91dfd2c8e1ed5f6e093fea938d9174a280a27",
+      "sha256": "3fbecba93d1f6ec72977cd1ae3b91dfd2c8e1ed5f6e093fea938d9174a280a27"
+    },
+    "states/ties__a1__a3/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "25391a54ec6efd3774605ddb34fdd2af92c7924036af3966e47cdce3132ad1e4",
+      "sha256": "78ac43972302dbb911432627a996e00821440bc9a8611e27d5ff9fa0db766dab"
+    },
+    "states/ties__a1__a3/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a3/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "5669e12d220f6bd7ab8e3b0604b4c67141a03ab94ac6bd30fb6571b1f7e00311",
+      "sha256": "7a6e7096da245d3653605ee091f69a5741fe33ccb97000fc25d0bbcea5aca253"
+    },
+    "states/linear_sum__a1__a4/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/generations/harmbench.json",
+      "source_sha256": "16dbbdafd3b427fca8c731efd9a0275ba35078346f5fcbee48fd9e96fbf7e449",
+      "sha256": "16dbbdafd3b427fca8c731efd9a0275ba35078346f5fcbee48fd9e96fbf7e449"
+    },
+    "states/linear_sum__a1__a4/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "75c5185771db17409dcb159efb26fc20d3e8b2d4b15486bb7aea956251226040",
+      "sha256": "d0467f98133b32571e4610c8e4f3acbf36fc393bfe9d82c28a0c1f3c1ada14d1"
+    },
+    "states/linear_sum__a1__a4/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "f971a839ca519272caeebfe4c464ca3de6624496050d12d2fdd5525e81f4184f",
+      "sha256": "8f571a09f32cd922a9486b60aa1ac854c3955a6232471421980634a68f6d684c"
+    },
+    "states/linear_sum__a1__a4/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/generations/advbench.json",
+      "source_sha256": "75d7841bfe48fb472fb588656f25002fa89010b9e19988bd5fb6052b781c706a",
+      "sha256": "75d7841bfe48fb472fb588656f25002fa89010b9e19988bd5fb6052b781c706a"
+    },
+    "states/linear_sum__a1__a4/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "7c7082c6d8e0f91b8db1983c106fcf08f7d2b711007617d1559fed3098dee3b3",
+      "sha256": "9637d300221bf16a8f0b7708db60844e7db0963931c6f2ca0a791f50cd4a95d6"
+    },
+    "states/linear_sum__a1__a4/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/verdicts/advbench__harm_cls.json",
+      "source_sha256": "4e22a6aa39678b94411e83440a3e4f6b44888175466d2895875f084c673e8f0c",
+      "sha256": "e228a873407bc0501b0e68ba72e6047830dca9bc20cd3939c04e701e2f7b2ee6"
+    },
+    "states/linear_sum__a1__a4/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/generations/alpaca.json",
+      "source_sha256": "34fe666b17acc3a536f636293b06c6825e87ebe8468a5c17b36816e019ee5214",
+      "sha256": "34fe666b17acc3a536f636293b06c6825e87ebe8468a5c17b36816e019ee5214"
+    },
+    "states/linear_sum__a1__a4/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "ad3b48017134e0660f0b5e4e0f9634a91b06d2dded31e9b75108df23439d8efd",
+      "sha256": "fdd5ba3f6cf77e2f923fa549dc167b1ec1a51bd1575a716ed63989f7cccc4c41"
+    },
+    "states/linear_sum__a1__a4/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a1-a4/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "48bad91afbd6172f099062f5af419f8ae424bd02f124c3aba26301a4f402217d",
+      "sha256": "d254f153a059c1bf9e176a31099b1f7c606fab661595566ff42ecdfc6885d18d"
+    },
+    "states/ties__a1__a4/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/generations/harmbench.json",
+      "source_sha256": "05ca53c25fad14c8870b30ce4ef970a302940a4e132eb4a1b651dcdc456f58aa",
+      "sha256": "05ca53c25fad14c8870b30ce4ef970a302940a4e132eb4a1b651dcdc456f58aa"
+    },
+    "states/ties__a1__a4/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "a66d32bab4731603496a9f40f600bca7bccb36bd4f698787ab1a5eecf9a805a3",
+      "sha256": "a95d9000834005938f5706ab5db72e4a79fb39d90d03f606f1d4a1539da130ef"
+    },
+    "states/ties__a1__a4/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "594558ba0594aafcff2c699556601d0dc2145aea9f9793eeda6e22706a5f2e1b",
+      "sha256": "2a4d694964e56831b64d0b67aab4ea29ab1bb46654ee00ec17c0bca25008299c"
+    },
+    "states/ties__a1__a4/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/generations/advbench.json",
+      "source_sha256": "6a8dd92fe2d8e71f6c65c47fff989b080065e71869287702338780c9051e2a63",
+      "sha256": "6a8dd92fe2d8e71f6c65c47fff989b080065e71869287702338780c9051e2a63"
+    },
+    "states/ties__a1__a4/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "28dc85f6727c68c99ec1728e7110c4e12652327f8cae164b976fccd598897c27"
+    },
+    "states/ties__a1__a4/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/verdicts/advbench__harm_cls.json",
+      "source_sha256": "dd056cc2c7ff9018f3c83f14a5477d5423482bf44c16ad1a6673e988a5e707af",
+      "sha256": "9968a3466ad7d6ff3fcc40a4e92f43da082d29d339b28c8b4e6ea389d9a44d6a"
+    },
+    "states/ties__a1__a4/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/generations/alpaca.json",
+      "source_sha256": "f2301d8fa7e921d58c6a9f92a211ad665db7cce7059eb7f1e1cc203d312e9ac9",
+      "sha256": "f2301d8fa7e921d58c6a9f92a211ad665db7cce7059eb7f1e1cc203d312e9ac9"
+    },
+    "states/ties__a1__a4/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "0b580348d71518347ebe86794dd37010811a9d137f6be3715fcff66e30110f94",
+      "sha256": "ec721120533ff6f0f41ce164c55d89ad21180ef8a86f401331657c9fc1e1219d"
+    },
+    "states/ties__a1__a4/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a1-a4/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "e131bbe14792beb37450dd76b61cee03d06552e1443a877c242bb2ef3cbec7c7",
+      "sha256": "6ebbe8d6e3b9b5628f1ee4e2e2e670ef5b9a3fe6326dafe3828dfc7f6826c617"
+    },
+    "states/linear_sum__a2__a3/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/generations/harmbench.json",
+      "source_sha256": "2df314c8d0d2c581bd5f86706ab6b95f95beac5a2c15c9ac5f665f984682c868",
+      "sha256": "2df314c8d0d2c581bd5f86706ab6b95f95beac5a2c15c9ac5f665f984682c868"
+    },
+    "states/linear_sum__a2__a3/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "7368220eae0f6935a79f31d97c5abc78f0181394662b757931334ddbc364c4ed",
+      "sha256": "3c2b21d95aabc5de238f8e87a73016ff2204bd8cbd38d59941dfa08de46b872a"
+    },
+    "states/linear_sum__a2__a3/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "0e71b03637c8cecfff734bb8739f25ed06727936924561dfd0493690619b3515",
+      "sha256": "80f4a0ed6d89d5f6a5475dd7cf5211ca660fcc881f37d46042740c5920b1ffe4"
+    },
+    "states/linear_sum__a2__a3/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/generations/advbench.json",
+      "source_sha256": "25fa13f10cb99bb92a7c9209d996754bff1ab39c81852d58b07888e1f1a317cb",
+      "sha256": "25fa13f10cb99bb92a7c9209d996754bff1ab39c81852d58b07888e1f1a317cb"
+    },
+    "states/linear_sum__a2__a3/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "528f972cc0376a976f055d7c5aded2fccc55729e3712183568a90a20ecb5ea71",
+      "sha256": "58e71fa60923c217f00de7942790bdf50fd52fa3d4c2cf955e9bdd423979ab7a"
+    },
+    "states/linear_sum__a2__a3/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/verdicts/advbench__harm_cls.json",
+      "source_sha256": "c5cf25a91fda3cae30b0158d5f8c91ccfcb07df59ebc509126b34d37dfdd3cef",
+      "sha256": "929d5672c84d9045d557bfe9d3a9d52f819a8a531b6c962d2606a340533a3e6d"
+    },
+    "states/linear_sum__a2__a3/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/generations/alpaca.json",
+      "source_sha256": "fdacf9c55b92def8e9e38ab73658325a99ea01cf7678b02cd9b0f5a51eab47f2",
+      "sha256": "fdacf9c55b92def8e9e38ab73658325a99ea01cf7678b02cd9b0f5a51eab47f2"
+    },
+    "states/linear_sum__a2__a3/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "802b1d3de418dd0b78c5e4bd9bc2b4fe567503f67ad92d91b3be00565b53eca1",
+      "sha256": "95bff703c05af58eeb79523c8ad90694f4cd697193cf8872e496927b82ba3a4e"
+    },
+    "states/linear_sum__a2__a3/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a3/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "5750f9e633ff73cb99e3080b7cf5e53a1f73a8d98c6ee3d2259bb7d91f442171",
+      "sha256": "2293e6eb8bf7e1c22eba1bc04bfc0332cd49998e3c7a2962d7a594528e84b5ac"
+    },
+    "states/ties__a2__a3/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/generations/harmbench.json",
+      "source_sha256": "0eb5e09ebf1966684e70fac6294cf71413ee4bbd6d0a71cd3d1ab8ef63d5177a",
+      "sha256": "0eb5e09ebf1966684e70fac6294cf71413ee4bbd6d0a71cd3d1ab8ef63d5177a"
+    },
+    "states/ties__a2__a3/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "85ad789d69615335245dd5d16645edde2c4d9f4c4fef442aab7a1f405fe62d21",
+      "sha256": "2fdb172f0e80573c2b9c8213e60ddd12553fed597e9843e03ad6d8fb64842758"
+    },
+    "states/ties__a2__a3/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "76e55eb5ad003798844ab96d37c2c303557bc0feb2eeb26656b343d72f9cb43f",
+      "sha256": "e7d4113eb739f708162de1126c92591416a5ec204f7b447c1100b560c9581678"
+    },
+    "states/ties__a2__a3/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/generations/advbench.json",
+      "source_sha256": "7ac392269dc6de303946624aad0070e30b82a547a82fd7ae4c0123af0fb9b03c",
+      "sha256": "7ac392269dc6de303946624aad0070e30b82a547a82fd7ae4c0123af0fb9b03c"
+    },
+    "states/ties__a2__a3/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "f4263f608ea1b188118e3c9eafd4215879941522d5042072321cb343cd8fd6eb",
+      "sha256": "3b7a7582e783ca3bba2acf1f2788bac09d1dad545e4aa6b8ba0678b615753e3e"
+    },
+    "states/ties__a2__a3/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/verdicts/advbench__harm_cls.json",
+      "source_sha256": "dbfb5cd04df4239271c6ff5dd3481004568b7ee23e2fd4f127f40648ddb4535e",
+      "sha256": "1aa724903012d6d8bd9641802ada31a6a71efa67b8dcfff5a186fb45bb76476a"
+    },
+    "states/ties__a2__a3/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/generations/alpaca.json",
+      "source_sha256": "a1f6e422ac97cfb40dff7dd69ef745f92ec2e634eed3c476da73ff2783d9378d",
+      "sha256": "a1f6e422ac97cfb40dff7dd69ef745f92ec2e634eed3c476da73ff2783d9378d"
+    },
+    "states/ties__a2__a3/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "c60fc0df20417b8a890860fa4391f60a76078beb9fd548ea834c41bd2553dd19",
+      "sha256": "97e4e502a3fb828cf6f39873f3a581c2cd6b3a4bd539f04660299c51da03a546"
+    },
+    "states/ties__a2__a3/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a3/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "df1e7fd341cd9a4b12e13fd5b5a9dcce0b9c56816aeabf3f13637db59767b506",
+      "sha256": "148981b9e951d82a183d71bd0799a8963632c05597ea6a67ba179a120e2faa47"
+    },
+    "states/linear_sum__a2__a4/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/generations/harmbench.json",
+      "source_sha256": "1675c125b35c257640bcee54e7eed48e69aa333610c33da5c488ea9dd1311352",
+      "sha256": "1675c125b35c257640bcee54e7eed48e69aa333610c33da5c488ea9dd1311352"
+    },
+    "states/linear_sum__a2__a4/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "0f8bd54b99ac55a8e7c79f47da1fd8818055abdd41387c9214d86f81efa1c458",
+      "sha256": "cf5267f5bc9a74ea2f41a5ede03a4fdbab9fe602659d42eb524cb9cdaef3f63c"
+    },
+    "states/linear_sum__a2__a4/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "9a4406a3a30fdc69cd181ef553af318f183a14842580f567f99a3211a5f76b8b",
+      "sha256": "ca231f830827c278c0a8b5e32613d747caf5c32f330ce48e870c959cb35164fa"
+    },
+    "states/linear_sum__a2__a4/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/generations/advbench.json",
+      "source_sha256": "983d3d82ac2fb991070f37f3914e90cc305d6656591be62b60593a79ab5d0d07",
+      "sha256": "983d3d82ac2fb991070f37f3914e90cc305d6656591be62b60593a79ab5d0d07"
+    },
+    "states/linear_sum__a2__a4/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "07e17283008be3b6bdb79c736f364b4e705ccc4f2f2f6491f6f299500458fd5d"
+    },
+    "states/linear_sum__a2__a4/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/verdicts/advbench__harm_cls.json",
+      "source_sha256": "3e3e7d5cdbf51a8ba568681961b5fd28bf05dfd1a43162a2d81d600c9f294fd5",
+      "sha256": "ba71f136f0a009ffb005a558ad4e9d02dc5186777c3c84ab9566529f1171bdaf"
+    },
+    "states/linear_sum__a2__a4/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/generations/alpaca.json",
+      "source_sha256": "03364c6235a81155e751b10a5c89106280e1418a9b3fe828c0568e400b005b68",
+      "sha256": "03364c6235a81155e751b10a5c89106280e1418a9b3fe828c0568e400b005b68"
+    },
+    "states/linear_sum__a2__a4/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "28653d8179c7c9bdbb7ee1b4268ea4188116a748ba0088a9c7a7894302cd5f2c",
+      "sha256": "2af00644fd4ddbdf9327605f5269e62d96ae501f5a335168e5594e98bddd7214"
+    },
+    "states/linear_sum__a2__a4/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a2-a4/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "11ca01745a26387d3d463e2755c067b1f7f7827141fd65943e94cf7aa7a9b11a",
+      "sha256": "110e4619046b01bb13d068e0c4bd729ac4ecfd3b53a15002bee38aec430287e3"
+    },
+    "states/ties__a2__a4/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/generations/harmbench.json",
+      "source_sha256": "38257e175862b7a994cc55993a58911e7780dc0558e3f3d9dba2679c81f9788a",
+      "sha256": "38257e175862b7a994cc55993a58911e7780dc0558e3f3d9dba2679c81f9788a"
+    },
+    "states/ties__a2__a4/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "439fd6aa75d5abff12d1922ef211a997b226038d312d72c23f9610224414e1cb",
+      "sha256": "b7c8a6bc7869ff456c73a9fa3bab52d4674e5677333ba22513a59b0f9e0b0464"
+    },
+    "states/ties__a2__a4/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "ce738b93f3993eefcfae91a701153100ce62fe33c0d85ec9d1e446fafad67ba5",
+      "sha256": "db2315fc2863e96fe0775e223c7e3b3e39bee42dfc4a26e954553bc7418668db"
+    },
+    "states/ties__a2__a4/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/generations/advbench.json",
+      "source_sha256": "56fb08b1c8ea652d0454dbf6b0d6670d2a79caa6a2cd145246d5d4cf758e1462",
+      "sha256": "56fb08b1c8ea652d0454dbf6b0d6670d2a79caa6a2cd145246d5d4cf758e1462"
+    },
+    "states/ties__a2__a4/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "0b32c4f98d0b69c7b9f39cf7fe93c523b82f5087043924f1c8a27f488b0b0b78"
+    },
+    "states/ties__a2__a4/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/verdicts/advbench__harm_cls.json",
+      "source_sha256": "3e3e7d5cdbf51a8ba568681961b5fd28bf05dfd1a43162a2d81d600c9f294fd5",
+      "sha256": "1404e9d164d48c74308b8e80c16d2a858712122d91addc93af3fe01a4eec1032"
+    },
+    "states/ties__a2__a4/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/generations/alpaca.json",
+      "source_sha256": "86c0a3642c53d269313a0b38299e7739ae2a907d6a5cfd29969074f08e039419",
+      "sha256": "86c0a3642c53d269313a0b38299e7739ae2a907d6a5cfd29969074f08e039419"
+    },
+    "states/ties__a2__a4/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "c6fd66fe3ae7124b3d9025a867ce319f4329319a65f4b2c10a1fd712c33903a8",
+      "sha256": "e2d8a77dff65edf5c6632ac8e43a07bc3af6715d1b16bd18d0288d7f5eb1b5ec"
+    },
+    "states/ties__a2__a4/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a2-a4/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "a58798aa0d124a66a2a4892b795dc63ac619c1198f7703634ac8c9522b823668",
+      "sha256": "41eb848a06041ad55cd22f9b0764d79a306901e2d5d7a939d2999bcdf88b7d43"
+    },
+    "states/linear_sum__a3__a4/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/generations/harmbench.json",
+      "source_sha256": "3d82c280b4b504bfe87aa93dfcb26668216fd50d38b9031cd269854dfe987b4c",
+      "sha256": "3d82c280b4b504bfe87aa93dfcb26668216fd50d38b9031cd269854dfe987b4c"
+    },
+    "states/linear_sum__a3__a4/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "5c7eb094da6f23784e8d8a27154fe4f2343234809df480953d8a6c120c1180c8",
+      "sha256": "d633675ff823eaf75bc579c94c3731fc17b10d6177689bb319a620462671b167"
+    },
+    "states/linear_sum__a3__a4/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "9871795df7c111a78c83d6b1bf504561069f8886622cd48ab82621a7bc547368",
+      "sha256": "36d36c11d0c619ea1bc9415ade078ace2c865080bf4641b06662a948dedc248a"
+    },
+    "states/linear_sum__a3__a4/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/generations/advbench.json",
+      "source_sha256": "49f3d9500e77d62b3382252653ce9404e2616e128e486ff347ca38bce96ebff8",
+      "sha256": "49f3d9500e77d62b3382252653ce9404e2616e128e486ff347ca38bce96ebff8"
+    },
+    "states/linear_sum__a3__a4/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "33ada8414025ba6f5a9c3d6b33a144a38003229e4b7334a842e20a7083dc8d5a"
+    },
+    "states/linear_sum__a3__a4/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/verdicts/advbench__harm_cls.json",
+      "source_sha256": "bccdfae76c2a69b11726a0f11038eb9580eacdccbd785197b4a6aa70bb02e7a1",
+      "sha256": "e66ab84753bbedf02cb32e10c3f4cc634b1113a56a77cb0ab86d62587e17e3f3"
+    },
+    "states/linear_sum__a3__a4/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/generations/alpaca.json",
+      "source_sha256": "a1bdf2963c4c7375ea60d2ac5a5ed193b18f5710dda82bb81e99377b1dbc1fb2",
+      "sha256": "a1bdf2963c4c7375ea60d2ac5a5ed193b18f5710dda82bb81e99377b1dbc1fb2"
+    },
+    "states/linear_sum__a3__a4/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "b8600e5480cb3eb52a259c8cb980a339a06f08cda1f809bcea973251339fa3c0",
+      "sha256": "b3939c0a311e69a93939d355553080de6fe250995859589d98176afcedcbcc4a"
+    },
+    "states/linear_sum__a3__a4/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/sum_a3-a4/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "9171f90ef6ff778d2a48e23b0adbaf80d1494c3e6f77b22f75055f96ba11af5b",
+      "sha256": "c2d8dbf0015dcd7f96c3186a2d4db5517d156ee3a49b9cd3a0b70561095ca966"
+    },
+    "states/ties__a3__a4/generations/harmbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/generations/harmbench.json",
+      "source_sha256": "778afe393df1734065ffd9d6864398dbbd892c2ce7b9036302a11d5eb0ae21be",
+      "sha256": "778afe393df1734065ffd9d6864398dbbd892c2ce7b9036302a11d5eb0ae21be"
+    },
+    "states/ties__a3__a4/verdicts/harmbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/verdicts/harmbench__llama_guard_3.json",
+      "source_sha256": "086ea78de3bb3c55dc99f0630d7db45777cd00ad9aa1c6a074d2e348877d0f52",
+      "sha256": "ddfea6a4bf88a9c2c6ff3233c162dd17e78e4505d846c61c9b4ff5a552f24372"
+    },
+    "states/ties__a3__a4/verdicts/harmbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/verdicts/harmbench__harm_cls.json",
+      "source_sha256": "f70ba6277c0dac7c66ff94e41110b194c4c9dd367e0be9e2d65c55df9a012435",
+      "sha256": "c733cb64ef2271c83aea2ebdec0deb04417e47c1a3cf35b89eccc98e55ca1915"
+    },
+    "states/ties__a3__a4/generations/advbench.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/generations/advbench.json",
+      "source_sha256": "6004b7b6e0cadc85e7c8d85fa949e296353a5ca5f1dd75047f96d5b722540b68",
+      "sha256": "6004b7b6e0cadc85e7c8d85fa949e296353a5ca5f1dd75047f96d5b722540b68"
+    },
+    "states/ties__a3__a4/verdicts/advbench__llama_guard_3.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/verdicts/advbench__llama_guard_3.json",
+      "source_sha256": "ba94bf5efdc0bb13dd6301341ea3d868b271799645857828f3498b687a872064",
+      "sha256": "d646fd52525cc53287ae0bbe191f5d69116336edbcf92f0bc99a121b5442a242"
+    },
+    "states/ties__a3__a4/verdicts/advbench__harm_cls.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/verdicts/advbench__harm_cls.json",
+      "source_sha256": "3e3e7d5cdbf51a8ba568681961b5fd28bf05dfd1a43162a2d81d600c9f294fd5",
+      "sha256": "bd111d08a4075d9615954d23af7774871f7b4e48cd8d0f5acf03be648e312afd"
+    },
+    "states/ties__a3__a4/generations/alpaca.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/generations/alpaca.json",
+      "source_sha256": "63b965aa6841282669dd593e42312e4dff3d6710a410c62054d4d7372aa21483",
+      "sha256": "63b965aa6841282669dd593e42312e4dff3d6710a410c62054d4d7372aa21483"
+    },
+    "states/ties__a3__a4/verdicts/alpaca__rejection_classifier.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/verdicts/alpaca__rejection_classifier.json",
+      "source_sha256": "304a41ae040c1c51d414fc568ab8e4cc94c28ce9486c3d7ad0a9baa9ae30aecc",
+      "sha256": "cdf395052805bdcdde3543c99c2728004c14cb67efbd8cf9c7ceec3ad59948ca"
+    },
+    "states/ties__a3__a4/verdicts/alpaca__keyword_refusal.json": {
+      "source": "/home/techmeet26/sarvam/end_term/storage/merged-adapter-safety-eval/ordering_experiment/results/20261117_045604/states/ties_a3-a4/verdicts/alpaca__keyword_refusal.json",
+      "source_sha256": "67adb1557865678887f951185d62b8fb06f337cd68b9818cdb45cf996791a1bc",
+      "sha256": "0ccdabb598a6c2e3e06b71c3a9d5cae249df6b92451fb8cbaaad8afbadc6f032"
+    }
+  },
+  "states": {
+    "base": "base",
+    "a1": "a1",
+    "a2": "a2",
+    "a3": "a3",
+    "a4": "a4",
+    "linear_sum__a1__a2": "sum(a1,a2)",
+    "ties__a1__a2": "ties(a1,a2)",
+    "linear_sum__a1__a3": "sum(a1,a3)",
+    "ties__a1__a3": "ties(a1,a3)",
+    "linear_sum__a1__a4": "sum(a1,a4)",
+    "ties__a1__a4": "ties(a1,a4)",
+    "linear_sum__a2__a3": "sum(a2,a3)",
+    "ties__a2__a3": "ties(a2,a3)",
+    "linear_sum__a2__a4": "sum(a2,a4)",
+    "ties__a2__a4": "ties(a2,a4)",
+    "linear_sum__a3__a4": "sum(a3,a4)",
+    "ties__a3__a4": "ties(a3,a4)"
+  },
+  "source_metadata_hashes": {
+    "config_used.yaml": "3cc6300ddd7a6c1e9023a1308828330a12c1478e0c3fd26679d37942fbbd96c0",
+    "plan.json": "5bfd9e26d66fe8d3d64f2725f1953a0519075362e4aae9ffd0735bd81ec0dc95"
+  }
+}

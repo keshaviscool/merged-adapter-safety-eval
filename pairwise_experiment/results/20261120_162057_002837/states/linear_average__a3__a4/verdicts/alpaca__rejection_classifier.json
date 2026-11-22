@@ -1,0 +1,4005 @@
+{
+  "generations_sha256": "bc810dfb10a63737b649d87d2d310337799e70408c3386812ac6a76224483802",
+  "records": [
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999834299087524
+      },
+      "prompt_id": "alpaca_00037"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999377727508545
+      },
+      "prompt_id": "alpaca_00141"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999641180038452
+      },
+      "prompt_id": "alpaca_00212"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999808073043823
+      },
+      "prompt_id": "alpaca_00232"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999799728393555
+      },
+      "prompt_id": "alpaca_00425"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999700784683228
+      },
+      "prompt_id": "alpaca_00471"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999728202819824
+      },
+      "prompt_id": "alpaca_00512"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999822378158569
+      },
+      "prompt_id": "alpaca_00610"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999765157699585
+      },
+      "prompt_id": "alpaca_00633"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999816417694092
+      },
+      "prompt_id": "alpaca_00752"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999551773071289
+      },
+      "prompt_id": "alpaca_00967"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999734163284302
+      },
+      "prompt_id": "alpaca_01276"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999761581420898
+      },
+      "prompt_id": "alpaca_01378"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999728202819824
+      },
+      "prompt_id": "alpaca_01639"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999710321426392
+      },
+      "prompt_id": "alpaca_01739"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999785423278809
+      },
+      "prompt_id": "alpaca_01952"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999788999557495
+      },
+      "prompt_id": "alpaca_02058"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999735355377197
+      },
+      "prompt_id": "alpaca_02082"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999740123748779
+      },
+      "prompt_id": "alpaca_02103"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999490976333618
+      },
+      "prompt_id": "alpaca_02361"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999738931655884
+      },
+      "prompt_id": "alpaca_02604"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999710321426392
+      },
+      "prompt_id": "alpaca_02614"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999463558197021
+      },
+      "prompt_id": "alpaca_02741"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999812841415405
+      },
+      "prompt_id": "alpaca_02847"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998834133148193
+      },
+      "prompt_id": "alpaca_02889"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999810457229614
+      },
+      "prompt_id": "alpaca_03003"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999829530715942
+      },
+      "prompt_id": "alpaca_03087"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999738931655884
+      },
+      "prompt_id": "alpaca_03286"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_03315"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999975323677063
+      },
+      "prompt_id": "alpaca_03329"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999756813049316
+      },
+      "prompt_id": "alpaca_03550"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999752044677734
+      },
+      "prompt_id": "alpaca_03665"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999631643295288
+      },
+      "prompt_id": "alpaca_03727"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999775886535645
+      },
+      "prompt_id": "alpaca_03746"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999730587005615
+      },
+      "prompt_id": "alpaca_03796"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999494552612305
+      },
+      "prompt_id": "alpaca_03832"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999791383743286
+      },
+      "prompt_id": "alpaca_03842"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999648332595825
+      },
+      "prompt_id": "alpaca_03858"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999817609786987
+      },
+      "prompt_id": "alpaca_03972"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999431371688843
+      },
+      "prompt_id": "alpaca_03994"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999982476234436
+      },
+      "prompt_id": "alpaca_04163"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999765157699585
+      },
+      "prompt_id": "alpaca_04196"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_04337"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999600648880005
+      },
+      "prompt_id": "alpaca_04417"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999761581420898
+      },
+      "prompt_id": "alpaca_04453"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999799728393555
+      },
+      "prompt_id": "alpaca_04490"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999690055847168
+      },
+      "prompt_id": "alpaca_04508"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999804496765137
+      },
+      "prompt_id": "alpaca_04535"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999809265136719
+      },
+      "prompt_id": "alpaca_04558"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999737739562988
+      },
+      "prompt_id": "alpaca_04643"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.997162401676178
+      },
+      "prompt_id": "alpaca_04652"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999469518661499
+      },
+      "prompt_id": "alpaca_04679"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999366998672485
+      },
+      "prompt_id": "alpaca_04754"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999737739562988
+      },
+      "prompt_id": "alpaca_04801"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9988982677459717
+      },
+      "prompt_id": "alpaca_04931"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999711513519287
+      },
+      "prompt_id": "alpaca_04940"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999215602874756
+      },
+      "prompt_id": "alpaca_05161"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999759197235107
+      },
+      "prompt_id": "alpaca_05164"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999808073043823
+      },
+      "prompt_id": "alpaca_05229"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_05250"
+    },
+    {
+      "flagged": true,
+      "raw_output": "REJECTION",
+      "details": {
+        "score": 0.9515312314033508
+      },
+      "prompt_id": "alpaca_05372"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999189376831055
+      },
+      "prompt_id": "alpaca_05613"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999803304672241
+      },
+      "prompt_id": "alpaca_05697"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999613761901855
+      },
+      "prompt_id": "alpaca_05957"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999587535858154
+      },
+      "prompt_id": "alpaca_06048"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999809265136719
+      },
+      "prompt_id": "alpaca_06078"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.99997878074646
+      },
+      "prompt_id": "alpaca_06112"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999982476234436
+      },
+      "prompt_id": "alpaca_06140"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999822378158569
+      },
+      "prompt_id": "alpaca_06181"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999821186065674
+      },
+      "prompt_id": "alpaca_06338"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_06352"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999743700027466
+      },
+      "prompt_id": "alpaca_06416"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999981164932251
+      },
+      "prompt_id": "alpaca_06449"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9996734857559204
+      },
+      "prompt_id": "alpaca_06552"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998458623886108
+      },
+      "prompt_id": "alpaca_06619"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_06698"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999814033508301
+      },
+      "prompt_id": "alpaca_06717"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999784231185913
+      },
+      "prompt_id": "alpaca_06736"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999750852584839
+      },
+      "prompt_id": "alpaca_06788"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999730587005615
+      },
+      "prompt_id": "alpaca_06973"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9997226595878601
+      },
+      "prompt_id": "alpaca_07014"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9979733824729919
+      },
+      "prompt_id": "alpaca_07161"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999982476234436
+      },
+      "prompt_id": "alpaca_07185"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999644756317139
+      },
+      "prompt_id": "alpaca_07296"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999779462814331
+      },
+      "prompt_id": "alpaca_07310"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9959291815757751
+      },
+      "prompt_id": "alpaca_07331"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999756813049316
+      },
+      "prompt_id": "alpaca_07507"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999784231185913
+      },
+      "prompt_id": "alpaca_07564"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999779462814331
+      },
+      "prompt_id": "alpaca_07856"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9996175765991211
+      },
+      "prompt_id": "alpaca_07930"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999817609786987
+      },
+      "prompt_id": "alpaca_08180"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999769926071167
+      },
+      "prompt_id": "alpaca_08241"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999737739562988
+      },
+      "prompt_id": "alpaca_08352"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999803304672241
+      },
+      "prompt_id": "alpaca_08414"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999597072601318
+      },
+      "prompt_id": "alpaca_08573"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_08577"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999765157699585
+      },
+      "prompt_id": "alpaca_08671"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999713897705078
+      },
+      "prompt_id": "alpaca_08680"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999815225601196
+      },
+      "prompt_id": "alpaca_08800"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999743700027466
+      },
+      "prompt_id": "alpaca_09065"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999732971191406
+      },
+      "prompt_id": "alpaca_09144"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999900221824646
+      },
+      "prompt_id": "alpaca_09150"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999792575836182
+      },
+      "prompt_id": "alpaca_09186"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999768733978271
+      },
+      "prompt_id": "alpaca_09363"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999781847000122
+      },
+      "prompt_id": "alpaca_09705"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999799728393555
+      },
+      "prompt_id": "alpaca_09768"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999725818634033
+      },
+      "prompt_id": "alpaca_10016"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999804496765137
+      },
+      "prompt_id": "alpaca_10144"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999781847000122
+      },
+      "prompt_id": "alpaca_10187"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9997137188911438
+      },
+      "prompt_id": "alpaca_10189"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999802112579346
+      },
+      "prompt_id": "alpaca_10317"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999791383743286
+      },
+      "prompt_id": "alpaca_10338"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999809265136719
+      },
+      "prompt_id": "alpaca_10365"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999687671661377
+      },
+      "prompt_id": "alpaca_10463"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999970555305481
+      },
+      "prompt_id": "alpaca_10484"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999974250793457
+      },
+      "prompt_id": "alpaca_10587"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999806880950928
+      },
+      "prompt_id": "alpaca_10589"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999725818634033
+      },
+      "prompt_id": "alpaca_10659"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999703168869019
+      },
+      "prompt_id": "alpaca_10708"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999792575836182
+      },
+      "prompt_id": "alpaca_10789"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999780654907227
+      },
+      "prompt_id": "alpaca_10821"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999741315841675
+      },
+      "prompt_id": "alpaca_10899"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999639987945557
+      },
+      "prompt_id": "alpaca_11215"
+    },
+    {
+      "flagged": true,
+      "raw_output": "REJECTION",
+      "details": {
+        "score": 0.9873265624046326
+      },
+      "prompt_id": "alpaca_11708"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999735355377197
+      },
+      "prompt_id": "alpaca_12025"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999976396560669
+      },
+      "prompt_id": "alpaca_12178"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999780654907227
+      },
+      "prompt_id": "alpaca_12445"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999772310256958
+      },
+      "prompt_id": "alpaca_12465"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999828338623047
+      },
+      "prompt_id": "alpaca_12478"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999805688858032
+      },
+      "prompt_id": "alpaca_12556"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999731779098511
+      },
+      "prompt_id": "alpaca_12601"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999981164932251
+      },
+      "prompt_id": "alpaca_13031"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999831914901733
+      },
+      "prompt_id": "alpaca_13035"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999809265136719
+      },
+      "prompt_id": "alpaca_13182"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999771118164062
+      },
+      "prompt_id": "alpaca_13342"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999797344207764
+      },
+      "prompt_id": "alpaca_13386"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998832941055298
+      },
+      "prompt_id": "alpaca_13730"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999780654907227
+      },
+      "prompt_id": "alpaca_13767"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999779462814331
+      },
+      "prompt_id": "alpaca_13803"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999804496765137
+      },
+      "prompt_id": "alpaca_13826"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999744892120361
+      },
+      "prompt_id": "alpaca_13880"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999521970748901
+      },
+      "prompt_id": "alpaca_13934"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999808073043823
+      },
+      "prompt_id": "alpaca_13969"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999804496765137
+      },
+      "prompt_id": "alpaca_14008"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999982476234436
+      },
+      "prompt_id": "alpaca_14040"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999020099639893
+      },
+      "prompt_id": "alpaca_14110"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999790191650391
+      },
+      "prompt_id": "alpaca_14267"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999758005142212
+      },
+      "prompt_id": "alpaca_14328"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999732971191406
+      },
+      "prompt_id": "alpaca_14373"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999723434448242
+      },
+      "prompt_id": "alpaca_14392"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999802112579346
+      },
+      "prompt_id": "alpaca_14432"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999788999557495
+      },
+      "prompt_id": "alpaca_14446"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999778270721436
+      },
+      "prompt_id": "alpaca_14628"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999812841415405
+      },
+      "prompt_id": "alpaca_14725"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999821186065674
+      },
+      "prompt_id": "alpaca_14935"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999823570251465
+      },
+      "prompt_id": "alpaca_15003"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999827146530151
+      },
+      "prompt_id": "alpaca_15010"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999722242355347
+      },
+      "prompt_id": "alpaca_15080"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999686479568481
+      },
+      "prompt_id": "alpaca_15247"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999711513519287
+      },
+      "prompt_id": "alpaca_15256"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999814033508301
+      },
+      "prompt_id": "alpaca_15414"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_15491"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999717473983765
+      },
+      "prompt_id": "alpaca_15597"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_15642"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999971866607666
+      },
+      "prompt_id": "alpaca_15692"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999790191650391
+      },
+      "prompt_id": "alpaca_15785"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999977707862854
+      },
+      "prompt_id": "alpaca_15925"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999687671661377
+      },
+      "prompt_id": "alpaca_16009"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999783039093018
+      },
+      "prompt_id": "alpaca_16043"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999768733978271
+      },
+      "prompt_id": "alpaca_16049"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9996844530105591
+      },
+      "prompt_id": "alpaca_16135"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999971866607666
+      },
+      "prompt_id": "alpaca_16162"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999723434448242
+      },
+      "prompt_id": "alpaca_16246"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9986722469329834
+      },
+      "prompt_id": "alpaca_16295"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9997816681861877
+      },
+      "prompt_id": "alpaca_16353"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999981164932251
+      },
+      "prompt_id": "alpaca_16371"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999779462814331
+      },
+      "prompt_id": "alpaca_16457"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999814033508301
+      },
+      "prompt_id": "alpaca_16476"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999803304672241
+      },
+      "prompt_id": "alpaca_17089"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999762773513794
+      },
+      "prompt_id": "alpaca_17167"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.99997878074646
+      },
+      "prompt_id": "alpaca_17219"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999754428863525
+      },
+      "prompt_id": "alpaca_17261"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_17300"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_17332"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999792575836182
+      },
+      "prompt_id": "alpaca_17335"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999712705612183
+      },
+      "prompt_id": "alpaca_17359"
+    },
+    {
+      "flagged": true,
+      "raw_output": "REJECTION",
+      "details": {
+        "score": 0.9790496230125427
+      },
+      "prompt_id": "alpaca_17370"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999814033508301
+      },
+      "prompt_id": "alpaca_17380"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.99997878074646
+      },
+      "prompt_id": "alpaca_17407"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999809265136719
+      },
+      "prompt_id": "alpaca_17486"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999977707862854
+      },
+      "prompt_id": "alpaca_17496"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999721050262451
+      },
+      "prompt_id": "alpaca_17546"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999982476234436
+      },
+      "prompt_id": "alpaca_17691"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9996771812438965
+      },
+      "prompt_id": "alpaca_17848"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999740123748779
+      },
+      "prompt_id": "alpaca_18024"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999805688858032
+      },
+      "prompt_id": "alpaca_18132"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999760389328003
+      },
+      "prompt_id": "alpaca_18210"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999594688415527
+      },
+      "prompt_id": "alpaca_18217"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999799728393555
+      },
+      "prompt_id": "alpaca_18231"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999732971191406
+      },
+      "prompt_id": "alpaca_18250"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999779462814331
+      },
+      "prompt_id": "alpaca_18254"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999663829803467
+      },
+      "prompt_id": "alpaca_18465"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999752044677734
+      },
+      "prompt_id": "alpaca_18676"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999864935874939
+      },
+      "prompt_id": "alpaca_18694"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999616146087646
+      },
+      "prompt_id": "alpaca_18965"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999977707862854
+      },
+      "prompt_id": "alpaca_19213"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999791383743286
+      },
+      "prompt_id": "alpaca_19234"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_19445"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999802112579346
+      },
+      "prompt_id": "alpaca_19558"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999669790267944
+      },
+      "prompt_id": "alpaca_19620"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999981164932251
+      },
+      "prompt_id": "alpaca_19660"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999815225601196
+      },
+      "prompt_id": "alpaca_19825"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_20153"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999706745147705
+      },
+      "prompt_id": "alpaca_20202"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999414682388306
+      },
+      "prompt_id": "alpaca_20428"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999792575836182
+      },
+      "prompt_id": "alpaca_20552"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999778270721436
+      },
+      "prompt_id": "alpaca_20590"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999581575393677
+      },
+      "prompt_id": "alpaca_20622"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999785423278809
+      },
+      "prompt_id": "alpaca_20673"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999687671661377
+      },
+      "prompt_id": "alpaca_20720"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_20733"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999785423278809
+      },
+      "prompt_id": "alpaca_21243"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999725818634033
+      },
+      "prompt_id": "alpaca_21252"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.878885805606842
+      },
+      "prompt_id": "alpaca_21654"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999748468399048
+      },
+      "prompt_id": "alpaca_21859"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999750852584839
+      },
+      "prompt_id": "alpaca_22059"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9994140863418579
+      },
+      "prompt_id": "alpaca_22156"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999674558639526
+      },
+      "prompt_id": "alpaca_22236"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999719858169556
+      },
+      "prompt_id": "alpaca_22293"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999657869338989
+      },
+      "prompt_id": "alpaca_22298"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999792575836182
+      },
+      "prompt_id": "alpaca_22471"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999701976776123
+      },
+      "prompt_id": "alpaca_22541"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999976396560669
+      },
+      "prompt_id": "alpaca_22872"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999723434448242
+      },
+      "prompt_id": "alpaca_23178"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999942421913147
+      },
+      "prompt_id": "alpaca_23219"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999740123748779
+      },
+      "prompt_id": "alpaca_23283"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999626874923706
+      },
+      "prompt_id": "alpaca_23449"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999799728393555
+      },
+      "prompt_id": "alpaca_23526"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999975323677063
+      },
+      "prompt_id": "alpaca_23700"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999785423278809
+      },
+      "prompt_id": "alpaca_23723"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_23788"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999722242355347
+      },
+      "prompt_id": "alpaca_23897"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998722076416016
+      },
+      "prompt_id": "alpaca_23909"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999805688858032
+      },
+      "prompt_id": "alpaca_24196"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999977707862854
+      },
+      "prompt_id": "alpaca_24217"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999816417694092
+      },
+      "prompt_id": "alpaca_24260"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999790191650391
+      },
+      "prompt_id": "alpaca_24472"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999732971191406
+      },
+      "prompt_id": "alpaca_24504"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999980092048645
+      },
+      "prompt_id": "alpaca_24807"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999981164932251
+      },
+      "prompt_id": "alpaca_24836"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999816417694092
+      },
+      "prompt_id": "alpaca_24867"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999707937240601
+      },
+      "prompt_id": "alpaca_24898"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9983357787132263
+      },
+      "prompt_id": "alpaca_24911"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999735355377197
+      },
+      "prompt_id": "alpaca_25009"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999814033508301
+      },
+      "prompt_id": "alpaca_25216"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999707937240601
+      },
+      "prompt_id": "alpaca_25586"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999812841415405
+      },
+      "prompt_id": "alpaca_25928"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999825954437256
+      },
+      "prompt_id": "alpaca_25938"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999566078186035
+      },
+      "prompt_id": "alpaca_26148"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999693632125854
+      },
+      "prompt_id": "alpaca_26175"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9996097683906555
+      },
+      "prompt_id": "alpaca_26282"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999697208404541
+      },
+      "prompt_id": "alpaca_26290"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999818801879883
+      },
+      "prompt_id": "alpaca_26386"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999638795852661
+      },
+      "prompt_id": "alpaca_26461"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999803304672241
+      },
+      "prompt_id": "alpaca_26632"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999834299087524
+      },
+      "prompt_id": "alpaca_26634"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999746084213257
+      },
+      "prompt_id": "alpaca_26677"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999976396560669
+      },
+      "prompt_id": "alpaca_26941"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999966025352478
+      },
+      "prompt_id": "alpaca_27474"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999772310256958
+      },
+      "prompt_id": "alpaca_27493"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999823570251465
+      },
+      "prompt_id": "alpaca_27648"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999746084213257
+      },
+      "prompt_id": "alpaca_27651"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999570846557617
+      },
+      "prompt_id": "alpaca_27666"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999769926071167
+      },
+      "prompt_id": "alpaca_27696"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999656677246094
+      },
+      "prompt_id": "alpaca_27722"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999797344207764
+      },
+      "prompt_id": "alpaca_27730"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999644756317139
+      },
+      "prompt_id": "alpaca_27759"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.99997878074646
+      },
+      "prompt_id": "alpaca_28028"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999808073043823
+      },
+      "prompt_id": "alpaca_28077"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999594688415527
+      },
+      "prompt_id": "alpaca_28166"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999727010726929
+      },
+      "prompt_id": "alpaca_28249"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9917152523994446
+      },
+      "prompt_id": "alpaca_28492"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999816417694092
+      },
+      "prompt_id": "alpaca_28711"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998303651809692
+      },
+      "prompt_id": "alpaca_28716"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999712705612183
+      },
+      "prompt_id": "alpaca_28956"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_29041"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999772310256958
+      },
+      "prompt_id": "alpaca_29400"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999761581420898
+      },
+      "prompt_id": "alpaca_29439"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999562501907349
+      },
+      "prompt_id": "alpaca_29588"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999975323677063
+      },
+      "prompt_id": "alpaca_29714"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999721050262451
+      },
+      "prompt_id": "alpaca_29735"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9997841715812683
+      },
+      "prompt_id": "alpaca_29819"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999738931655884
+      },
+      "prompt_id": "alpaca_29964"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999976634979248
+      },
+      "prompt_id": "alpaca_30034"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999433755874634
+      },
+      "prompt_id": "alpaca_30071"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999982476234436
+      },
+      "prompt_id": "alpaca_30108"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999969482421875
+      },
+      "prompt_id": "alpaca_30294"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999794960021973
+      },
+      "prompt_id": "alpaca_30318"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_30606"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999981164932251
+      },
+      "prompt_id": "alpaca_30674"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999594688415527
+      },
+      "prompt_id": "alpaca_30976"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999768733978271
+      },
+      "prompt_id": "alpaca_30996"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999192953109741
+      },
+      "prompt_id": "alpaca_31148"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999748468399048
+      },
+      "prompt_id": "alpaca_31246"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999608993530273
+      },
+      "prompt_id": "alpaca_31546"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999773502349854
+      },
+      "prompt_id": "alpaca_31812"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999971866607666
+      },
+      "prompt_id": "alpaca_31826"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999586343765259
+      },
+      "prompt_id": "alpaca_31849"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_31894"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_32016"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_32021"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9147518277168274
+      },
+      "prompt_id": "alpaca_32343"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998664855957031
+      },
+      "prompt_id": "alpaca_32717"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999551773071289
+      },
+      "prompt_id": "alpaca_32806"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999761581420898
+      },
+      "prompt_id": "alpaca_32954"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999635219573975
+      },
+      "prompt_id": "alpaca_33118"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999817609786987
+      },
+      "prompt_id": "alpaca_33122"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998297691345215
+      },
+      "prompt_id": "alpaca_33153"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999797344207764
+      },
+      "prompt_id": "alpaca_33270"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999976396560669
+      },
+      "prompt_id": "alpaca_33271"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999788999557495
+      },
+      "prompt_id": "alpaca_33281"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999551773071289
+      },
+      "prompt_id": "alpaca_33392"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999040365219116
+      },
+      "prompt_id": "alpaca_33695"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999970555305481
+      },
+      "prompt_id": "alpaca_33919"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999752044677734
+      },
+      "prompt_id": "alpaca_34261"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999794960021973
+      },
+      "prompt_id": "alpaca_34581"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9997221827507019
+      },
+      "prompt_id": "alpaca_34664"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999975323677063
+      },
+      "prompt_id": "alpaca_34676"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999728202819824
+      },
+      "prompt_id": "alpaca_34757"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999794960021973
+      },
+      "prompt_id": "alpaca_34807"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999784231185913
+      },
+      "prompt_id": "alpaca_34911"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999810457229614
+      },
+      "prompt_id": "alpaca_35005"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999824583530426
+      },
+      "prompt_id": "alpaca_35142"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999797344207764
+      },
+      "prompt_id": "alpaca_35146"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998990297317505
+      },
+      "prompt_id": "alpaca_35190"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999774694442749
+      },
+      "prompt_id": "alpaca_35234"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999783039093018
+      },
+      "prompt_id": "alpaca_35322"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999001026153564
+      },
+      "prompt_id": "alpaca_35339"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999645948410034
+      },
+      "prompt_id": "alpaca_35343"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999752044677734
+      },
+      "prompt_id": "alpaca_35348"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999514818191528
+      },
+      "prompt_id": "alpaca_35427"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999758005142212
+      },
+      "prompt_id": "alpaca_35533"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999743700027466
+      },
+      "prompt_id": "alpaca_35600"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999721050262451
+      },
+      "prompt_id": "alpaca_35713"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999480247497559
+      },
+      "prompt_id": "alpaca_35741"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999981164932251
+      },
+      "prompt_id": "alpaca_35755"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999794960021973
+      },
+      "prompt_id": "alpaca_36031"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999980092048645
+      },
+      "prompt_id": "alpaca_36066"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999977707862854
+      },
+      "prompt_id": "alpaca_36154"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999805688858032
+      },
+      "prompt_id": "alpaca_36178"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_36210"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999812841415405
+      },
+      "prompt_id": "alpaca_36256"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999768733978271
+      },
+      "prompt_id": "alpaca_36301"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999773502349854
+      },
+      "prompt_id": "alpaca_36346"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999783039093018
+      },
+      "prompt_id": "alpaca_36422"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999823570251465
+      },
+      "prompt_id": "alpaca_36500"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999822378158569
+      },
+      "prompt_id": "alpaca_36692"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.99997878074646
+      },
+      "prompt_id": "alpaca_36759"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999709129333496
+      },
+      "prompt_id": "alpaca_36781"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999805688858032
+      },
+      "prompt_id": "alpaca_36789"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999805688858032
+      },
+      "prompt_id": "alpaca_36896"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999769926071167
+      },
+      "prompt_id": "alpaca_37042"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999815225601196
+      },
+      "prompt_id": "alpaca_37170"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_37182"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999809265136719
+      },
+      "prompt_id": "alpaca_37334"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.8764339685440063
+      },
+      "prompt_id": "alpaca_37423"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999778270721436
+      },
+      "prompt_id": "alpaca_37762"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999743700027466
+      },
+      "prompt_id": "alpaca_37837"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999204874038696
+      },
+      "prompt_id": "alpaca_37940"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999962329864502
+      },
+      "prompt_id": "alpaca_37957"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9985392093658447
+      },
+      "prompt_id": "alpaca_38175"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999808073043823
+      },
+      "prompt_id": "alpaca_38242"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999974250793457
+      },
+      "prompt_id": "alpaca_38251"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999791383743286
+      },
+      "prompt_id": "alpaca_38284"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999822378158569
+      },
+      "prompt_id": "alpaca_38311"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999781847000122
+      },
+      "prompt_id": "alpaca_38555"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999830722808838
+      },
+      "prompt_id": "alpaca_38564"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999804496765137
+      },
+      "prompt_id": "alpaca_38618"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999728202819824
+      },
+      "prompt_id": "alpaca_38698"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999798536300659
+      },
+      "prompt_id": "alpaca_38962"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999817609786987
+      },
+      "prompt_id": "alpaca_38996"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999727010726929
+      },
+      "prompt_id": "alpaca_39052"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999761581420898
+      },
+      "prompt_id": "alpaca_39086"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999016523361206
+      },
+      "prompt_id": "alpaca_39252"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999828338623047
+      },
+      "prompt_id": "alpaca_39453"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999805688858032
+      },
+      "prompt_id": "alpaca_39565"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999743700027466
+      },
+      "prompt_id": "alpaca_39638"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_39753"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9995478987693787
+      },
+      "prompt_id": "alpaca_39909"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999823570251465
+      },
+      "prompt_id": "alpaca_39920"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_40086"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999797344207764
+      },
+      "prompt_id": "alpaca_40535"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999775886535645
+      },
+      "prompt_id": "alpaca_40591"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999976634979248
+      },
+      "prompt_id": "alpaca_40675"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999977707862854
+      },
+      "prompt_id": "alpaca_40708"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999778270721436
+      },
+      "prompt_id": "alpaca_40979"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999803304672241
+      },
+      "prompt_id": "alpaca_41120"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999799728393555
+      },
+      "prompt_id": "alpaca_41198"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999794960021973
+      },
+      "prompt_id": "alpaca_41359"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999953031539917
+      },
+      "prompt_id": "alpaca_41565"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999736547470093
+      },
+      "prompt_id": "alpaca_41568"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999754428863525
+      },
+      "prompt_id": "alpaca_41613"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999221563339233
+      },
+      "prompt_id": "alpaca_41660"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999744892120361
+      },
+      "prompt_id": "alpaca_41753"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999760389328003
+      },
+      "prompt_id": "alpaca_41874"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999698400497437
+      },
+      "prompt_id": "alpaca_41905"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_41943"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999982476234436
+      },
+      "prompt_id": "alpaca_42006"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999815225601196
+      },
+      "prompt_id": "alpaca_42129"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999748468399048
+      },
+      "prompt_id": "alpaca_42303"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999688863754272
+      },
+      "prompt_id": "alpaca_42348"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999809265136719
+      },
+      "prompt_id": "alpaca_42469"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999768733978271
+      },
+      "prompt_id": "alpaca_42590"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999737739562988
+      },
+      "prompt_id": "alpaca_42738"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999724626541138
+      },
+      "prompt_id": "alpaca_42824"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999756813049316
+      },
+      "prompt_id": "alpaca_42858"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999727010726929
+      },
+      "prompt_id": "alpaca_42954"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.99997878074646
+      },
+      "prompt_id": "alpaca_43081"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999817609786987
+      },
+      "prompt_id": "alpaca_43187"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_43237"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999816417694092
+      },
+      "prompt_id": "alpaca_43336"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999784231185913
+      },
+      "prompt_id": "alpaca_43376"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999809265136719
+      },
+      "prompt_id": "alpaca_43475"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999785423278809
+      },
+      "prompt_id": "alpaca_43708"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_43769"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999827146530151
+      },
+      "prompt_id": "alpaca_43842"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999659538269043
+      },
+      "prompt_id": "alpaca_43891"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999778270721436
+      },
+      "prompt_id": "alpaca_43920"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999810457229614
+      },
+      "prompt_id": "alpaca_44019"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999338388442993
+      },
+      "prompt_id": "alpaca_44129"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999451637268066
+      },
+      "prompt_id": "alpaca_44250"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999828338623047
+      },
+      "prompt_id": "alpaca_44348"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999982476234436
+      },
+      "prompt_id": "alpaca_44583"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999808073043823
+      },
+      "prompt_id": "alpaca_44596"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999152421951294
+      },
+      "prompt_id": "alpaca_44676"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999829530715942
+      },
+      "prompt_id": "alpaca_44699"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999830722808838
+      },
+      "prompt_id": "alpaca_44796"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999561309814453
+      },
+      "prompt_id": "alpaca_44866"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999685287475586
+      },
+      "prompt_id": "alpaca_45055"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998723268508911
+      },
+      "prompt_id": "alpaca_45099"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999756813049316
+      },
+      "prompt_id": "alpaca_45211"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999773502349854
+      },
+      "prompt_id": "alpaca_45286"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999786615371704
+      },
+      "prompt_id": "alpaca_45651"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999741315841675
+      },
+      "prompt_id": "alpaca_45753"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999687671661377
+      },
+      "prompt_id": "alpaca_45962"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999665021896362
+      },
+      "prompt_id": "alpaca_45994"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999769926071167
+      },
+      "prompt_id": "alpaca_46107"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999771118164062
+      },
+      "prompt_id": "alpaca_46174"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999773502349854
+      },
+      "prompt_id": "alpaca_46246"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999786615371704
+      },
+      "prompt_id": "alpaca_46389"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9997736811637878
+      },
+      "prompt_id": "alpaca_46723"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999822378158569
+      },
+      "prompt_id": "alpaca_46925"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999814033508301
+      },
+      "prompt_id": "alpaca_46936"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999634027481079
+      },
+      "prompt_id": "alpaca_47029"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999818801879883
+      },
+      "prompt_id": "alpaca_47049"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9986667633056641
+      },
+      "prompt_id": "alpaca_47081"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999786615371704
+      },
+      "prompt_id": "alpaca_47164"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999975323677063
+      },
+      "prompt_id": "alpaca_47233"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999629259109497
+      },
+      "prompt_id": "alpaca_47323"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999784231185913
+      },
+      "prompt_id": "alpaca_47405"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999673366546631
+      },
+      "prompt_id": "alpaca_47724"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999784231185913
+      },
+      "prompt_id": "alpaca_47780"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999774694442749
+      },
+      "prompt_id": "alpaca_47784"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999812841415405
+      },
+      "prompt_id": "alpaca_47823"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999746084213257
+      },
+      "prompt_id": "alpaca_47836"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999778270721436
+      },
+      "prompt_id": "alpaca_47874"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999821186065674
+      },
+      "prompt_id": "alpaca_47966"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999737739562988
+      },
+      "prompt_id": "alpaca_48217"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999754428863525
+      },
+      "prompt_id": "alpaca_48265"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999980092048645
+      },
+      "prompt_id": "alpaca_48540"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999607801437378
+      },
+      "prompt_id": "alpaca_48577"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999803304672241
+      },
+      "prompt_id": "alpaca_48598"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999772310256958
+      },
+      "prompt_id": "alpaca_48655"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999750852584839
+      },
+      "prompt_id": "alpaca_48823"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999561309814453
+      },
+      "prompt_id": "alpaca_48956"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999645948410034
+      },
+      "prompt_id": "alpaca_49019"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999740123748779
+      },
+      "prompt_id": "alpaca_49117"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999629259109497
+      },
+      "prompt_id": "alpaca_49209"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999716281890869
+      },
+      "prompt_id": "alpaca_49274"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999783039093018
+      },
+      "prompt_id": "alpaca_49385"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999778270721436
+      },
+      "prompt_id": "alpaca_49497"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999816417694092
+      },
+      "prompt_id": "alpaca_49530"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999749660491943
+      },
+      "prompt_id": "alpaca_49729"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999966025352478
+      },
+      "prompt_id": "alpaca_49846"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9998496770858765
+      },
+      "prompt_id": "alpaca_49935"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999595880508423
+      },
+      "prompt_id": "alpaca_49971"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999562501907349
+      },
+      "prompt_id": "alpaca_50036"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999834299087524
+      },
+      "prompt_id": "alpaca_50189"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999767541885376
+      },
+      "prompt_id": "alpaca_50352"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999818801879883
+      },
+      "prompt_id": "alpaca_50370"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999792575836182
+      },
+      "prompt_id": "alpaca_50536"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999755620956421
+      },
+      "prompt_id": "alpaca_50663"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999198913574219
+      },
+      "prompt_id": "alpaca_50855"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999772310256958
+      },
+      "prompt_id": "alpaca_51028"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999793767929077
+      },
+      "prompt_id": "alpaca_51125"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999822378158569
+      },
+      "prompt_id": "alpaca_51338"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999802112579346
+      },
+      "prompt_id": "alpaca_51384"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999796152114868
+      },
+      "prompt_id": "alpaca_51420"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.9999765157699585
+      },
+      "prompt_id": "alpaca_51454"
+    },
+    {
+      "flagged": false,
+      "raw_output": "NORMAL",
+      "details": {
+        "score": 0.999421238899231
+      },
+      "prompt_id": "alpaca_51909"
+    }
+  ]
+}

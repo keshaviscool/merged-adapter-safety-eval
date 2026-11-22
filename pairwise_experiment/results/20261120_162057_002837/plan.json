@@ -1,0 +1,240 @@
+{
+  "base": {
+    "method": "base",
+    "adapters": []
+  },
+  "a1": {
+    "method": "single",
+    "adapters": [
+      "a1"
+    ]
+  },
+  "a2": {
+    "method": "single",
+    "adapters": [
+      "a2"
+    ]
+  },
+  "a3": {
+    "method": "single",
+    "adapters": [
+      "a3"
+    ]
+  },
+  "a4": {
+    "method": "single",
+    "adapters": [
+      "a4"
+    ]
+  },
+  "linear_sum__a1__a2": {
+    "method": "linear_sum",
+    "adapters": [
+      "a1",
+      "a2"
+    ]
+  },
+  "linear_average__a1__a2": {
+    "method": "linear_average",
+    "adapters": [
+      "a1",
+      "a2"
+    ]
+  },
+  "coefficient_normalized__a1__a2": {
+    "method": "coefficient_normalized",
+    "adapters": [
+      "a1",
+      "a2"
+    ]
+  },
+  "frobenius_normalized__a1__a2": {
+    "method": "frobenius_normalized",
+    "adapters": [
+      "a1",
+      "a2"
+    ]
+  },
+  "ties__a1__a2": {
+    "method": "ties",
+    "adapters": [
+      "a1",
+      "a2"
+    ]
+  },
+  "linear_sum__a1__a3": {
+    "method": "linear_sum",
+    "adapters": [
+      "a1",
+      "a3"
+    ]
+  },
+  "linear_average__a1__a3": {
+    "method": "linear_average",
+    "adapters": [
+      "a1",
+      "a3"
+    ]
+  },
+  "coefficient_normalized__a1__a3": {
+    "method": "coefficient_normalized",
+    "adapters": [
+      "a1",
+      "a3"
+    ]
+  },
+  "frobenius_normalized__a1__a3": {
+    "method": "frobenius_normalized",
+    "adapters": [
+      "a1",
+      "a3"
+    ]
+  },
+  "ties__a1__a3": {
+    "method": "ties",
+    "adapters": [
+      "a1",
+      "a3"
+    ]
+  },
+  "linear_sum__a1__a4": {
+    "method": "linear_sum",
+    "adapters": [
+      "a1",
+      "a4"
+    ]
+  },
+  "linear_average__a1__a4": {
+    "method": "linear_average",
+    "adapters": [
+      "a1",
+      "a4"
+    ]
+  },
+  "coefficient_normalized__a1__a4": {
+    "method": "coefficient_normalized",
+    "adapters": [
+      "a1",
+      "a4"
+    ]
+  },
+  "frobenius_normalized__a1__a4": {
+    "method": "frobenius_normalized",
+    "adapters": [
+      "a1",
+      "a4"
+    ]
+  },
+  "ties__a1__a4": {
+    "method": "ties",
+    "adapters": [
+      "a1",
+      "a4"
+    ]
+  },
+  "linear_sum__a2__a3": {
+    "method": "linear_sum",
+    "adapters": [
+      "a2",
+      "a3"
+    ]
+  },
+  "linear_average__a2__a3": {
+    "method": "linear_average",
+    "adapters": [
+      "a2",
+      "a3"
+    ]
+  },
+  "coefficient_normalized__a2__a3": {
+    "method": "coefficient_normalized",
+    "adapters": [
+      "a2",
+      "a3"
+    ]
+  },
+  "frobenius_normalized__a2__a3": {
+    "method": "frobenius_normalized",
+    "adapters": [
+      "a2",
+      "a3"
+    ]
+  },
+  "ties__a2__a3": {
+    "method": "ties",
+    "adapters": [
+      "a2",
+      "a3"
+    ]
+  },
+  "linear_sum__a2__a4": {
+    "method": "linear_sum",
+    "adapters": [
+      "a2",
+      "a4"
+    ]
+  },
+  "linear_average__a2__a4": {
+    "method": "linear_average",
+    "adapters": [
+      "a2",
+      "a4"
+    ]
+  },
+  "coefficient_normalized__a2__a4": {
+    "method": "coefficient_normalized",
+    "adapters": [
+      "a2",
+      "a4"
+    ]
+  },
+  "frobenius_normalized__a2__a4": {
+    "method": "frobenius_normalized",
+    "adapters": [
+      "a2",
+      "a4"
+    ]
+  },
+  "ties__a2__a4": {
+    "method": "ties",
+    "adapters": [
+      "a2",
+      "a4"
+    ]
+  },
+  "linear_sum__a3__a4": {
+    "method": "linear_sum",
+    "adapters": [
+      "a3",
+      "a4"
+    ]
+  },
+  "linear_average__a3__a4": {
+    "method": "linear_average",
+    "adapters": [
+      "a3",
+      "a4"
+    ]
+  },
+  "coefficient_normalized__a3__a4": {
+    "method": "coefficient_normalized",
+    "adapters": [
+      "a3",
+      "a4"
+    ]
+  },
+  "frobenius_normalized__a3__a4": {
+    "method": "frobenius_normalized",
+    "adapters": [
+      "a3",
+      "a4"
+    ]
+  },
+  "ties__a3__a4": {
+    "method": "ties",
+    "adapters": [
+      "a3",
+      "a4"
+    ]
+  }
+}
