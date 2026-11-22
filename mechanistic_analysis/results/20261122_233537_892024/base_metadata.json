@@ -1,0 +1,6 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "revision": null,
+  "dtype": "bfloat16",
+  "original_ordering_revision": "not recorded; reconstruction identity cannot be certified"
+}

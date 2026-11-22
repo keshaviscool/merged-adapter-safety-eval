@@ -1,0 +1,578 @@
+{
+  "linear_001": {
+    "transition_id": "linear_001",
+    "method": "linear",
+    "before": "base",
+    "incoming": "a1",
+    "after": "a1",
+    "step": 1
+  },
+  "linear_002": {
+    "transition_id": "linear_002",
+    "method": "linear",
+    "before": "a1",
+    "incoming": "a2",
+    "after": "sum(a1,a2)",
+    "step": 2
+  },
+  "linear_003": {
+    "transition_id": "linear_003",
+    "method": "linear",
+    "before": "sum(a1,a2)",
+    "incoming": "a3",
+    "after": "sum(a1,a2,a3)",
+    "step": 3
+  },
+  "linear_004": {
+    "transition_id": "linear_004",
+    "method": "linear",
+    "before": "sum(a1,a2,a3)",
+    "incoming": "a4",
+    "after": "sum(a1,a2,a3,a4)",
+    "step": 4
+  },
+  "linear_005": {
+    "transition_id": "linear_005",
+    "method": "linear",
+    "before": "sum(a1,a2)",
+    "incoming": "a4",
+    "after": "sum(a1,a2,a4)",
+    "step": 3
+  },
+  "linear_006": {
+    "transition_id": "linear_006",
+    "method": "linear",
+    "before": "sum(a1,a2,a4)",
+    "incoming": "a3",
+    "after": "sum(a1,a2,a3,a4)",
+    "step": 4
+  },
+  "linear_007": {
+    "transition_id": "linear_007",
+    "method": "linear",
+    "before": "a1",
+    "incoming": "a3",
+    "after": "sum(a1,a3)",
+    "step": 2
+  },
+  "linear_008": {
+    "transition_id": "linear_008",
+    "method": "linear",
+    "before": "sum(a1,a3)",
+    "incoming": "a2",
+    "after": "sum(a1,a2,a3)",
+    "step": 3
+  },
+  "linear_009": {
+    "transition_id": "linear_009",
+    "method": "linear",
+    "before": "sum(a1,a3)",
+    "incoming": "a4",
+    "after": "sum(a1,a3,a4)",
+    "step": 3
+  },
+  "linear_010": {
+    "transition_id": "linear_010",
+    "method": "linear",
+    "before": "sum(a1,a3,a4)",
+    "incoming": "a2",
+    "after": "sum(a1,a2,a3,a4)",
+    "step": 4
+  },
+  "linear_011": {
+    "transition_id": "linear_011",
+    "method": "linear",
+    "before": "a1",
+    "incoming": "a4",
+    "after": "sum(a1,a4)",
+    "step": 2
+  },
+  "linear_012": {
+    "transition_id": "linear_012",
+    "method": "linear",
+    "before": "sum(a1,a4)",
+    "incoming": "a2",
+    "after": "sum(a1,a2,a4)",
+    "step": 3
+  },
+  "linear_013": {
+    "transition_id": "linear_013",
+    "method": "linear",
+    "before": "sum(a1,a4)",
+    "incoming": "a3",
+    "after": "sum(a1,a3,a4)",
+    "step": 3
+  },
+  "linear_014": {
+    "transition_id": "linear_014",
+    "method": "linear",
+    "before": "base",
+    "incoming": "a2",
+    "after": "a2",
+    "step": 1
+  },
+  "linear_015": {
+    "transition_id": "linear_015",
+    "method": "linear",
+    "before": "a2",
+    "incoming": "a1",
+    "after": "sum(a1,a2)",
+    "step": 2
+  },
+  "linear_016": {
+    "transition_id": "linear_016",
+    "method": "linear",
+    "before": "a2",
+    "incoming": "a3",
+    "after": "sum(a2,a3)",
+    "step": 2
+  },
+  "linear_017": {
+    "transition_id": "linear_017",
+    "method": "linear",
+    "before": "sum(a2,a3)",
+    "incoming": "a1",
+    "after": "sum(a1,a2,a3)",
+    "step": 3
+  },
+  "linear_018": {
+    "transition_id": "linear_018",
+    "method": "linear",
+    "before": "sum(a2,a3)",
+    "incoming": "a4",
+    "after": "sum(a2,a3,a4)",
+    "step": 3
+  },
+  "linear_019": {
+    "transition_id": "linear_019",
+    "method": "linear",
+    "before": "sum(a2,a3,a4)",
+    "incoming": "a1",
+    "after": "sum(a1,a2,a3,a4)",
+    "step": 4
+  },
+  "linear_020": {
+    "transition_id": "linear_020",
+    "method": "linear",
+    "before": "a2",
+    "incoming": "a4",
+    "after": "sum(a2,a4)",
+    "step": 2
+  },
+  "linear_021": {
+    "transition_id": "linear_021",
+    "method": "linear",
+    "before": "sum(a2,a4)",
+    "incoming": "a1",
+    "after": "sum(a1,a2,a4)",
+    "step": 3
+  },
+  "linear_022": {
+    "transition_id": "linear_022",
+    "method": "linear",
+    "before": "sum(a2,a4)",
+    "incoming": "a3",
+    "after": "sum(a2,a3,a4)",
+    "step": 3
+  },
+  "linear_023": {
+    "transition_id": "linear_023",
+    "method": "linear",
+    "before": "base",
+    "incoming": "a3",
+    "after": "a3",
+    "step": 1
+  },
+  "linear_024": {
+    "transition_id": "linear_024",
+    "method": "linear",
+    "before": "a3",
+    "incoming": "a1",
+    "after": "sum(a1,a3)",
+    "step": 2
+  },
+  "linear_025": {
+    "transition_id": "linear_025",
+    "method": "linear",
+    "before": "a3",
+    "incoming": "a2",
+    "after": "sum(a2,a3)",
+    "step": 2
+  },
+  "linear_026": {
+    "transition_id": "linear_026",
+    "method": "linear",
+    "before": "a3",
+    "incoming": "a4",
+    "after": "sum(a3,a4)",
+    "step": 2
+  },
+  "linear_027": {
+    "transition_id": "linear_027",
+    "method": "linear",
+    "before": "sum(a3,a4)",
+    "incoming": "a1",
+    "after": "sum(a1,a3,a4)",
+    "step": 3
+  },
+  "linear_028": {
+    "transition_id": "linear_028",
+    "method": "linear",
+    "before": "sum(a3,a4)",
+    "incoming": "a2",
+    "after": "sum(a2,a3,a4)",
+    "step": 3
+  },
+  "linear_029": {
+    "transition_id": "linear_029",
+    "method": "linear",
+    "before": "base",
+    "incoming": "a4",
+    "after": "a4",
+    "step": 1
+  },
+  "linear_030": {
+    "transition_id": "linear_030",
+    "method": "linear",
+    "before": "a4",
+    "incoming": "a1",
+    "after": "sum(a1,a4)",
+    "step": 2
+  },
+  "linear_031": {
+    "transition_id": "linear_031",
+    "method": "linear",
+    "before": "a4",
+    "incoming": "a2",
+    "after": "sum(a2,a4)",
+    "step": 2
+  },
+  "linear_032": {
+    "transition_id": "linear_032",
+    "method": "linear",
+    "before": "a4",
+    "incoming": "a3",
+    "after": "sum(a3,a4)",
+    "step": 2
+  },
+  "ties_001": {
+    "transition_id": "ties_001",
+    "method": "ties",
+    "before": "base",
+    "incoming": "a1",
+    "after": "a1",
+    "step": 1
+  },
+  "ties_002": {
+    "transition_id": "ties_002",
+    "method": "ties",
+    "before": "a1",
+    "incoming": "a2",
+    "after": "ties(a1,a2)",
+    "step": 2
+  },
+  "ties_003": {
+    "transition_id": "ties_003",
+    "method": "ties",
+    "before": "ties(a1,a2)",
+    "incoming": "a3",
+    "after": "ties(a3,ties(a1,a2))",
+    "step": 3
+  },
+  "ties_004": {
+    "transition_id": "ties_004",
+    "method": "ties",
+    "before": "ties(a3,ties(a1,a2))",
+    "incoming": "a4",
+    "after": "ties(a4,ties(a3,ties(a1,a2)))",
+    "step": 4
+  },
+  "ties_005": {
+    "transition_id": "ties_005",
+    "method": "ties",
+    "before": "ties(a1,a2)",
+    "incoming": "a4",
+    "after": "ties(a4,ties(a1,a2))",
+    "step": 3
+  },
+  "ties_006": {
+    "transition_id": "ties_006",
+    "method": "ties",
+    "before": "ties(a4,ties(a1,a2))",
+    "incoming": "a3",
+    "after": "ties(a3,ties(a4,ties(a1,a2)))",
+    "step": 4
+  },
+  "ties_007": {
+    "transition_id": "ties_007",
+    "method": "ties",
+    "before": "a1",
+    "incoming": "a3",
+    "after": "ties(a1,a3)",
+    "step": 2
+  },
+  "ties_008": {
+    "transition_id": "ties_008",
+    "method": "ties",
+    "before": "ties(a1,a3)",
+    "incoming": "a2",
+    "after": "ties(a2,ties(a1,a3))",
+    "step": 3
+  },
+  "ties_009": {
+    "transition_id": "ties_009",
+    "method": "ties",
+    "before": "ties(a2,ties(a1,a3))",
+    "incoming": "a4",
+    "after": "ties(a4,ties(a2,ties(a1,a3)))",
+    "step": 4
+  },
+  "ties_010": {
+    "transition_id": "ties_010",
+    "method": "ties",
+    "before": "ties(a1,a3)",
+    "incoming": "a4",
+    "after": "ties(a4,ties(a1,a3))",
+    "step": 3
+  },
+  "ties_011": {
+    "transition_id": "ties_011",
+    "method": "ties",
+    "before": "ties(a4,ties(a1,a3))",
+    "incoming": "a2",
+    "after": "ties(a2,ties(a4,ties(a1,a3)))",
+    "step": 4
+  },
+  "ties_012": {
+    "transition_id": "ties_012",
+    "method": "ties",
+    "before": "a1",
+    "incoming": "a4",
+    "after": "ties(a1,a4)",
+    "step": 2
+  },
+  "ties_013": {
+    "transition_id": "ties_013",
+    "method": "ties",
+    "before": "ties(a1,a4)",
+    "incoming": "a2",
+    "after": "ties(a2,ties(a1,a4))",
+    "step": 3
+  },
+  "ties_014": {
+    "transition_id": "ties_014",
+    "method": "ties",
+    "before": "ties(a2,ties(a1,a4))",
+    "incoming": "a3",
+    "after": "ties(a3,ties(a2,ties(a1,a4)))",
+    "step": 4
+  },
+  "ties_015": {
+    "transition_id": "ties_015",
+    "method": "ties",
+    "before": "ties(a1,a4)",
+    "incoming": "a3",
+    "after": "ties(a3,ties(a1,a4))",
+    "step": 3
+  },
+  "ties_016": {
+    "transition_id": "ties_016",
+    "method": "ties",
+    "before": "ties(a3,ties(a1,a4))",
+    "incoming": "a2",
+    "after": "ties(a2,ties(a3,ties(a1,a4)))",
+    "step": 4
+  },
+  "ties_017": {
+    "transition_id": "ties_017",
+    "method": "ties",
+    "before": "base",
+    "incoming": "a2",
+    "after": "a2",
+    "step": 1
+  },
+  "ties_018": {
+    "transition_id": "ties_018",
+    "method": "ties",
+    "before": "a2",
+    "incoming": "a1",
+    "after": "ties(a1,a2)",
+    "step": 2
+  },
+  "ties_019": {
+    "transition_id": "ties_019",
+    "method": "ties",
+    "before": "a2",
+    "incoming": "a3",
+    "after": "ties(a2,a3)",
+    "step": 2
+  },
+  "ties_020": {
+    "transition_id": "ties_020",
+    "method": "ties",
+    "before": "ties(a2,a3)",
+    "incoming": "a1",
+    "after": "ties(a1,ties(a2,a3))",
+    "step": 3
+  },
+  "ties_021": {
+    "transition_id": "ties_021",
+    "method": "ties",
+    "before": "ties(a1,ties(a2,a3))",
+    "incoming": "a4",
+    "after": "ties(a4,ties(a1,ties(a2,a3)))",
+    "step": 4
+  },
+  "ties_022": {
+    "transition_id": "ties_022",
+    "method": "ties",
+    "before": "ties(a2,a3)",
+    "incoming": "a4",
+    "after": "ties(a4,ties(a2,a3))",
+    "step": 3
+  },
+  "ties_023": {
+    "transition_id": "ties_023",
+    "method": "ties",
+    "before": "ties(a4,ties(a2,a3))",
+    "incoming": "a1",
+    "after": "ties(a1,ties(a4,ties(a2,a3)))",
+    "step": 4
+  },
+  "ties_024": {
+    "transition_id": "ties_024",
+    "method": "ties",
+    "before": "a2",
+    "incoming": "a4",
+    "after": "ties(a2,a4)",
+    "step": 2
+  },
+  "ties_025": {
+    "transition_id": "ties_025",
+    "method": "ties",
+    "before": "ties(a2,a4)",
+    "incoming": "a1",
+    "after": "ties(a1,ties(a2,a4))",
+    "step": 3
+  },
+  "ties_026": {
+    "transition_id": "ties_026",
+    "method": "ties",
+    "before": "ties(a1,ties(a2,a4))",
+    "incoming": "a3",
+    "after": "ties(a3,ties(a1,ties(a2,a4)))",
+    "step": 4
+  },
+  "ties_027": {
+    "transition_id": "ties_027",
+    "method": "ties",
+    "before": "ties(a2,a4)",
+    "incoming": "a3",
+    "after": "ties(a3,ties(a2,a4))",
+    "step": 3
+  },
+  "ties_028": {
+    "transition_id": "ties_028",
+    "method": "ties",
+    "before": "ties(a3,ties(a2,a4))",
+    "incoming": "a1",
+    "after": "ties(a1,ties(a3,ties(a2,a4)))",
+    "step": 4
+  },
+  "ties_029": {
+    "transition_id": "ties_029",
+    "method": "ties",
+    "before": "base",
+    "incoming": "a3",
+    "after": "a3",
+    "step": 1
+  },
+  "ties_030": {
+    "transition_id": "ties_030",
+    "method": "ties",
+    "before": "a3",
+    "incoming": "a1",
+    "after": "ties(a1,a3)",
+    "step": 2
+  },
+  "ties_031": {
+    "transition_id": "ties_031",
+    "method": "ties",
+    "before": "a3",
+    "incoming": "a2",
+    "after": "ties(a2,a3)",
+    "step": 2
+  },
+  "ties_032": {
+    "transition_id": "ties_032",
+    "method": "ties",
+    "before": "a3",
+    "incoming": "a4",
+    "after": "ties(a3,a4)",
+    "step": 2
+  },
+  "ties_033": {
+    "transition_id": "ties_033",
+    "method": "ties",
+    "before": "ties(a3,a4)",
+    "incoming": "a1",
+    "after": "ties(a1,ties(a3,a4))",
+    "step": 3
+  },
+  "ties_034": {
+    "transition_id": "ties_034",
+    "method": "ties",
+    "before": "ties(a1,ties(a3,a4))",
+    "incoming": "a2",
+    "after": "ties(a2,ties(a1,ties(a3,a4)))",
+    "step": 4
+  },
+  "ties_035": {
+    "transition_id": "ties_035",
+    "method": "ties",
+    "before": "ties(a3,a4)",
+    "incoming": "a2",
+    "after": "ties(a2,ties(a3,a4))",
+    "step": 3
+  },
+  "ties_036": {
+    "transition_id": "ties_036",
+    "method": "ties",
+    "before": "ties(a2,ties(a3,a4))",
+    "incoming": "a1",
+    "after": "ties(a1,ties(a2,ties(a3,a4)))",
+    "step": 4
+  },
+  "ties_037": {
+    "transition_id": "ties_037",
+    "method": "ties",
+    "before": "base",
+    "incoming": "a4",
+    "after": "a4",
+    "step": 1
+  },
+  "ties_038": {
+    "transition_id": "ties_038",
+    "method": "ties",
+    "before": "a4",
+    "incoming": "a1",
+    "after": "ties(a1,a4)",
+    "step": 2
+  },
+  "ties_039": {
+    "transition_id": "ties_039",
+    "method": "ties",
+    "before": "a4",
+    "incoming": "a2",
+    "after": "ties(a2,a4)",
+    "step": 2
+  },
+  "ties_040": {
+    "transition_id": "ties_040",
+    "method": "ties",
+    "before": "a4",
+    "incoming": "a3",
+    "after": "ties(a3,a4)",
+    "step": 2
+  }
+}

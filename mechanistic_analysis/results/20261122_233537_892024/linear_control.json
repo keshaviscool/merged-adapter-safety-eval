@@ -1,0 +1,9 @@
+{
+  "orders": 24,
+  "distinct_final_expressions": 1,
+  "modules_checked": 252,
+  "canonical_fp32_endpoint_equal": true,
+  "max_absolute_difference": 0.0,
+  "bf16_endpoint_equal": true,
+  "interpretation": "Same canonical FP32 sum and one BF16 cast, by source construction. Not a test of arbitrary-order in-place BF16 addition."
+}

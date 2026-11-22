@@ -1,0 +1,7 @@
+dataset,detector,lower_asr_order,higher_asr_order,n,before_flagged,after_flagged,before_pct,after_pct,change_pp,ci95_low_pp,ci95_high_pp
+harmbench,llama_guard_3,a1>a4>a2>a3,a3>a4>a2>a1,300,61,76,20.333333333333332,25.333333333333332,5.0,2.0,8.0
+harmbench,harm_cls,a1>a4>a2>a3,a3>a4>a2>a1,300,59,74,19.666666666666668,24.666666666666668,5.0,2.0,8.333333333333334
+advbench,llama_guard_3,a1>a4>a2>a3,a3>a4>a2>a1,520,0,0,0.0,0.0,0.0,0.0,0.0
+advbench,harm_cls,a1>a4>a2>a3,a3>a4>a2>a1,520,0,0,0.0,0.0,0.0,0.0,0.0
+alpaca,rejection_classifier,a1>a4>a2>a3,a3>a4>a2>a1,500,7,8,1.4,1.6,0.2,-0.4,1.0
+alpaca,keyword_refusal,a1>a4>a2>a3,a3>a4>a2>a1,500,11,12,2.2,2.4,0.2,-0.4,1.0

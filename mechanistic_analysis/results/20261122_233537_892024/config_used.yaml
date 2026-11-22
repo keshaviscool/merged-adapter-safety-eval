@@ -1,0 +1,15 @@
+source_run: ordering_experiment/results/20261117_045604
+pairwise_run: pairwise_experiment/results/20261120_162057_002837
+output_root: mechanistic_analysis/results
+top_fractions:
+- 0.1
+- 0.2
+- 0.5
+bootstrap_samples: 20000
+bootstrap_seed: 42
+lower_asr_order: a1>a4>a2>a3
+higher_asr_order: a3>a4>a2>a1
+earlier_interesting_modules:
+- model.layers.33.self_attn.o_proj
+- model.layers.3.mlp.up_proj
+- model.layers.30.mlp.down_proj
